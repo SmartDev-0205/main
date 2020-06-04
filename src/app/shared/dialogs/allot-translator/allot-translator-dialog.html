@@ -1,0 +1,44 @@
+<!-- <form
+  [formGroup]="allotVendorForm"
+  (ngSubmit)="onSubmit()"
+  class="form-modal"
+  > -->
+<h1 class="form-modal__header" mat-dialog-title>
+  Allot Vendors
+</h1>
+
+<button mat-dialog-close mat-icon-button class="form-modal__close">
+  <ion-icon name="close"></ion-icon>
+</button>
+
+
+<div mat-dialog-content class="form-modal__body">
+  <div class="form-modal__body--content">
+
+    <ion-searchbar id="ion-searchbar-vendors"
+                   debounce="250"
+                   (ionChange)="filterVendors($event)"
+                   ></ion-searchbar>
+
+    <ion-list id="ion-list-vendors">
+      <ion-item (click)="onVendorClicked(vendor)"
+              *ngFor="let vendor of vendors"
+              >
+              <ion-checkbox class="translator-checkbox" 
+                            [checked]="checkIfVendorAssgined(vendor)"
+                            ></ion-checkbox>
+              <ion-label style="margin-left: 8px;">
+                {{vendor.profile.givenName}} {{vendor.profile.familyName}}
+              </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
+
+<div class="form-modal__footer" mat-dialog-actions>
+  <!--  mat-raised-button color="primary" -->
+  <ion-button (click)="onSubmit()">
+    Assign <ion-icon style="margin-left: 6px;" name="checkmark-circle"></ion-icon>
+  </ion-button>
+</div>
+<!-- </form> -->

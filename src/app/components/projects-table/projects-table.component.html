@@ -1,0 +1,99 @@
+<div *ngIf="(projects$ | async)?.length === 0" style="margin-top: 40px; text-align: center;">
+  No projects yet.
+</div>
+
+<div *ngIf="!(projects$ | async)" style="margin-top: 40px; text-align: center;">
+  Fetching projects...
+</div>
+
+<div *ngIf="(projects$ | async)?.length">
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          ID 
+        </th>
+        <td mat-cell *matCellDef="let i = index"> 
+          {{ i + 1 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Name 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdBy">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Created by 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.user?.profile?.givenName }} {{ element.user?.profile?.familyName }} 
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="budget">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Budget 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          ${{ element.budget }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quoteStatus" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Quote Status
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.quoteStatus }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="paymentStatus" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Payment Status
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.paymentStatus }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="developmentStatus" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+          Development Status
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.developmentStatus }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="openDialog(row)"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>

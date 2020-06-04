@@ -1,0 +1,131 @@
+$font-units: 16px;
+
+.form-modal {
+  position: relative;
+  height: 100%;
+
+  &__header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    display: flex;
+    mat-spinner {
+      margin-right: 45px;
+      margin-top: -2px;
+      margin-left: auto;
+    }
+    h1 {
+      width: 80%;
+      font-size: 1.5 * $font-units;
+      font-weight: bold;
+      margin-bottom: 0px;
+      align-self: flex-start;
+    }
+    button {
+      margin-top: -10px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__body {
+    &--headline {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      h5 {
+        font-size: 0.9 * $font-units;
+
+        &:nth-child(1) {
+          span {
+            color: #275d8d;
+          }
+        }
+
+        &:nth-child(2) {
+          margin-left: 8px;
+        }
+
+        span {
+          color: #777;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 0.8 * $font-units;
+        }
+      }
+    }
+
+    &--content {
+
+      .project-info {
+        margin: 20px;
+      }
+
+      mat-form-field {
+        width: 300px;
+      }
+      .client-comments {
+        padding: 16px;
+        border-radius: 8px;
+        background: #f7f7f7;
+        line-height: 1.4;
+        margin: 16px 0;
+      }
+
+      .alloted-translators {
+        margin-top: 32px;
+
+        h4 {
+          color: #000;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 0.8 * $font-units;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    input#fileUpload {
+      display: none !important;
+    }
+
+    .stroked {
+      margin-right: 8px;
+    }
+  }
+
+  ion-icon {
+    font-size: 1 * $font-units;
+    margin-left: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+.requirement-files {
+  padding-left:10px;
+  padding-right:10px;
+  display: flex;
+  flex-direction: column;
+  .file {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    ion-icon {
+      margin-left: 5px;
+    }
+  }
+}

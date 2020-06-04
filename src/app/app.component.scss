@@ -1,0 +1,28 @@
+#logo {
+  max-width: 40%;
+  border: 0;
+  height: auto;
+  margin: 48px auto 32px auto;
+  display: block;
+}
+
+#main-content {
+  background: #f9f9f9 !important;
+
+  .ion-page {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width:700px) {
+  ion-menu {
+    max-width:20%!important;
+  }
+ }
+@media only screen and (max-width: 500px) {
+  ion-menu {
+    menu {
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add Project</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="add-project" style="padding: 20px;">
+
+    <ion-card slot="start" class="new-project">
+
+      <ion-card-header>
+        <h1>Project Details</h1>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form [formGroup]="newProjectForm">
+
+          <!-- project name -->
+          <div>
+            <mat-form-field>
+              <input matInput 
+                     formControlName="name"
+                     type="text" 
+                     placeholder="Project name">
+              <mat-error *ngIf="newProjectForm.controls.name.hasError('required')">
+                This field is required
+              </mat-error>
+              <mat-error *ngIf="newProjectForm.controls.name.hasError('email')">
+                Please insert a valid email
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- project file -->
+          <div style="margin-bottom: 24px;">
+            <mat-label style="display: block; margin: 24px 0 16px 0;">
+              <strong>* Project Files</strong>
+            </mat-label>
+            <input type="file" multiple #fileInput>
+          </div>
+
+          <!-- budget -->
+          <div>
+            <mat-form-field>
+              <input matInput 
+                     formControlName="budget"
+                     id="budget"
+                     type="number" 
+                     placeholder="Budget ($)">
+              <mat-error *ngIf="newProjectForm.controls.budget.hasError('pattern')">
+                Please insert a number
+              </mat-error>
+              <mat-error *ngIf="newProjectForm.controls.budget.hasError('required')">
+                This field is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- comments -->
+          <div>
+            <mat-form-field>
+              <textarea matInput 
+                        formControlName="description"
+                        placeholder="Description" rows="5">
+              </textarea>
+              <mat-error *ngIf="newProjectForm.controls.description.hasError('maxlength')">
+                Maximum number of characters: 1500
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- sourceLanguage: String -->
+          <div>
+            <mat-form-field>
+              <input matInput 
+                     formControlName="sourceLanguage"
+                     placeholder="Source Language" rows="5">
+            </mat-form-field>
+          </div>
+
+          <!-- targetLanguage: String -->
+          <div>
+            <mat-form-field>
+              <input matInput 
+                     formControlName="targetLanguage"
+                     placeholder="Target Language" rows="5">
+            </mat-form-field>
+          </div>
+
+          <!-- serviceType: String -->
+          <div>
+            <mat-form-field>
+              <mat-label>Service Type</mat-label>
+              <mat-select formControlName="serviceType">
+                <mat-option value="Audio Recording">Audio Recording</mat-option>
+                <mat-option value="Copywriting">Copywriting</mat-option>
+                <mat-option value="Proofreading">Proofreading</mat-option>
+                <mat-option value="Quality Assurance">Quality Assurance</mat-option>
+                <mat-option value="Subtitling">Subtitling</mat-option>
+                <mat-option value="Translation">Translation</mat-option>
+                <mat-option value="Translation and Proofreading">Translation and Proofreading</mat-option>
+                <mat-option value="Transcreation">Transcreation</mat-option>
+                <mat-option value="Voice-over">Voice-over</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- dueDate: String -->
+          <div>
+            <mat-form-field>
+              <input type="date"
+                     matInput 
+                     formControlName="dueDate"
+                     placeholder="Due Date" rows="5">
+              <mat-error *ngIf="newProjectForm.controls.dueDate.hasError('required')">
+                This field is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <ion-button (click)="onSubmit()" style="margin-left: auto; display: inline-block;">
+            Submit
+          </ion-button>
+
+        </form>
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+</ion-content>

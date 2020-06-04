@@ -1,0 +1,30 @@
+<ion-card *ngIf="projectDetails" slot="start" class="project">
+
+  <ion-card-header>
+    <ion-card-title>{{ projectDetails.name }}</ion-card-title>
+    <ion-card-subtitle style="margin-top: 8px;">client: <span style="color: #275D8D;">{{ clientName }}</span>
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="client-comments">
+      <p>
+        {{projectDetails.description}}
+      </p>
+    </div>
+
+    <ion-label *ngIf="projectDetails.translators && projectDetails.translators.length !== 0"
+      style="color: green; font-weight: bold; display: flex; justify-content: flex-end; align-items: center;">
+      <ion-icon name="checkmark-circle" style="margin-right: 8px; margin-top: -1.5px; font-size: 1rem;"></ion-icon>
+      Translators alloted
+    </ion-label>
+
+    <ion-label *ngIf="!projectDetails.translators || projectDetails.translators.length === 0"
+      style="color: goldenrod; font-weight: bold; display: flex; justify-content: flex-end; align-items: center;">
+      <ion-icon name="time" style="margin-right: 8px; margin-top: -1.5px; font-size: 1rem;"></ion-icon> Allotment
+      pending
+    </ion-label>
+
+  </ion-card-content>
+
+</ion-card>

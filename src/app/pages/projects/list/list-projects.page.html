@@ -1,0 +1,31 @@
+<ion-header>
+  <!-- <ion-row>
+    <ion-col  offset=0 size=6>
+
+    </ion-col>
+
+  </ion-row> -->
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size-md=6 size-xl=3 class="center">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Projects</ion-title>
+      </ion-col>
+      <ion-col size=6>
+        <ion-searchbar [(ngModel)]="serchText" (keyup)="onSearch($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="display: inline-block;padding: 24px 0px 0px 24px">
+    <ion-button color="secondary" [routerLink]="'/projects/add'" [routerDirection]="'root'" size="small" style="max-width: 70px;">New</ion-button>
+    <ion-button color="secondary" (click)="onDeleteProjects()" size="small" style="max-width: 70px;">Delete</ion-button>
+  </div>
+  <ion-card style="margin: 24px; min-height: 100px;">
+    <projects-table style="overflow-y: auto; height: 100%;"></projects-table>
+  </ion-card> 
+
+</ion-content>

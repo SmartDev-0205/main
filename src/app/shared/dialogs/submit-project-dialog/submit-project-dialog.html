@@ -1,0 +1,28 @@
+<!-- <form [formGroup]="submitprojectForm" (ngSubmit)="onSubmit()" class="form-modal"> -->
+<h1 class="form-modal__header" mat-dialog-title>
+  Submit Translated Files
+</h1>
+
+<button mat-dialog-close mat-icon-button class="form-modal__close">
+  <ion-icon name="close"></ion-icon>
+</button>
+
+<div mat-dialog-content class="form-modal__body">
+  <div class="form-modal__body--content">
+    <!-- project file -->
+    <div style="margin-bottom: 24px; font-size: 14px;">
+      <mat-label style="display: block; margin: 24px 0 16px 0;">
+        <strong>* Project Files</strong> - (Zip all your files and select that
+        single Zipped file)
+      </mat-label>
+      <input type="file" id="fileUpload" />
+    </div>
+  </div>
+</div>
+
+<div class="form-modal__footer" mat-dialog-actions>
+  <ion-button (click)="onSubmit()" style="margin-left: auto; display: block;">
+    Submit
+  </ion-button>
+</div>
+<!-- </form> -->

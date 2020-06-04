@@ -1,0 +1,18 @@
+.new-project {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 16px;
+
+  mat-form-field {
+    display: block;
+    margin: 24px 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .new-project {
+    padding: 16px 32px;
+  }
+}

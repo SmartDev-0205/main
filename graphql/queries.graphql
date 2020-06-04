@@ -1,0 +1,299 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    role
+    profile {
+      givenName
+      familyName
+      company
+      birthday
+      email
+      email_2
+      website
+      address
+      postal
+      city
+      country
+      timezone
+      address_2
+      postal_2
+      city_2
+      country_2
+      timezone_2
+      phone
+      phone_2
+      skype
+    }
+    projects {
+      items {
+        id
+        userId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        quoteStatus
+        paymentStatus
+        projectManagerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    vendorProjects {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    quoteStatus
+    paymentStatus
+    projectManagerId
+    projectManager {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendors {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListProjects(
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      quoteStatus
+      paymentStatus
+      projectManagerId
+      projectManager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      vendors {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectsByUserId(
+  $userId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getProjectsByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      quoteStatus
+      paymentStatus
+      projectManagerId
+      projectManager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      vendors {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

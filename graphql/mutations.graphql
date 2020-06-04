@@ -1,0 +1,742 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      givenName
+      familyName
+      company
+      birthday
+      email
+      email_2
+      website
+      address
+      postal
+      city
+      country
+      timezone
+      address_2
+      postal_2
+      city_2
+      country_2
+      timezone_2
+      phone
+      phone_2
+      skype
+    }
+    projects {
+      items {
+        id
+        userId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        quoteStatus
+        paymentStatus
+        projectManagerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    vendorProjects {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      givenName
+      familyName
+      company
+      birthday
+      email
+      email_2
+      website
+      address
+      postal
+      city
+      country
+      timezone
+      address_2
+      postal_2
+      city_2
+      country_2
+      timezone_2
+      phone
+      phone_2
+      skype
+    }
+    projects {
+      items {
+        id
+        userId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        quoteStatus
+        paymentStatus
+        projectManagerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    vendorProjects {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      givenName
+      familyName
+      company
+      birthday
+      email
+      email_2
+      website
+      address
+      postal
+      city
+      country
+      timezone
+      address_2
+      postal_2
+      city_2
+      country_2
+      timezone_2
+      phone
+      phone_2
+      skype
+    }
+    projects {
+      items {
+        id
+        userId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        quoteStatus
+        paymentStatus
+        projectManagerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    vendorProjects {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProject(
+  $input: CreateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  createProject(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    quoteStatus
+    paymentStatus
+    projectManagerId
+    projectManager {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendors {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProject(
+  $input: UpdateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  updateProject(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    quoteStatus
+    paymentStatus
+    projectManagerId
+    projectManager {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendors {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProject(
+  $input: DeleteProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  deleteProject(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    quoteStatus
+    paymentStatus
+    projectManagerId
+    projectManager {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendors {
+      items {
+        id
+        projectId
+        vendorId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectVendor(
+  $input: CreateProjectVendorInput!
+  $condition: ModelProjectVendorConditionInput
+) {
+  createProjectVendor(input: $input, condition: $condition) {
+    id
+    projectId
+    vendorId
+    project {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      quoteStatus
+      paymentStatus
+      projectManagerId
+      projectManager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      vendors {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendor {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectVendor(
+  $input: UpdateProjectVendorInput!
+  $condition: ModelProjectVendorConditionInput
+) {
+  updateProjectVendor(input: $input, condition: $condition) {
+    id
+    projectId
+    vendorId
+    project {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      quoteStatus
+      paymentStatus
+      projectManagerId
+      projectManager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      vendors {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendor {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectVendor(
+  $input: DeleteProjectVendorInput!
+  $condition: ModelProjectVendorConditionInput
+) {
+  deleteProjectVendor(input: $input, condition: $condition) {
+    id
+    projectId
+    vendorId
+    project {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      quoteStatus
+      paymentStatus
+      projectManagerId
+      projectManager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      vendors {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    vendor {
+      id
+      role
+      profile {
+        givenName
+        familyName
+        company
+        birthday
+        email
+        email_2
+        website
+        address
+        postal
+        city
+        country
+        timezone
+        address_2
+        postal_2
+        city_2
+        country_2
+        timezone_2
+        phone
+        phone_2
+        skype
+      }
+      projects {
+        nextToken
+      }
+      vendorProjects {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}

@@ -1,0 +1,72 @@
+type User @model {
+  id: ID!
+  role: String
+  profile: Profile
+
+  projects: [Project] @connection(keyName: "byUser", fields: ["id"])
+  vendorProjects : [ProjectVendor] @connection(keyName: "byVendor", fields: ["id"])
+}
+
+type Profile {
+  givenName: String
+  familyName: String
+  company: String
+  birthday: String
+  email: String
+  email_2: String
+  website: String
+  address: String
+  postal: String
+  city: String
+  country: String
+  timezone: String
+  address_2: String
+  postal_2: String
+  city_2: String
+  country_2: String
+  timezone_2: String
+  phone: String
+  phone_2: String
+  skype: String
+}
+
+type Project @model 
+  @key(name: "byUser", fields: ["userId"], queryField: "getProjectsByUserId")
+{
+  id: ID!
+  userId: ID!
+
+  # Project owned by
+  user: User @connection(fields: ["userId"])
+
+  # Project Details
+  name: String
+  description: String
+  budget: Float
+  approvedBudget: Float
+  sourceLanguage: String
+  targetLanguage: String
+  serviceType: String
+  dueDate: String
+
+  # Project Statuses
+  status: String
+  developmentStatus: String
+  quoteStatus: String
+  paymentStatus: String
+
+  projectManagerId: String
+  projectManager: User @connection(fields: ["userId"])
+  vendors: [ProjectVendor] @connection(keyName: "byProject", fields: ["id"])
+}
+
+type ProjectVendor
+  @model(queries: null)
+  @key(name: "byProject", fields: ["projectId", "vendorId"])
+  @key(name: "byVendor", fields: ["vendorId", "projectId"]) {
+  id: ID!
+  projectId: ID!
+  vendorId: ID!
+  project: Project @connection(fields: ["projectId"])
+  vendor: User @connection(fields: ["vendorId"])
+}

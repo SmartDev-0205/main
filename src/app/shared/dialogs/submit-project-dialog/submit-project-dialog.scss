@@ -1,0 +1,71 @@
+$font-units: 14px;
+
+.form-modal {
+  position: relative;
+  height: 100%;
+
+  &__header {
+    width: 80%;
+    font-size: 1.5 * $font-units;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // &__body {
+
+  //   &--content {
+
+  //   }
+  // }
+
+  &__footer {
+    margin-top: 80px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    input#fileUpload {
+      display: none !important;
+    }
+
+    .stroked {
+      margin-right: 8px;
+    }
+  }
+
+  ion-icon {
+    font-size: 1 * $font-units;
+    margin-left: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form-modal {
+    &__header {
+      margin-bottom: 16px;
+    }
+
+    &__footer {
+      margin-top: 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      button {
+        margin: 4px 0;
+      }
+
+      .stroked {
+        margin-right: 0;
+      }
+    }
+  }
+}

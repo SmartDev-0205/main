@@ -1,0 +1,15 @@
+<div *ngIf="projects$ | async" class="project-list">
+  <div *ngFor="let project of (projects$ | async);" class="project-card__wrapper">
+    <a (click)="openDialog(project)">
+      <project-card [projectDetails]="project"></project-card>
+    </a>
+  </div>
+</div>
+
+<div *ngIf="(projects$ | async)?.length === 0" style="margin-top: 40px; text-align: center;">
+  No projects yet.
+</div>
+
+<div *ngIf="!(projects$ | async)" style="margin-top: 40px; text-align: center;">
+  Fetching the projects...
+</div>

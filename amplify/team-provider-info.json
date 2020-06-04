@@ -1,0 +1,20 @@
+{
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-prolocalize-prod-95832-authRole",
+            "UnauthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "amplify-prolocalize-prod-95832-deployment",
+            "UnauthRoleName": "amplify-prolocalize-prod-95832-unauthRole",
+            "StackName": "amplify-prolocalize-prod-95832",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:590709797647:stack/amplify-prolocalize-prod-95832/b3b07220-433e-11ea-8086-0a43e1cd1fda",
+            "AmplifyAppId": "drshshpona720"
+        },
+        "categories": {
+            "auth": {
+                "prolocalize43142882": {}
+            }
+        }
+    }
+}

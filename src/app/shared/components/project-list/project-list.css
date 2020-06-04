@@ -1,0 +1,30 @@
+.scroll-box {
+  overflow: auto;
+  height: 100%;
+}
+
+.project-card__wrapper {
+  width: calc(50% - 16px);
+}
+
+.project-card__wrapper:nth-child(odd) {
+  margin-left: 16px;
+}
+
+@media only screen and (max-width: 500px) {
+  .project-card__wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .project-card__wrapper:nth-child(odd) {
+    margin-left: auto;
+  }
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  overflow-y: auto;
+}

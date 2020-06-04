@@ -1,0 +1,323 @@
+<div *ngIf="!project">
+  Loading...
+</div>
+
+<div *ngIf="project" class="form-modal">
+
+  <div class="form-modal__header">
+    <h1 mat-dialog-title>
+      {{ project.name }}
+    </h1>
+    <mat-spinner *ngIf="updatingProject" diameter="25"></mat-spinner>
+    <button mat-dialog-close mat-icon-button class="form-modal__close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </div>
+
+  <div mat-dialog-content class="form-modal__body">
+    <div class="form-modal__body--headline">
+      <h5>
+        Created by: <span>
+          {{ project.user.profile.givenName }} {{ project.user.profile.familyName }}
+        </span>
+      </h5> 
+      <span style="margin: 0 3px;">-</span>
+      <h5>Budget: ${{project.budget}}</h5>
+    </div>
+
+    <div class="form-modal__body--content">
+
+      <h2>Project Information</h2>
+      <div>
+        <div class="project-info">
+          Target Language: {{ project.targetLanguage }}
+        </div>
+        <div class="project-info">
+          Source Language: {{ project.sourceLanguage }}
+        </div>
+        <div class="project-info">
+          Service Type: {{ project.serviceType }}
+        </div>
+        <div class="project-info">
+          Due Date: {{ project.dueDate }}
+        </div>
+      </div>
+
+      <h2>Project Status</h2>
+
+      <div style="margin-left: 15px" *ngIf="
+                    (user.role$ | async) !== 'vendor'
+                    ">
+        <h4>Quote Status</h4>
+        <div *ngIf="
+                    (user.role$ | async) === 'manager' ||
+                    (user.role$ | async) === 'sales';
+                    else nonEditableQuoteStatus 
+                    ">
+          <mat-form-field>
+            <mat-label>Quote Status</mat-label>
+            <mat-select [(ngModel)]="project.quoteStatus">
+              <mat-option value="quote_requested">Quote requested</mat-option>
+              <mat-option value="quote_delivered">Quote delivered</mat-option>
+              <mat-option value="quote_issue">Issue with quote</mat-option>
+              <mat-option value="quote_accepted">Quote accpeted</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <ng-template #nonEditableQuoteStatus>
+          <div [ngSwitch]="project.quoteStatus">
+            <div *ngSwitchCase="'quote_requested'">
+              Quote has been requested.
+            </div>
+            <div *ngSwitchCase="'quote_delivered'">
+              Quote has been provided.
+            </div>
+            <div *ngSwitchCase="'quote_issue'">
+              Quote issue, the quote will be reviewed and updated soon.
+            </div>
+            <div *ngSwitchCase="'quote_accepted'">
+              Quote has been accepeted.
+            </div>
+            <div *ngSwitchDefault>
+              Quote status undefined. Please contact an administrator.
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <div style="margin-left: 15px" *ngIf="
+                    (user.role$ | async) !== 'vendor'
+                    ">
+        <h4>Payment Status</h4>
+        <div *ngIf="
+                    (user.role$ | async) === 'manager' ||
+                    (user.role$ | async) === 'sales';
+                    else nonEditablePaymentStatus 
+                    ">
+          <mat-form-field>
+            <mat-label>Payment Status</mat-label>
+            <mat-select [(ngModel)]="project.paymentStatus">
+              <mat-option value="payment_details_required">Payment details required</mat-option>
+              <mat-option value="payment_pending">Payment pending</mat-option>
+              <mat-option value="payment_successful">Payment successful</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <ng-template #nonEditablePaymentStatus>
+          <div [ngSwitch]="project.paymentStatus">
+            <div *ngSwitchCase="'payment_details_required'">
+              Payment details will be added soon.
+            </div>
+            <div *ngSwitchCase="'payment_pending'">
+              Payment details are set.
+            </div>
+            <div *ngSwitchCase="'payment_successful'">
+              Payment has ben successful processed.
+            </div>
+            <div *ngSwitchDefault>
+              Payment details have not been defined yet.
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <div style="margin-left: 15px">
+        <h4>Development Status</h4>
+        <div *ngIf="
+                    (user.role$ | async) === 'manager' ||
+                    (user.role$ | async) === 'sales';
+                    else nonEditableDevelopmentStatus 
+                    ">
+          <mat-form-field>
+            <mat-label>Develpment Status</mat-label>
+            <mat-select [(ngModel)]="project.developmentStatus">
+              <mat-option value="project_allotment_pending">Vendor allotment pending</mat-option>
+              <mat-option value="project_work_in_progress">Work in progress</mat-option>
+              <mat-option value="project_delivered">Work delivered. Waiting for review</mat-option>
+              <mat-option value="project_issue">Issue with work delivered</mat-option>
+              <mat-option value="project_accepted">Work accepted</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <ng-template #nonEditableDevelopmentStatus>
+          <div [ngSwitch]="project.developmentStatus">
+            <div *ngSwitchCase="'project_allotment_pending'">
+              Vendor allotment pending, the project will start soon.
+            </div>
+            <div *ngSwitchCase="'project_work_in_progress'">
+              Project is up and running. Work in progress.
+            </div>
+            <div *ngSwitchCase="'project_delivered'">
+              Project work has been delivered and is ready to be reviewed.
+            </div>
+            <div *ngSwitchCase="'project_issue'">
+              Issue with work delivered, the project will be reviewed and updated soon.
+            </div>
+            <div *ngSwitchCase="'project_accepted'">
+              Project deliverd work has been accepeted.
+            </div>
+            <div *ngSwitchDefault>
+              Project has not yet started.
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <ion-button *ngIf="
+                    (user.role$ | async) === 'manager' ||
+                    (user.role$ | async) === 'sales';
+                    "
+        (click)="updateProjectStatuses()">
+        Update Project Statuses
+      </ion-button>
+
+      <!-- Client comment -->
+      <h2>Description</h2>
+      <div class="client-comments">
+        <p>
+          {{project.description}}
+        </p>
+      </div>
+
+      <h2>Requirement Files</h2>
+      <div class="requirement-files">
+        <div class="file" 
+             *ngFor="let file of requirementFiles"
+             >
+             {{ file.name }}
+             <ion-icon slot="end" 
+                       name="cloud-download" 
+                       (click)="downloadFile(file.key)"
+                       ></ion-icon>
+             <ion-icon slot="end" 
+                       (click)="deleteFile(file.key)"
+                       name="trash"
+                       ></ion-icon>
+        </div>
+      </div>
+      <div *ngIf="!requirementFiles">
+        Fetching requirement files...
+      </div>
+      <div *ngIf="requirementFiles?.length === 0">
+        No requirement files have been uploaded.
+      </div>
+      <div style="margin-bottom: 24px;">
+        <div *ngIf="(user.role$ | async) === 'manager'">
+          <input style="margin-top:15px" type="file" multiple #requirementFilesInput>
+          <div style="margin-top:10px">
+            <ion-button (click)="uploadRequirementFiles()">
+              Upload Files<ion-icon slot="end" name="cloud-download"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="(user.role$ | async) !== 'vendor'">
+        <h2>Quotation Files</h2>
+        <div class="requirement-files">
+          <div class="file" 
+               *ngFor="let file of quotationFiles"
+               >
+               {{ file.name }}
+               <ion-icon slot="end" 
+                         name="cloud-download" 
+                         (click)="downloadFile(file.key)"
+                         ></ion-icon>
+               <ion-icon slot="end" 
+                         (click)="deleteFile(file.key)"
+                         name="trash"
+                         ></ion-icon>
+          </div>
+        </div>
+        <div *ngIf="!quotationFiles">
+          Fetching quotation files...
+        </div>
+        <div *ngIf="quotationFiles?.length === 0">
+          No quotation files have been uploaded.
+        </div>
+        <div style="margin-bottom: 24px;">
+          <div *ngIf="(user.role$ | async) === 'manager'">
+            <input style="margin-top:15px" type="file" multiple #quotationFilesInput>
+            <div style="margin-top:10px">
+              <ion-button (click)="uploadQuotationFiles()">
+                Upload Files<ion-icon slot="end" name="cloud-download"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Delivered Files</h2>
+      <div class="delivery-files">
+        <div class="file" 
+             *ngFor="let file of deliveredFiles"
+             >
+             {{ file.name }}
+             <ion-icon slot="end" 
+                       name="cloud-download" 
+                       (click)="downloadFile(file.key)"
+                       ></ion-icon>
+             <ion-icon slot="end" 
+                       (click)="deleteFile(file.key)"
+                       name="trash"
+                       ></ion-icon>
+        </div>
+      </div>
+      <div *ngIf="!deliveredFiles">
+        Fetching delivered files...
+      </div>
+      <div *ngIf="deliveredFiles?.length === 0">
+        No delivered files have been uploaded.
+      </div>
+      <div style="margin-bottom: 24px;">
+        <div *ngIf="
+                    (user.role$ | async) === 'manager' ||
+                    (user.role$ | async) === 'vendor'
+                    ">
+          <input style="margin-top:15px" type="file" multiple #deliveredFilesInput>
+          <div style="margin-top:10px">
+            <ion-button (click)="uploadDeliveredFiles()">
+              Upload Files<ion-icon slot="end" name="cloud-download"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </div>
+
+      <div class="alloted-translators" style="margin-bottom:10px;">
+        <ion-label>
+          <h4>Alloted Translators</h4>
+          <ion-chip *ngFor="let item of project.vendors.items" color="primary">
+            <ion-label>
+              {{item.vendor.profile.givenName}} {{item.vendor.profile.familyName}}
+            </ion-label>
+          </ion-chip>
+          <ion-label *ngIf="!project.vendors.items">N/A</ion-label>
+        </ion-label>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-modal__footer" mot-mat-dialog-actions>
+
+    <!-- Delete: Client only -->
+    <ion-button class="stroked" 
+                fill="clear" 
+                (click)="deleteProject()" 
+                color="danger"
+                *ngIf="
+                       (user.role$ | async) === 'client' ||
+                       (user.role$ | async) === 'manager'
+                       "
+                >
+                Delete Project
+                <ion-icon slot="end" name="trash"></ion-icon>
+    </ion-button>
+
+    <ion-button *ngIf="(user.role$ | async) === 'manager'" (click)="allotTranslatorDialog()">
+      Allot Translators <ion-icon slot="end" name="person-add"></ion-icon>
+    </ion-button>
+
+  </div>
+
+</div>

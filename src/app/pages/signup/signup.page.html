@@ -1,0 +1,72 @@
+<ion-content>
+  <ion-grid style="padding: 0;">
+    <ion-row class="ion-align-items-center" style="background-color: #f7f7f7;">
+      <ion-col offset-md="2" size-md="8" offset-lg="3" size-lg="6">
+        <ion-card style="margin-top: 10vh; background-color: white;">
+          <ion-card-header>
+            <ion-card-title style="text-align: center;font-weight:bold;font-size: 25px;">
+              Create New Account
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content style="padding: 10px 10% 30px 10%;">
+            <ion-item>
+              <ion-label position="floating">Given Name</ion-label>
+              <ion-input [(ngModel)]="newUserProfile.givenName" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Family Name</ion-label>
+              <ion-input [(ngModel)]="newUserProfile.familyName" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input [(ngModel)]="newUserEmail" type="email"></ion-input>
+            </ion-item>
+
+            <ion-list>
+              <ion-item>
+                <ion-label>User Role</ion-label>
+                <ion-select interface="popover" [(ngModel)]="newUserRole">
+                  <ion-select-option value="client">Client</ion-select-option>
+                  <ion-select-option value="manager">Project Manager</ion-select-option>
+                  <ion-select-option value="sales">Sales</ion-select-option>
+                  <ion-select-option value="vendor">Vendor</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input [(ngModel)]="newUserPassword" type="password"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Verify password</ion-label>
+              <ion-input [(ngModel)]="newUserPasswordCheck" type="password"></ion-input>
+            </ion-item>
+
+            <ion-item style="margin-top: 30px;" lines="none">
+              <ion-label class="ion-text-wrap">
+                I agree with the <a>Terms of Use</a> and the
+                <a>Privacy Policy</a>
+              </ion-label>
+              <ion-checkbox [(ngModel)]="termsCheckbox" slot="start">
+              </ion-checkbox>
+            </ion-item>
+
+            <div class="ion-text-center">
+              <ion-button (click)="signUp()" style="margin-top:20px;">Sign Up</ion-button>
+            </div>
+
+            <div class="ion-text-center" style="margin-top:30px;">
+              <div>Do you already have an account?</div>
+              <a (click)="backToSignin()"> Back to Signin </a>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
