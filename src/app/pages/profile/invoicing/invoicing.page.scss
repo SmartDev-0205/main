@@ -1,0 +1,123 @@
+.profile-picture {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 20vh;
+    margin: auto;
+  }
+  
+  $input-margin-vertical: 12px;
+  $input-padding-vertical: 12px;
+  $input-padding-horizonal: 12px;
+  $input-border-radius: 4px;
+  
+  .editable-input {
+    border: solid 1px #c4c1d2;
+    margin-top: $input-margin-vertical * 2;
+    margin-bottom: $input-margin-vertical;
+    padding-top: $input-padding-vertical;
+    padding-bottom: $input-padding-vertical;
+    padding-left: $input-padding-horizonal !important;
+    padding-right: $input-padding-horizonal !important;
+    border-radius: $input-border-radius;
+  }
+  .non-editable-input {
+    border: solid 1px #ffffff00;
+    margin-top: $input-margin-vertical;
+    margin-bottom: $input-margin-vertical;
+    padding-top: $input-padding-vertical;
+    padding-bottom: $input-padding-vertical;
+    // padding-left: $input-padding-horizonal !important;
+    // padding-right: $input-padding-horizonal !important;
+    border-radius: $input-border-radius;
+  }
+  
+  .profile__grid {
+    display: flex;
+    margin-top: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    ion-item {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .profile__grid {
+      ion-item {
+        width: 50%;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .profile__grid {
+      ion-item {
+        width: 100%;
+        padding: 8px;
+        margin: 4px 0;
+        border-bottom: 1px solid #efefef;
+      }
+    }
+  }
+  
+  .profile-section-title {
+    margin-top: 20px;
+  }
+  
+  .profile-floating-menu {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 3vh;
+    right: 5vw;
+    z-index: 999;
+    margin-bottom: 56px;
+  }
+  
+  ion-card {
+    margin-top: 50px;
+    padding: 0px 10px 20px 10px;
+    background-color: white;
+  }
+  
+  ion-card-title {
+    font-size: 23px;
+  }
+  .profile__content {
+    ion-label {
+      color: #777;
+      font-size: 1rem;
+    }
+  
+    ion-card-header {
+      margin-top: 16px;
+    }
+  }
+  .toolbar-content{
+    display: flex;
+  }
+  .full-width{
+      width: 100%;
+  }
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .radio-button {
+    margin: 5px;
+  }
+  .radio-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date-selector{
+    margin-left: 10px;
+  }
+  .date-picker{
+    margin-left: 30px;
+  }

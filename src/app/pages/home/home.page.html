@@ -8,18 +8,28 @@
 </ion-header>
 
 <ion-content>
-
     <ion-card class="welcome-card">
-
       <ion-card-header>
         <h1>Prolocalize Translation Portal</h1>
       </ion-card-header>
-
       <ion-card-content>
         Use the left panel to create and manage projects.
       </ion-card-content>
-
+      <!-- list all invites -->
+      <!-- *ngFor="let invite of invites; let i = index" -->
+      <!-- <ion-item *ngFor="let invite of invites; let i = index">
+        <div class="item-content">
+          <div class="item-header">
+            <img class="invite-logo" src="/assets/main/teaminvite.jpg">
+            <h1><strong>Team invite</strong></h1>
+          </div>
+          <div class="item-body">
+            <span class="invite-font">Hi {{(invite.user.profile.givenName + " " + invite.user.profile.familyName).toUpperCase() + "." }} {{(invite.team.manager.profile.givenName + " " + invite.team.manager.profile.familyName).toUpperCase() + " " }}invite you on {{invite.team.teamName}} team.</span>
+            <ion-button  class="invite-button" (click)="a ssept(i)" [disabled]="idDisabled(invite)">Accept</ion-button>
+            <ion-button  class="invite-button" (click)="reject(i)" [disabled]="idDisabled(invite)">Reject</ion-button>
+          </div>
+        </div>
+      </ion-item> -->
     </ion-card>
-
-
+    
 </ion-content>

@@ -1,0 +1,102 @@
+<ion-content>
+  <div class="profile-floating-menu">
+    <ion-fab vertical="center" horizonal="center">
+      <ion-fab-button (click)="toggleEditing()">
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="primary" (click)="saveProfile()">
+          <ion-icon name="save" style="font-size: 25px;"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <ion-grid class="profile__content" style="padding: 0;">
+    <ion-row class="ion-align-items-center" style="background-color: #fff;">
+      <ion-col offset-md=1 size-md=10>
+
+        <div *ngIf="userProfile" @fadeInAnimation>
+          <ion-card style="margin-top: 24px;">
+            <ion-card-content class="profile__grid">
+              <ion-item lines="none" class="full-width">
+                <ion-label position="stacked">Payment Term</ion-label>
+                <ion-input autocomplete="account-type" mode="ios"
+                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}" *ngIf="!editingProfile"
+                  [(ngModel)]="userProfile.paymentTerm" [readonly]=!editingProfile>
+                </ion-input>
+                <mat-form-field *ngIf="editingProfile" class="full-width" [ngClass]="{'editable-material': editingProfile, 'non-editable-material': !editingProfile}">
+                  <mat-select [ngClass]="{'editable-select': editingProfile, 'non-editable-select': !editingProfile}"  [(ngModel)]="userProfile.paymentTerm" >
+                    <mat-option *ngFor="let option of paymentTerm" [value]="option" >{{option}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ion-item>
+
+              
+              
+              <ion-item lines="none" class="full-width">
+                <ion-label position="stacked">Payment Method</ion-label>
+                <!-- <ion-input autocomplete="company-name"
+                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
+                  [(ngModel)]="userProfile.company" [readonly]=!editingProfile></ion-input> -->
+                  <mat-form-field class="full-width">
+                    <mat-chip-list [disabled]="!editingProfile" #chipList aria-label="Fruit selection" readonly="!editingProfile" >
+                      <mat-chip
+                        *ngFor="let fruit of userProfile.paymentMethod"
+                        [selectable]="selectable"
+                        [removable]="removable"
+                        (removed)="remove(fruit)"
+                        [disabled]="!editingProfile">
+                        {{fruit}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                      </mat-chip>
+                      <input
+                        
+                        #fruitInput
+                        [formControl]="fruitCtrl"
+                        [matAutocomplete]="auto"
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="add($event)">
+                    </mat-chip-list>
+                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                      <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                        {{fruit}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+              </ion-item>
+              <ion-item>
+                <mat-radio-group
+                  aria-labelledby="radio-group-label"
+                  class="radio-group"
+                  [(ngModel)]="userProfile.dayOption" (change)="changeDayOption()">
+                  <mat-radio-button [disabled]="!editingProfile" class="radio-button"  *ngFor="let day of payDays" [value]="day">
+                    <div class="radio-content">
+                      <span>{{day}}</span>
+                      <mat-form-field class="form-group" class="date-picker" *ngIf="userProfile.dayOption == day">  
+                        <input required matInput [disabled]="!editingProfile" [matDatepicker]="picker" name="date" class="form-control" [(ngModel)]="payDay"> 
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> 
+                      <mat-datepicker touchUi="true" #picker></mat-datepicker> 
+                      </mat-form-field>
+                    </div>
+                </mat-radio-button>
+              </mat-radio-group>
+              </ion-item>
+              
+
+              <ion-item lines="none" class="full-width">
+                <ion-label position="stacked">Note</ion-label>
+                <ion-input autocomplete="company-name"
+                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
+                  [(ngModel)]="userProfile.note" [readonly]=!editingProfile></ion-input>
+              </ion-item>
+
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <!-- TODO: experience: [UserProfileExperience] @connection(keyName: "byUserProfile", fields: ["id"]) -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

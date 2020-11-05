@@ -1,0 +1,158 @@
+<div>
+  <div class="table-container big-table first-table">
+    <table mat-table [dataSource]="headerDataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="key">
+        <th mat-header-cell *matHeaderCellDef class="key-header"> 
+          Key
+        </th>
+      </ng-container>
+
+      <ng-container matColumnDef="project-invoice">
+        <th mat-header-cell *matHeaderCellDef class="project-invoice-header"> 
+          Tax invoice / Invoice
+        </th>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="headerDisplayedColumns" class="first-table-row"></tr>
+      <tr  mat-row *matRowDef="let row; columns: dearderDisplayedColumns;"></tr>
+    </table>
+ 
+ 
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 big-table second-table">
+      <ng-container matColumnDef="project-code" >
+        <th mat-header-cell *matHeaderCellDef class="project-code-header"> 
+          Project Code 
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getPorjectRowSpan(i) ? '' : 'none'" [attr.rowspan]="getPorjectRowSpan(i)"> 
+          {{element.projectCode}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="project-client-name">
+        <th mat-header-cell *matHeaderCellDef class="client-name-header"> 
+          Project Name
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getPorjectRowSpan(i) ? '' : 'none'" [attr.rowspan]="getPorjectRowSpan(i)"> 
+          <ion-label>{{element.projectName}}</ion-label>
+        </td> 
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-no-name">
+        <th mat-header-cell *matHeaderCellDef class="invoice-no-header"> 
+          No(Flow)
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getInvoiceRowSpan(i) ? '' : 'none'" [attr.rowspan]="getInvoiceRowSpan(i)"> 
+          <ion-label>{{element.invoiceNo}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-date">
+        <th mat-header-cell *matHeaderCellDef class="invoice-date-header"> 
+          Date(MMDDYY)
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getInvoiceRowSpan(i) ? '' : 'none'" [attr.rowspan]="getInvoiceRowSpan(i)"> 
+          <ion-label>{{element.invoiceDate}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-customer-name">
+        <th mat-header-cell *matHeaderCellDef class="invoice-customer-name-header"> 
+          Customer Name
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getInvoiceRowSpan(i) ? '' : 'none'" [attr.rowspan]="getInvoiceRowSpan(i)"> 
+          <ion-label>{{element.invoiceCustomerName}}</ion-label>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="invoice-reference">
+        <th mat-header-cell *matHeaderCellDef class="invoice-reference-header"> 
+          Reference Quotation
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getInvoiceRowSpan(i) ? '' : 'none'" [attr.rowspan]="getInvoiceRowSpan(i)"> 
+          <ion-label>{{element.reference}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-description">
+        <th mat-header-cell *matHeaderCellDef class="invoice-description-header"> 
+          Description
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.description}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-qty">
+        <th mat-header-cell *matHeaderCellDef class="invoice-qty-header"> 
+          Qty
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.quantity}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-usd-price-unit">
+        <th mat-header-cell *matHeaderCellDef class="invoice-usd-price-unit-header"> 
+          Unite price (USD)
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.pricePerUnit}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-thb-price-unit">
+        <th mat-header-cell *matHeaderCellDef class="invoice-thb-price-unit-header"> 
+          Unite price (THB)
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{this.getForexChangeAmount(element.currency,element.pricePerUnit)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-unit">
+        <th mat-header-cell *matHeaderCellDef class="invoice-unit-header"> 
+          Unit
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.unit}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-thb-amount">
+        <th mat-header-cell *matHeaderCellDef class="invoice-thb-amount-header"> 
+          THB amount
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getEstimatedAmount(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-vat">
+        <th mat-header-cell *matHeaderCellDef class="invoice-vat-header"> 
+          VAT
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getEstimatedVat(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-wht">
+        <th mat-header-cell *matHeaderCellDef class="invoice-wht-header"> 
+          WHT
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getEstimatedWht(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice-total-amount">
+        <th mat-header-cell *matHeaderCellDef class="invoice-total-amount-header"> 
+          Total amount(THB)
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getEstimatedTotal(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>     
+  </div>
+</div>

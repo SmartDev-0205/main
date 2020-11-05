@@ -1,14 +1,12 @@
 import {Component, OnInit} from "@angular/core";
-import {NavController} from "@ionic/angular";
-import {Profile} from "src/app/interfaces/profile.interface";
+import {NavController, MenuController} from "@ionic/angular";
 import {AlertService} from "src/app/services/alert.service";
 import {AuthService, UserAttributes} from "src/app/services/auth.service";
 import {Router} from "@angular/router";
 import {User} from 'src/app/interfaces/user.interface';
-import {ProlocalizeDB} from 'src/app/services/prolocalize-database.service';
 import {filter, take} from 'rxjs/operators';
 import {UserService} from 'src/app/services/user.service';
-
+import { Profile } from 'src/app/interfaces/project.interface';
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.page.html",
@@ -17,13 +15,14 @@ import {UserService} from 'src/app/services/user.service';
 export class SignupPage implements OnInit {
   constructor(
     private alertMsg: AlertService,
+    private menuCtrl: MenuController,
     private auth: AuthService,
     private navCtrl: NavController,
     private router: Router,
-    private prolocalizeDB: ProlocalizeDB,
-    private user: UserService
-  ) {}
-
+    private user: UserService,
+  ) {
+    this.menuCtrl.enable(false)
+  }
   newUserProfile: Profile = {};
   newUserRole: string;
   newUserEmail: string;
@@ -32,6 +31,11 @@ export class SignupPage implements OnInit {
   public backToSignin() {
     this.navCtrl.navigateBack("/signin");
   }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
+
 
   newUserPasswordCheck: string;
   newUserPassword: string;
@@ -91,9 +95,8 @@ export class SignupPage implements OnInit {
 
     const attributes: UserAttributes = {
       givenName: this.newUserProfile.givenName,
-      familyName: this.newUserProfile.familyName
+      familyName: this.newUserProfile.familyName,
     };
-
     const successfulSignUp = await this.auth.signUp(
       this.newUserEmail,
       this.newUserPassword,
@@ -105,11 +108,7 @@ export class SignupPage implements OnInit {
         this.newUserPassword
       );
       if (successfulSignIn) {
-        // TODO: If signin fails, user is not created in the DynamoDB
-        // If the user verifies the account through the login page and we 
-        // detect no profile, (or in general if we don't detect a profile
-        // we should redirect the user to a profile definition page where we can 
-        // complete the missing fields
+        this.newUserProfile.email = this.newUserEmail;
         const id = await new Promise<string>((resolve) => {
           this.user.id$.pipe(
             filter(id => id !== undefined),
@@ -123,9 +122,13 @@ export class SignupPage implements OnInit {
           role: this.newUserRole,
           profile: this.newUserProfile
         }
-        await this.prolocalizeDB.createUser(newUser)
+        console.log("new user login",newUser);
+        let createdUser = await this.user.createUser(newUser);
+        console.log("cratedUser",createdUser)
+        console.log('request User',newUser);
         this.router.navigateByUrl("");
       }
     }
   }
+  
 }

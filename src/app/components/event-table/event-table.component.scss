@@ -1,0 +1,32 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+.selection-header{
+    width: 10%;
+  }
+  .date-header{
+    width: 15%;
+  }
+  .type-header{
+    width: 15%;
+  }
+  .content-header{
+      width: 50%;
+  }
+  .more-header{
+      width: 15%;
+  }
+ .table-style{
+    overflow-y: auto;
+     height: 100%;
+ }

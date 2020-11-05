@@ -1,0 +1,13 @@
+@import '../profile.page.scss';
+
+.profile-container {
+  display: flex;
+  margin-top: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  ion-item{
+    width: 100%;
+  }
+}

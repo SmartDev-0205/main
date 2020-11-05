@@ -1,0 +1,47 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+
+.table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    min-width: 1000px;
+  }
+  .selection-header{
+    width: 5%;
+  }
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
+    padding-left: 0px;
+ }
+  .id-header{
+    width: 7%;
+  }
+  .name-header{
+    width: 35%;
+  }
+  .progress-header{
+      width: 10%;
+  }
+  .due-header{
+    width: 20%;
+  }
+  .target-header{
+    width: 15%;
+  }
+  .manager-header{
+    width: 1%;
+    padding: 0px;
+    text-align: right;
+  }
+  .none-padding{
+    padding: 0px;
+  }
+  ion-icon{
+    font-size: 20px;
+}
+
+
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: -1.25em;
+}

@@ -1,0 +1,21 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.box {
+    display: flex;
+    justify-content: flex-end;
+}
+.right {
+    // position:absolute;
+    bottom:0;
+    right:0;
+}
+ion-col{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+ion-input{
+    --padding-bottom:3px;
+    --padding-top:3px;
+    border: solid 1px;
+}

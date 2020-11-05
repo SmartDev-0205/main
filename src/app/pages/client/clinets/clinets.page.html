@@ -1,0 +1,41 @@
+<ion-content >
+  <div class="project-content">
+    <div class="header">
+      <ion-button size="small" (click)="addClient()">Add Client</ion-button>
+    </div>
+    <div class="main-content">
+      <div *ngIf="(clients$ | async)?.length === 0">
+        No clients yet.
+      </div>
+      <div *ngIf="!(clients$ | async)">
+        Fetching clients...
+      </div>
+      <div *ngIf="(clients$ | async)?.length">
+        <div class="client-container" *ngFor="let client of (clients$ | async) let i = index">
+          <div class="card" >
+            <div class="avata">
+              <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+            </div>
+            <div class="content" (click)="editProfile(client)">
+              <div class="three-width">
+                <P>{{(client.profile.givenName + " " + client.profile.familyName).toUpperCase() }}</P>
+                <P>Email:{{client.profile.email}}</P>
+              </div>
+              <div class="three-width">
+                <P> Account Type :{{client.profile.accountType }}</P>
+                <P>Position:{{client.profile.position}}</P>
+              </div>
+              <div class="three-width">
+                <P>Country : {{client.profile.country}}</P>
+                <P>Tel:{{client.profile.Tel}}</P>
+              </div>
+            </div>
+            <div class="action">
+              <ion-icon (click)="delete(i)" ios="ios-trash" md="md-trash"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

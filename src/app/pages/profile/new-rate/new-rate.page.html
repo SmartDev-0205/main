@@ -1,0 +1,63 @@
+<ion-content >
+  <div class="white-content">
+    <div class="header">
+      <ion-label>{{title}}</ion-label>
+    </div>
+    <div class="main-content">
+      <div class="container">
+        <div class="main-container">
+          <mat-form-field class="full-width">
+            <mat-select [(ngModel)]="service" placeholder="Service">
+              <mat-option *ngFor="let option of allServices" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-select [(ngModel)]="sourceLanguage" placeholder="Source language">
+              <mat-option *ngFor="let option of allLanguages" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field class="full-width">
+            <mat-select [(ngModel)]="targetLanguage" placeholder="Target language">
+              <mat-option *ngFor="let option of allLanguages" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <ion-input class="full-width" [(ngModel)]="specialize" placeholder="Specialization"></ion-input>
+          
+          <div class="unit-editor">
+            <ion-input class="there-element input-padding" [(ngModel)]="unitPrice" placeholder="Price"></ion-input>
+            <ion-input class="there-element input-padding" [(ngModel)]="currency" placeholder="Currency"></ion-input>
+            <mat-form-field class="there-element">
+              <mat-select [(ngModel)]="unit" placeholder="Unit">
+                <mat-option *ngFor="let option of allUnit" [value]="option" >
+                  {{option}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>  
+            <!-- <mat-form-field class="there-element">
+              <mat-select [(ngModel)]="currency" placeholder="Currency">
+                <mat-option *ngFor="let option of getAllCurrency()" [value]="option" >
+                  {{option}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>   -->
+          </div>
+            
+          <div class="footer">
+            <ion-button size="small" (click)="save()">Save</ion-button>        
+            <ion-button size="small" (click)="cancel()">Cancel</ion-button>        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,51 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+ion-col{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;   
+}
+.project-content{
+    padding: 10px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.edit-icon{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.header{
+    width: $contentPercent;
+}
+.mat-dialog-container{
+    padding: 0px!important;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .team-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .team-selector{
+      width: 300px;
+  }
+  .title{
+    max-width: 150px;
+  }
+  .left-panel{
+      display: flex;
+  }
+  .manager-freelancer-header{
+      display: flex;
+      justify-content: flex-end;
+  }

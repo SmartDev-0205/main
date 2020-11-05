@@ -33,10 +33,11 @@ export class GuardLoggedInToMainMenu {
   ) { }
 
   canActivate() {
+    console.log("current auth",this.auth.signedIn)
     if (!this.auth.signedIn) {
       return true;
     } else {
-      return this.router.parseUrl('/home');
+      return this.router.parseUrl('/dashboard');
     }
   }
 

@@ -1,0 +1,140 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+ .key-header{
+    width: 20%;
+    background:#92D050;
+ }
+ .project-quotation-header{
+    width: 80%;
+    background  :#C5ECF3;
+ }
+ th.mat-header-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ th.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+ }
+ td.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ tr {
+    border: solid 1px;
+ } 
+ .first-table-row{
+    border-bottom: 0px;
+ }
+ .big-table{
+     width: 3000px;
+ }
+ .project-code-header{
+     width: 10%;
+     background:#92D050;
+ }
+ .client-name-header{
+     width: 10%;
+     background:#92D050;
+ }
+ .quotation-no-header{
+     width: 4%;
+    background:#C5ECF3;
+ }
+ .quotation-data-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-customer-code-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-customer-name-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-country-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-service-type-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-description-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-duration-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-qty-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-unit-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-rate-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-currency-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-sales-amount-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-record-sales-amount-header{
+    width: 4%;
+    background:#C5ECF3;
+}
+.quotation-total-charge-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-project-manager-contact-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-crdit-term-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-collection-term-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-collection-channel-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-collection-detail-header{
+   width: 4%;
+   background:#C5ECF3;
+}
+.quotation-fxrate-header{
+    width: 4%;
+    background:#C5ECF3;
+ }
+ .quotation-vat-header{
+    width: 4%;
+    background:#C5ECF3;
+ }
+ 

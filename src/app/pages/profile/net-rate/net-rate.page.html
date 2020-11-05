@@ -1,0 +1,128 @@
+<ion-content >
+  <div class="profile-floating-menu">
+    <ion-fab vertical="center" horizonal="center">
+      <ion-fab-button (click)="toggleEditing()">
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="primary" (click)="saveProfile()">
+          <ion-icon name="save" style="font-size: 25px;"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <div class="white-content">
+    <div class="main-content content-center">
+      <div class="rate-content">
+        <div class="row">
+          <div class="item header">
+            Match Type
+          </div>
+          <div class="item header">
+            Tm  
+          </div>
+          <div class="item header">
+            MT
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="item">
+            Repetitions/Context Match
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmRepetitions"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtRepetitions"></ion-input> % 
+          </div>
+        </div>
+        <div class="row">
+          <div class="item">
+            >100%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmOverHundred"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtOverHundred"></ion-input> % 
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="item">
+            100%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmHundred"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mthundred"></ion-input> % 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="item">
+            95%-99%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmNineFive"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [(ngModel)]="currentNetRate.mtNineFive"></ion-input> % 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="item">
+            85%-94%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmEightFive"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtEightFive"></ion-input> % 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="item">
+            75%-84%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmSevenFive"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtSevenFive"></ion-input> % 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="item">
+            50%-74%
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmFive"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtFive"></ion-input> % 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="item">
+            New Word
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.tmNewWord"></ion-input> % 
+          </div>
+          <div class="item">
+            <ion-input [readonly]="!editingProfile" [(ngModel)]="currentNetRate.mtNewWord"></ion-input> % 
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</ion-content>

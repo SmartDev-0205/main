@@ -1,0 +1,43 @@
+@import '../../../theme/common-variable.scss';
+ion-row{
+    background-color: #f7f7f7; 
+    height: 100%;
+}
+ion-card{
+    background-image: $defaultBackground;
+    padding-top: 20px; 
+    text-align: center; 
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+ion-item{
+    height: 48px;
+    margin-top: 20px;
+    border: solid 1px #d9d9d9;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        display: block; 
+        width: 60px;
+        padding: 10px;
+    }
+    .header-text{
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+.forgoten-password{
+    margin-top: 20px;   
+    display: flex;
+    justify-content: flex-start;
+}
+.button-container{
+    margin-top: 20px;   
+}
+.singin-button{
+    margin-left: 0px;   
+    width: 100%;   
+}

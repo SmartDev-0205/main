@@ -1,0 +1,29 @@
+<ion-content>
+<div class="project-content">
+  <div class="main-content">
+    <div class="password-content">
+      <ion-row class="item">
+        <ion-col size="5">
+          <ion-label>Old Password </ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input type="password" [(ngModel)]="oldPassword"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="item">
+        <ion-row class="item">
+          <ion-col size="5">
+            <ion-label>New Password </ion-label>
+          </ion-col>
+          <ion-col size="7">
+            <ion-input type="password" [(ngModel)]="newPassword"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+      <div class="action">
+        <ion-button size="small" (click)="changePassword()">Save</ion-button>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

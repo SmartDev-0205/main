@@ -1,0 +1,38 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    // cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+  .selection-header{
+    width: 10%;
+  }
+  .id-header{
+    width: 10%;
+  }
+  .name-header{
+    width: 35%;
+  }
+  .progress-header{
+      width: 10%;
+  }
+  .due-header{
+    width: 15%;
+  }
+  .target-header{
+    width: 10%;
+  }
+  .none-padding{
+    padding: 0px;
+  }
+ 

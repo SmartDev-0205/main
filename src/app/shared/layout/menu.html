@@ -1,27 +1,22 @@
+<div class="table-cell" *ngIf="userRole!=''" (click)="goToDashboard()">
+  <img id="logo" src="/assets/prolocalize-logo.png">
+  <!-- <span class="title">Prolocalize</span> -->
+  <!-- <ion-tab-button class="tab-button">
+      <ion-icon name="notifications" class="notification-icon"></ion-icon>
+      <ion-badge color="danger" *ngIf="badge>0" class="notifications-badge" >{{badge}}</ion-badge>
+  </ion-tab-button> -->
 
-<img id="logo" src="/assets/prolocalize-logo.png">
+</div>
 
-<ion-menu-toggle auto-hide="false">
-
-  <!-- <ion-item *ngIf="(user.role$ | async) === 'manager' ||
-                          (user.role$ | async) === 'client'
-                          "
-                 [routerLink]="'/projects/add'" 
-                 [routerDirection]="'root'">
-    <ion-icon slot="start" name="add-circle"></ion-icon>
-    <ion-label>
-      Add Project
-    </ion-label>
-  </ion-item> -->
-
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+<ion-menu-toggle auto-hide="false" *ngIf="userRole!=''"> 
+  <ion-item [routerLink]="'/project/list'" [routerDirection]="'root'">
     <ion-icon slot="start" name="document"></ion-icon>
     <ion-label>
       Projects
     </ion-label>
   </ion-item>
 
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <ion-item [routerLink]="'/trans-Memory'" [routerDirection]="'root'">
     <ion-icon slot="start" name="folder"></ion-icon>
     <ion-label>
       Translation Memory
@@ -30,33 +25,33 @@
 
   <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
     <ion-icon slot="start" name="calendar"></ion-icon>
-    <ion-label>
-      Termboses
+    <ion-label> 
+      Termbases 
     </ion-label>
   </ion-item>
 
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <ion-item [routerLink]="'/finance/manager'" [routerDirection]="'root'">
     <ion-icon slot="start" name="logo-usd"></ion-icon>
     <ion-label>
       Finance
     </ion-label>
   </ion-item>
 
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <ion-item *ngIf="userRole=='manager'" [routerLink]="'/client'" [routerDirection]="'root'">
     <ion-icon slot="start" name="person"></ion-icon>
     <ion-label>
       Clients
     </ion-label>
   </ion-item>
 
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <ion-item *ngIf="userRole=='manager'" [routerLink]="'/team'" [routerDirection]="'root'">
     <ion-icon slot="start" name="people"></ion-icon>
     <ion-label>
       Teams
     </ion-label>
   </ion-item>
 
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <ion-item [routerLink]="'/app-center'" [routerDirection]="'root'">
     <ion-icon slot="start" name="appstore"></ion-icon>
     <ion-label>
       App Center
@@ -69,12 +64,28 @@
       Reports
     </ion-label>
   </ion-item>
-  <ion-item [routerLink]="'/projects'" [routerDirection]="'root'">
+  <!-- <ion-item [routerLink]="'/profile'" [routerDirection]="'root'">
     <ion-icon slot="start" name="settings"></ion-icon>
     <ion-label>
       Setting
     </ion-label>
   </ion-item>
+
+  <ion-item [routerLink]="'/inbox'" [routerDirection]="'root'">
+    <ion-icon slot="start" name="notifications"></ion-icon>
+    <ion-label>
+      Inbox
+    </ion-label>
+    <ion-badge color="primary" *ngIf="badge>0" class="notifications-badge" >{{badge}}</ion-badge>
+  </ion-item>
+
+  <ion-item (click)="chatLink()" [routerDirection]="'root'">
+    <ion-icon slot="start" ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon>
+    <ion-label>
+      Chat
+    </ion-label>
+    <ion-icon ios="ios-information-circle" md="md-information-circle" color="danger" *ngIf="unReadChatStatus"></ion-icon>
+  </ion-item> -->
 
   <!-- <ion-item [routerLink]="'/profile'" [routerDirection]="'root'">
     <ion-icon slot="start" name="person"></ion-icon>
@@ -85,7 +96,7 @@
 
 </ion-menu-toggle>
 
-<div class="ion-text-center" style="margin-top: 16px;">
-  <ion-button (click)="signOut()">Sign Out</ion-button>
+<div class="ion-text-center" *ngIf="userRole!=''" style="margin-top: 16px;">
+  <ion-button style="width: 100%;" (click)="signOut()">Sign Out</ion-button>
 </div>
 

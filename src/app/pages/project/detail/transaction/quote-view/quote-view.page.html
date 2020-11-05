@@ -1,0 +1,413 @@
+<ion-content >
+  <div class="project-content">
+
+    <div class="main-content">
+      <div class="header">
+        <table  class="full-width">
+          <tr class="full-width">
+            <td class="half-width td-padding">
+              <img src="/assets/prolocalize-logo.jpg" class="img-width">
+              <ion-input [(ngModel)]="quote.companyName" placeholder="Company name"></ion-input>
+              <ion-input [(ngModel)]="quote.companyAddress" placeholder="Company Address"></ion-input>
+              <ion-input [(ngModel)]="quote.taxId" placeholder="Tax Id"></ion-input>
+              <ion-input [(ngModel)]="quote.tel" placeholder="Tel"></ion-input>
+              <ion-input [(ngModel)]="quote.mobile" placeholder="Mobile"></ion-input>
+              <ion-input [(ngModel)]="quote.siteUrl" placeholder="Site url"></ion-input>
+              <!-- <ion-label>Client</ion-label> -->
+              <!-- <ion-input [(ngModel)]="quote.clientName" placeholder="Client name"></ion-input> -->
+              <ion-row>
+                <ion-col size=4>
+                  <ion-label>Client</ion-label>
+                </ion-col>
+                <ion-col size=8>
+                  <ion-input [(ngModel)]="quote.clientName" placeholder="Client Name"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size=4>
+                  <ion-label>Project Name</ion-label>
+                </ion-col>
+                <ion-col size=8>
+                  <ion-input [(ngModel)]="quote.projectName" placeholder="Project Name"></ion-input>
+                </ion-col>
+              </ion-row>
+            </td>
+            <td class="half-width second-td-padding">
+              <div class="underline-box title-box">
+                <ion-label>{{documentTitle}}</ion-label>
+              </div>
+
+              <div class="underline-box">
+                <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Document No</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-input placeholder="Document No" [(ngModel)]="quote.documentNo"></ion-input>
+                  </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Date</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="quote.date" placeholder="Date"></ion-datetime>
+                  </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Credit</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-input [(ngModel)]="quote.credit" placeholder="Credit"></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Due Date</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="quote.dueDate" placeholder="Date"></ion-datetime>
+                  </ion-col>
+                </ion-row>
+
+
+
+
+                <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Seller</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-input [(ngModel)]="quote.seller" placeholder="Seller"></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <!-- <ion-row>
+                  <ion-col size=5>
+                    <ion-label>Reference</ion-label>
+                  </ion-col>
+                  <ion-col size=7>
+                    <ion-input [(ngModel)]="quote.reference" placeholder="Reference"></ion-input>
+                  </ion-col>
+                </ion-row> -->
+
+              </div>
+
+              <ion-row>
+                <ion-col size=5>
+                  <ion-label>Collection Term</ion-label>
+                </ion-col>
+                <ion-col size=7>
+                  <!-- <ion-input [(ngModel)]="quote.collectionTerm" placeholder="Collection Term"></ion-input> -->
+                  <mat-form-field class="full-width">
+                    <mat-select [(ngModel)]="quote.collectionTerm">
+                      <mat-option *ngFor="let option of collections" [value]="option" >
+                        {{option}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </ion-col>
+              </ion-row>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="item-table" id="item-table" cellspacing="0" cellpadding="0" class="full-width">
+        <tbody>
+          <tr class="project-title full-width table-row">
+            <th  style="width: 5%;">#</th>
+            <th  style="width: 40%">Description</th>
+            <th  style="width: 10%">Quantity</th>
+            <th  style="width: 10%">Unit</th>
+            <th  style="width: 14%">Unit Price</th>
+            <th  style="width: 14%">Amount</th>
+            <th  style="width: 7%">Currency</th>
+          </tr>
+          <tr *ngFor="let item of items; let i = index" class="pointer" [ngClass]="{'selected':selectedIndex===i}" (click)="selectItem(i)">
+            <td class="item-align" valign="top">
+              <ion-input class="item-input" [disabled]="true" value="{{i + 1}}"></ion-input>
+            </td>
+            <td class="item-align" valign="top">
+              <ion-input class="item-input description" placeholder="Description" [(ngModel)]="item.description"></ion-input>
+              <ion-row>
+                <ion-col size=5>
+                  <ion-label class="item-label">Services:</ion-label>
+                </ion-col>
+                <ion-col size=7>
+                  <ion-input [(ngModel)]="item.services" placeholder="services"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size=5>
+                  <ion-label class="item-label">Languages:</ion-label>
+                </ion-col>
+                <ion-col size=7>
+                  <ion-input [(ngModel)]="item.languages" placeholder="Languages"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size=5>
+                  <ion-label class="item-label">Start Date:</ion-label>
+                </ion-col>
+                <ion-col size=7>
+                  <ion-input type="date" [(ngModel)]="item.stratDate" placeholder="Start Date"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size=5>
+                  <ion-label class="item-label">Delivery Date</ion-label>
+                </ion-col>
+                <ion-col size=7>
+                  <ion-input type="date" [(ngModel)]="item.deliveryDate" placeholder="Delivery Date"></ion-input>
+                </ion-col>
+              </ion-row>
+            </td>
+            <td class="item-align"  valign="top">
+              <ion-input class="item-input" placeholder="Quantity" [(ngModel)]="item.quantity"></ion-input>
+            </td>
+            <td class="item-align"  valign="top">
+              <ion-input class="item-input" placeholder="Unit" [(ngModel)]="item.unit"></ion-input>
+            </td>
+
+            <td class="item-align"  valign="top">
+              <ion-input class="item-input" placeholder="Price Per Unit" [(ngModel)]="item.pricePerUnit"></ion-input>
+            </td>
+
+            <td class="item-align"  valign="top">
+              <ion-input class="item-input" placeholder="Amount" (change)="calculateTotal()" [(ngModel)]="item.amount"></ion-input>
+            </td>
+
+            <td class="item-align"  valign="top">
+              <!-- <ion-input class="item-input" placeholder="Currency" [(ngModel)]="item.currency"></ion-input> -->
+              <mat-form-field class="full-width">
+                <mat-select [(ngModel)]="item.currency">
+                  <mat-option *ngFor="let option of allCurrency" [value]="option" >
+                    {{option}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="manage-box">
+        <ion-button (click)="createNewItem()" size="small">
+          <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+          <ion-label>Add new line</ion-label>
+        </ion-button>
+        <ion-button (click)="deleteItem()" size="small">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+          <ion-label>Delete Item</ion-label>
+        </ion-button>
+        <ion-button (click)="update()" size="small">
+          <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+          <ion-label>Update</ion-label>
+        </ion-button>
+      </div>
+
+      <ion-row>
+        <ion-col class="right-align" size=9>
+          <ion-label>Total</ion-label>
+        </ion-col>
+        <ion-col class="right-align" size=3>
+          <ion-input class="right-align-input" [(ngModel)]="quote.total" placeholder="Total"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="right-align" size=9>
+          <ion-label>Vat 7%</ion-label>
+        </ion-col>
+        <ion-col class="right-align" size=3>
+          <ion-input class="right-align-input" [(ngModel)]="quote.vat" placeholder="Vat"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="right-align" size=9>
+          <ion-label>Grand Total</ion-label>
+        </ion-col>
+        <ion-col class="right-align" size=3>
+          <ion-input class="right-align-input" [(ngModel)]="quote.grandTotal" placeholder="Grand Total"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="right-align" size=9>
+          <ion-label>Withholding Tax 3%</ion-label>
+        </ion-col>
+        <ion-col class="right-align" size=3>
+          <ion-input class="right-align-input" [(ngModel)]="quote.discount" placeholder="Discount"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="right-align" size=9>
+          <ion-label>Payment Amount</ion-label>
+        </ion-col>
+        <ion-col class="right-align" size=3>
+          <ion-input class="right-align-input" [(ngModel)]="quote.totalAfterDiscount" placeholder="Total After Discount"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      
+      <div>
+        <ion-label>Remarks</ion-label>
+        <textarea [(ngModel)] = "quote.remark" name="remark" ></textarea>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="project-content" class="hide" #content>
+  <!-- <div class="project-content" #content> -->
+    <div class="main-content">
+      <div class="header">
+        <table  class="full-width">
+          <tr class="full-width">
+            <td class="half-width td-padding">
+              <img [src]="componyLogoBlob" class="img-width">
+              <p class="full-width">{{quote.companyName}}</p>
+              <p class="full-width">{{quote.companyAddress}}</p>
+              <p class="full-width">{{quote.taxId}}</p>
+              <p class="full-width">{{quote.tel}}</p>
+              <p class="full-width">{{quote.mobile}}</p>
+              <p class="full-width">{{quote.siteUrl}}</p>
+              <p class="full-width">Client : {{quote.clientName}}</p>
+              <p class="full-width">Project Name : {{quote.projectName}}</p>
+            </td>
+            <td>
+              <div class="underline-box title-box">
+                <label>{{documentTitle}}</label>
+              </div>
+              <div class="underline-box">
+                
+                <table  style="width: 100%;">
+                  <tr class="full-width">
+                    <td style="width: 40%" >
+                      <div>
+                        <p style="line-height: 1;" >Document No:</p>
+                        <p style="line-height: 1;" >Date:</p>
+                        <p style="line-height: 1;" >Credit:</p>
+                        <p style="line-height: 1;" >Due Date:</p>
+                        <p style="line-height: 1;" >Seller:</p>
+                        <!-- <p style="line-height: 1;" >Reference:</p> -->
+                      </div>
+                    </td>
+                    <td style="width: 60%;">
+                      <div>
+                        <p style="line-height: 1;" >{{quote.documentNo}}</p>
+                        <p style="line-height: 1;">{{quote.date}}</p>
+                        <p style="line-height: 1;">{{quote.credit}}</p>
+                        <p style="line-height: 1;">{{quote.dueDate}}</p>
+                        <p style="line-height: 1;">{{quote.seller}}</p>
+                        <!-- <p style="line-height: 1;">{{quote.reference}}</p> -->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <table  style="width: 100%;">
+                <tr class="full-width">
+                  <td style="width: 40%" >
+                    <div>
+                      <p style="line-height: 1;" >Collection Term:</p>
+                    </div>
+                  </td>
+                  <td style="width: 60%;">
+                    <div>
+                      <p style="line-height: 1;">{{quote.collectionTerm}}</p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr> 
+        </table>
+      </div>
+
+      <table class="item-table table" id="item-table" cellspacing="0" cellpadding="0" class="full-width">
+        <tbody>
+          <tr class="tr item-table-project-title full-width item-table-table-row">
+            <th class="th" style="width: 5%;">#</th>
+            <th class="th" style="width: 40%">Description</th>
+            <th class="th"  style="width: 10%">Quantity</th>
+            <th class="th"  style="width: 10%">Unit</th>
+            <th class="th"  style="width: 14%">Unit Price</th>
+            <th class="th"  style="width: 14%">Amount</th>
+            <th class="th"  style="width: 7%">Currency</th>
+          </tr>
+          <tr *ngFor="let item of items; let i = index" class="pointer tr" >
+            <td class="item-table-item-align td" valign="top">
+              <span class="item-input" >{{i + 1}}</span>
+            </td>
+            <td class="item-table-item-align td" valign="top">
+              <p class="cardBlockText">{{item.description}}</p>
+              <p class="cardBlockText" [ngClass]="{'hide':!item.services}">Services: {{item.services}}</p>
+              <p class="cardBlockText" [ngClass]="{'hide':!item.languages}">Languages: {{item.languages}}</p>
+              <p class="cardBlockText" [ngClass]="{'hide':!item.stratDate}">Start Date: {{item.stratDate}}</p>
+              <p class="cardBlockText" [ngClass]="{'hide':!item.deleteItem}">Delivery Date: {{item.deliveryDate}}</p>
+            </td>
+            <td class="item-table-item-align td"  valign="top">
+              <span class="item-table-item-input">{{item.quantity}}</span>
+            </td>
+            <td class="item-table-item-align td"  valign="top">
+              <span class="item-table-item-input">{{item.unit}}</span>
+            </td>
+
+            <td class="item-table-item-align td"  valign="top">
+              <span class="item-table-item-input">{{item.pricePerUnit}}</span>
+            </td>
+
+            <td class="item-table-item-align td"  valign="top">
+              <span class="item-table-item-input">{{item.amount}}</span>
+            </td>
+
+            <td class="item-table-item-align td"  valign="top">
+              <span class="item-table-item-input">{{item.currency}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+
+
+      <table  style="width: 100%;">
+        <tr class="full-width">
+          <td style="width: 75%" >
+            <div  style="text-align: right;">
+              <p style="line-height: 1;" >Total:</p>
+              <p style="line-height: 1;" >vat 0%:</p>
+              <p style="line-height: 1;font-size: 14px;">Grand Total:</p>
+              <p style="line-height: 1;" >Withholding Tax 3%:</p>
+              <p style="line-height: 1;" >Payment Amount:</p>
+            </div>
+          </td>
+          <td style="width: 25%;">
+            <div style="text-align: right;">
+              <p style="line-height: 1;" >{{quote.total}}</p>
+              <p style="line-height: 1;">{{quote.vat}}</p>
+              <p style="line-height: 1;">{{quote.grandTotal}}</p>
+              <p style="line-height: 1;">{{quote.discount}}</p>
+              <p style="line-height: 1;" style="text-decoration: underline;font-weight: bold;font-size: 14px;" >{{quote.totalAfterDiscount}}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div>
+        <label>Remarks</label>
+        <textarea [(ngModel)] = "quote.remark" name="remark" ></textarea>
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>

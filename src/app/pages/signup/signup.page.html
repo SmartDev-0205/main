@@ -11,24 +11,24 @@
 
           <ion-card-content style="padding: 10px 10% 30px 10%;">
             <ion-item>
-              <ion-label position="floating">Given Name</ion-label>
-              <ion-input [(ngModel)]="newUserProfile.givenName" type="text"></ion-input>
+              <!-- <ion-label position="floating">Given Name</ion-label> -->
+              <ion-input placeholder="Given Name" [(ngModel)]="newUserProfile.givenName" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="floating">Family Name</ion-label>
-              <ion-input [(ngModel)]="newUserProfile.familyName" type="text"></ion-input>
+              <!-- <ion-label position="floating">Family Name</ion-label> -->
+              <ion-input placeholder="Family Name" [(ngModel)]="newUserProfile.familyName" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="floating">Email</ion-label>
-              <ion-input [(ngModel)]="newUserEmail" type="email"></ion-input>
+              <!-- <ion-label position="floating">Email</ion-label> -->
+              <ion-input placeholder="Email" [(ngModel)]="newUserEmail" type="email"></ion-input>
             </ion-item>
 
             <ion-list>
               <ion-item>
-                <ion-label>User Role</ion-label>
-                <ion-select interface="popover" [(ngModel)]="newUserRole">
+                <ion-label style="color:#C1C1C1">User Role</ion-label>
+                <ion-select interface="alert" [(ngModel)]="newUserRole">
                   <ion-select-option value="client">Client</ion-select-option>
                   <ion-select-option value="manager">Project Manager</ion-select-option>
                   <ion-select-option value="sales">Sales</ion-select-option>
@@ -38,13 +38,13 @@
             </ion-list>
 
             <ion-item>
-              <ion-label position="floating">Password</ion-label>
-              <ion-input [(ngModel)]="newUserPassword" type="password"></ion-input>
+              <!-- <ion-label position="floating">Password</ion-label> -->
+              <ion-input placeholder="Password" [(ngModel)]="newUserPassword" type="password"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="floating">Verify password</ion-label>
-              <ion-input [(ngModel)]="newUserPasswordCheck" type="password"></ion-input>
+              <!-- <ion-label position="floating">Verify password</ion-label> -->
+              <ion-input placeholder="Verify password" [(ngModel)]="newUserPasswordCheck" type="password"></ion-input>
             </ion-item>
 
             <ion-item style="margin-top: 30px;" lines="none">

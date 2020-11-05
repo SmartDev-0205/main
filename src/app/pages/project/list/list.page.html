@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size-md=6 size-xl=3 class="center">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Projects</ion-title>
+      </ion-col>
+      <ion-col size=6>
+        <ion-searchbar [(ngModel)]="serchText" (keyup)="onSearch($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- this is for only manager part -->
+  <div class="action-box" *ngIf="isManager">
+    <ion-button class= "button" color="secondary" [routerLink]="'/project/add'" [routerDirection]="'root'" size="small">New</ion-button>
+    <ion-button class = "button" color="secondary" (click)="onDeleteProjects()" size="small">Delete</ion-button>
+  </div>
+  <ion-card >
+    <projects-table class="project-table"></projects-table>
+  </ion-card> 
+
+</ion-content>

@@ -1,0 +1,22 @@
+<div class="container" #container>
+  <div class="chat">
+    <div class="chat-content" #chatcontent>
+      <div *ngFor="let message of orderMessages" [ngClass]="{'self':message.senderId == 'client','start-flex':message.senderId != 'client'}">
+        <div class="push-right-sm">
+          <img *ngIf="message.senderId == 'admin'" src="/assets/user.png">
+        </div>
+        <div class="message">
+          <div>{{message.content}}</div>
+          <div class="time" [class.secondary-text-color]="message.senderId == 'client'">{{message.time}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="add-area">
+      <mat-form-field >
+        <textarea (keypress)="keyup($event)" [(ngModel)] = "messageValue" #messageInput matInput placeholder="Message..." maxRows="2"></textarea>
+      </mat-form-field>
+      <button mat-mini-fab color="primary" (click)="sendMessage(messageInput.value); messageInput.value = null">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+</div>

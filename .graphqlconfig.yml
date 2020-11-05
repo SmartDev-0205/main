@@ -1,15 +1,15 @@
 projects:
-  prolocalize:
-    schemaPath: ./graphql/schema.json
+  main:
+    schemaPath: src/graphql/schema.json
     includes:
-      - ./graphql/**/*.graphql
+      - src/graphql/**/*.graphql
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: angular
         generatedFileName: src/app/API.service.ts
-        docsFilePath: ./graphql
+        docsFilePath: src/graphql
 extensions:
   amplify:
     version: 3

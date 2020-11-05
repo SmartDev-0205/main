@@ -1,47 +1,30 @@
 <ion-content>
 
   <ion-grid style="height: 100%; padding: 0;">
-    <ion-row class="ion-align-items-center" style="background-color: #f7f7f7; height: 100%;">
-      <ion-col offset-md=2 size-md=8 offset-lg=4 size-lg=4>
-        <img src="/assets/prolocalize-logo.png"
-          style="display: block; margin: 0 auto 40px auto; width: 150px; height: 150px;" alt="Prolocalize">
-        <ion-card style="background-color: white; padding-top: 20px; text-align: center; margin-bottom: 20px;">
-          <ion-card-header>
-            <ion-card-title>
-              Prolocalize Translation Portal
-            </ion-card-title>
-          </ion-card-header>
-
+    <ion-row class="ion-align-items-center" style="">
+      <ion-col offset-md=0 size-md=12 offset-lg=4 size-lg=4>
+        <ion-card>
+          <div class="header">
+            <img src="/assets/prolocalize-logo_sign.png" alt="Prolocalize">
+            <span class="header-text">Prolocalize</span>
+          </div>
           <ion-card-content style="padding: 10px 10% 30px 10%;">
 
-            <ion-item style="margin-top:-20px;">
-              <ion-label position="floating">Email</ion-label>
-              <ion-input [(ngModel)]="userEmail" type="email"></ion-input>
-            </ion-item>
-
             <ion-item>
-              <ion-label position="floating">Password</ion-label>
-              <ion-input [(ngModel)]="userPassword" type="password"></ion-input>
+              <!-- <ion-label position="floating">Email</ion-label> -->
+              <ion-input placeholder="Email" [(ngModel)]="userEmail" type="email"></ion-input>
             </ion-item>
-
-            <div class="ion-text-center" style="margin-top: 30px;">
-
-              <ion-button (click)="signIn()" style="
-                                 margin-right:15px; 
-                                 display:inline-block; 
-                                 vertical-align:middle
-                                 ">
+            <ion-item>
+              <!-- <ion-label position="floating">Password</ion-label> -->
+              <ion-input placeholder="Password" [(ngModel)]="userPassword" type="password" (keyup)="onKey($event)"></ion-input>
+            </ion-item>
+            <div class="forgoten-password">
+                <a [routerLink]="'/forgotten-password'"> Forgotten password? </a>
+            </div>
+            <div class="button-container">
+              <ion-button class="singin-button" (click)="signIn()" size="small" color="secondary">
                 Sign In
               </ion-button>
-
-              <div style="
-                          display:inline-block; 
-                          vertical-align:middle; 
-                          margin-top: 15px;
-                          ">
-                <a [routerLink]="'/forgotten-password'"> Forgotten password? </a>
-              </div>
-
             </div>
 
             <div class="ion-text-center" style="margin-top:30px;">

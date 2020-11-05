@@ -1,0 +1,10 @@
+@import '../../../../../theme/common-variable.scss';
+@import '../../../../../theme/common-style.scss';
+.box {
+    display: flex;
+    justify-content: flex-end;
+}
+.dialog-container{
+    padding: 10px;
+    border: solid #F0F0F0;
+}

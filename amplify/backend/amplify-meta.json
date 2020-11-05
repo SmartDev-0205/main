@@ -1,77 +1,41 @@
 {
     "providers": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-prolocalize-prod-95832-authRole",
-            "UnauthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-authRole",
-            "Region": "ap-southeast-1",
-            "DeploymentBucketName": "amplify-prolocalize-prod-95832-deployment",
-            "UnauthRoleName": "amplify-prolocalize-prod-95832-unauthRole",
-            "StackName": "amplify-prolocalize-prod-95832",
-            "StackId": "arn:aws:cloudformation:ap-southeast-1:590709797647:stack/amplify-prolocalize-prod-95832/b3b07220-433e-11ea-8086-0a43e1cd1fda",
-            "AmplifyAppId": "drshshpona720"
-        },
-        "categories": {
-            "auth": {
-                "prolocalize43142882": {}
-            }
+            "AuthRoleName": "amplify-main-prod-93217-authRole",
+            "UnauthRoleArn": "arn:aws:iam::632817565170:role/amplify-main-prod-93217-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::632817565170:role/amplify-main-prod-93217-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-main-prod-93217-deployment",
+            "UnauthRoleName": "amplify-main-prod-93217-unauthRole",
+            "StackName": "amplify-main-prod-93217",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:632817565170:stack/amplify-main-prod-93217/2499e630-0e8f-11eb-952b-06fa27f652ae",
+            "AmplifyAppId": "d3vj7bk1b6wd9o"
         }
     },
     "auth": {
-        "prolocalize43142882": {
+        "main4082e793": {
             "service": "Cognito",
             "providerPlugin": "awscloudformation",
             "dependsOn": [],
-            "output": {
-                "AppClientSecret": "hfg4bhrq49kujpsodtsss0mvu5amk3npu6jq7mntuj8fskn72rc",
-                "UserPoolId": "ap-southeast-1_SlP7gRPwn",
-                "AppClientIDWeb": "1el2jp5n79hf5kcabd38e6gdkb",
-                "AppClientID": "27ppia03nql70daq723fcosb86",
-                "IdentityPoolId": "ap-southeast-1:0e9d4d81-0338-49c3-b708-7b3e0400c4b8",
-                "IdentityPoolName": "prolocalize43142882_identitypool_43142882__prod",
-                "UserPoolName": "prolocalize43142882_userpool_43142882"
-            },
-            "lastPushTimeStamp": "2020-06-04T15:19:08.517Z",
             "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-prolocalize-prod-95832-deployment/amplify-cfn-templates/auth/prolocalize43142882-cloudformation-template.yml",
-                "logicalId": "authprolocalize43142882"
-            }
-        }
-    },
-    "storage": {
-        "dynamo91edcd0a": {
-            "service": "DynamoDB",
-            "providerPlugin": "awscloudformation",
-            "output": {
-                "PartitionKeyName": "user_profiles",
-                "Region": "ap-southeast-1",
-                "Arn": "arn:aws:dynamodb:ap-southeast-1:590709797647:table/dynamo91edcd0a-prod",
-                "StreamArn": "arn:aws:dynamodb:ap-southeast-1:590709797647:table/dynamo91edcd0a-prod/stream/2020-01-30T09:03:30.891",
-                "PartitionKeyType": "S",
-                "Name": "dynamo91edcd0a-prod"
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-main-prod-93217-deployment/amplify-cfn-templates/auth/main4082e793-cloudformation-template.yml",
+                "logicalId": "authmain4082e793"
             },
-            "lastPushTimeStamp": "2020-06-04T15:19:08.519Z",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-prolocalize-prod-95832-deployment/amplify-cfn-templates/storage/dynamo91edcd0a-cloudformation-template.json",
-                "logicalId": "storagedynamo91edcd0a"
-            }
-        },
-        "projectFiles": {
-            "service": "S3",
-            "providerPlugin": "awscloudformation",
+            "lastPushTimeStamp": "2020-11-05T07:23:45.367Z",
             "output": {
-                "BucketName": "prolocalize-client-project-files95832-prod",
-                "Region": "ap-southeast-1"
+                "AppClientSecret": "1r833om6a1dqmelugluqnucets9s26jbu70n7cl26u2f2l181n1d",
+                "UserPoolId": "ap-southeast-2_q6WcMoQlL",
+                "AppClientIDWeb": "3c8ldpej0gnk6n724649k30rol",
+                "AppClientID": "soi1ooagp660ah07ofir8prd1",
+                "IdentityPoolId": "ap-southeast-2:9fa3e996-8f2e-49ed-8fe0-2cb4af191002",
+                "IdentityPoolName": "main4082e793_identitypool_4082e793__prod",
+                "UserPoolName": "main4082e793_userpool_4082e793"
             },
-            "lastPushTimeStamp": "2020-06-04T15:19:08.520Z",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-prolocalize-prod-95832-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
-                "logicalId": "storageprojectFiles"
-            }
+            "lastPushDirHash": "Q2zcyDZQqqjPSJS7GQPQ+7NRC34="
         }
     },
     "api": {
-        "prolocalize": {
+        "main": {
             "service": "AppSync",
             "providerPlugin": "awscloudformation",
             "output": {
@@ -80,39 +44,82 @@
                     "defaultAuthentication": {
                         "authenticationType": "AMAZON_COGNITO_USER_POOLS",
                         "userPoolConfig": {
-                            "userPoolId": "authprolocalize43142882"
+                            "userPoolId": "authmain4082e793"
                         }
                     }
                 },
-                "GraphQLAPIIdOutput": "p5mwluc6rngdvevuu6iguhtzfe",
-                "GraphQLAPIEndpointOutput": "https://xgb7kr75s5ai5btjqcmt2337le.appsync-api.ap-southeast-1.amazonaws.com/graphql"
+                "GraphQLAPIIdOutput": "xky4r4xlvjfida2kzfz6qcrqju",
+                "GraphQLAPIEndpointOutput": "https://4ztss4yf5bbmrmyxf5theconla.appsync-api.ap-southeast-2.amazonaws.com/graphql"
             },
-            "lastPushTimeStamp": "2020-06-04T15:19:08.522Z",
             "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-prolocalize-prod-95832-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-                "logicalId": "apiprolocalize"
-            }
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-main-prod-93217-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apimain"
+            },
+            "lastPushTimeStamp": "2020-11-05T07:25:26.825Z",
+            "lastPushDirHash": "7/jatlKgK6izLfakAl6+6+VaPoE="
+        },
+        "restApi": {
+            "service": "API Gateway",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "restApi",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ],
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-main-prod-93217-deployment/amplify-cfn-templates/api/restApi-cloudformation-template.json",
+                "logicalId": "apirestApi"
+            },
+            "lastPushTimeStamp": "2020-11-05T07:23:45.370Z",
+            "output": {
+                "ApiName": "restApi",
+                "RootUrl": "https://l9pwe7nfr8.execute-api.ap-southeast-2.amazonaws.com/prod",
+                "ApiId": "l9pwe7nfr8"
+            },
+            "lastPushDirHash": "OsDvQWoxe/y47zS3EgW+GZdh6qU="
+        }
+    },
+    "function": {
+        "restApi": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda",
+            "dependsOn": [],
+            "lastBuildTimeStamp": "2020-10-15T02:49:41.286Z",
+            "lastPackageTimeStamp": "2020-10-15T02:49:41.327Z",
+            "distZipFilename": "restApi-67516a6b4b6b636b3837-build.zip",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-main-prod-93217-deployment/amplify-cfn-templates/function/restApi-cloudformation-template.json",
+                "logicalId": "functionrestApi"
+            },
+            "lastPushTimeStamp": "2020-11-05T07:23:45.372Z",
+            "output": {
+                "Region": "ap-southeast-2",
+                "CloudWatchEventRule": "amplify-main-prod-93217-functionre-CloudWatchEvent-NVW61F0K3YTG",
+                "Arn": "arn:aws:lambda:ap-southeast-2:632817565170:function:restApi-prod",
+                "Name": "restApi-prod",
+                "LambdaExecutionRole": "mainLambdaRolec9c80d67-prod"
+            },
+            "lastPushDirHash": "WBKRO0Q9C9+a4SV57F8qlN2+xgM="
         }
     },
     "hosting": {
-        "S3AndCloudFront": {
-            "service": "S3AndCloudFront",
+        "amplifyhosting": {
+            "service": "amplifyhosting",
             "providerPlugin": "awscloudformation",
-            "output": {
-                "CloudFrontSecureURL": "https://dsleaprbtn0wl.cloudfront.net",
-                "S3BucketSecureURL": "https://prolocalzie-prod.s3.amazonaws.com",
-                "CloudFrontOriginAccessIdentity": "ERIOTM5PSABSY",
-                "WebsiteURL": "http://prolocalzie-prod.s3-website-ap-southeast-1.amazonaws.com",
-                "CloudFrontDistributionID": "E27ZLCCYRRILNH",
-                "Region": "ap-southeast-1",
-                "HostingBucketName": "prolocalzie-prod",
-                "CloudFrontDomainName": "dsleaprbtn0wl.cloudfront.net"
-            },
-            "lastPushTimeStamp": "2020-06-04T15:19:08.523Z",
+            "type": "manual",
             "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-prolocalize-prod-95832-deployment/amplify-cfn-templates/hosting/template.json",
-                "logicalId": "hostingS3AndCloudFront"
-            }
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-main-prod-93217-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+                "logicalId": "hostingamplifyhosting"
+            },
+            "lastPushTimeStamp": "2020-11-05T07:23:45.373Z",
+            "output": {},
+            "lastPushDirHash": "/+VZ33seFFqAr6wbtptwbINUfSA="
         }
     }
 }

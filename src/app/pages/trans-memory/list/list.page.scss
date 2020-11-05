@@ -1,0 +1,8 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.header{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}

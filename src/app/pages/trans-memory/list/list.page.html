@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Translation Memories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="content">
+    
+    <div class="main-content">
+      <div class="header">
+        <ion-button size="small" (click)="uploadTm()">Upload</ion-button>
+        <ion-button size="small" (click)="deleteTm()">Remove</ion-button>
+      </div>
+      <app-trans-memory-table></app-trans-memory-table>
+    </div>
+  </div>
+</ion-content>

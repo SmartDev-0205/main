@@ -1,0 +1,34 @@
+.project-content{
+    padding: 10px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-content{
+    background-color: white;
+    width: 95;
+    padding: 30px 20px 30px 20px;
+    overflow: auto;
+    
+}
+.password-content{
+    margin-top: 30px;
+}
+.item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+ion-input{
+    border: solid  1px;
+    --padding-bottom: 3px;
+    --padding-top: 3px;
+}
+.action{
+    display: flex;
+    justify-content: flex-end;
+}

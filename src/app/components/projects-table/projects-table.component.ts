@@ -1,17 +1,15 @@
 import {Component, OnInit, ViewChild,Input} from "@angular/core";
-import {ProjectDetailsDialog} from "src/app/shared/dialogs/project-details-dialog/project-details-dialog";
 import {MatDialog} from "@angular/material";
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSort} from '@angular/material/sort';
-
 import {Project} from "src/app/interfaces/project.interface";
-import {ProjectService} from "src/app/services/project.service";
 import {UserService} from "src/app/services/user.service";
 import {BehaviorSubject} from 'rxjs';
 import {SelectionModel } from '@angular/cdk/collections';
-
+import { Router } from '@angular/router';
+import { DataService } from "src/app/services/data.service";
+import { ProjectService } from 'src/app/services/project.service';
 @Component({
   selector: "projects-table",
   templateUrl: "./projects-table.component.html",
@@ -24,11 +22,11 @@ export class ProjectsTableComponent implements OnInit {
     'select',
     'ID',
     'name', 
-    'createdBy', 
-    'budget', 
-    'quoteStatus',
-    'paymentStatus',
-    'developmentStatus',
+    'status', 
+    'type', 
+    'client',
+    'manage',
+    'dueDate',
   ];
   public selection:any;
   @ViewChild(MatPaginator, {static: false})
@@ -40,25 +38,27 @@ export class ProjectsTableComponent implements OnInit {
     this.dataSource.sort = s;
   }
   constructor(
+    private dataService:DataService,
     public dialog: MatDialog,
-    private projectService: ProjectService,
-    private user: UserService
+    private user: UserService,
+    private router: Router,
+    private projectService:ProjectService
   ) {
     const initialSelection = [];
     const allowMultiSelect = true;
     this.selection = new SelectionModel<Project>(allowMultiSelect, initialSelection);
+    
   }
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected == numRows;
   }
-  
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
+    this.selection.clear() :
+    this.dataSource.data.forEach(row => this.selection.select(row));
   }
   async ngOnInit() {
     this.updateProjects();
@@ -68,23 +68,23 @@ export class ProjectsTableComponent implements OnInit {
     await this.user.awaitRole();
     await this.user.awaitId();
     let projects: any;
-    if (
-      this.user.role$.getValue() === "client"
-    ) {
-      await this.user.awaitId();
-      projects = await this.projectService.getProjectsByUserId(this.user.id$.getValue());
+    if ( this.user.role$.getValue() === "client" ) {
+      projects = await this.projectService.getClientProject(this.user.id$.getValue());
     } else if (
       this.user.role$.getValue() === "manager" ||
       this.user.role$.getValue() === "sales"
     ) {
-      projects = await this.projectService.getProjects();
+      console.log("current user Id",this.user.id$.getValue());
+      projects = await this.projectService.getPmProject(this.user.id$.getValue());
+      console.log("current project",projects);
     } else if (
       this.user.role$.getValue() === "vendor"
     ) {
-      projects = await this.projectService.getProjectsAssignedToUser(this.user.id$.getValue());
+      projects = await this.projectService.getFreelancerProject(this.user.id$.getValue());
     }
     this.projects$.next(projects);
     this.dataSource.data = projects;
+    console.log("current project",this.dataSource);
     
     this.dataSource.filterPredicate = function(data, filter: string): boolean {
       return data.name.toLowerCase().includes(filter);
@@ -97,16 +97,8 @@ export class ProjectsTableComponent implements OnInit {
   }
 
   public openDialog(project: any): void {
-    const openedDialog = this.dialog.open(ProjectDetailsDialog, {
-      maxWidth: "95vw", minWidth: "90vw",
-      data: {
-        projectId: project.id,
-      }
-    });
-    openedDialog.afterClosed().toPromise().then(() => {
-      this.updateProjects();
-    });
-
+    this.dataService.changeCurrentProject(project);
+    this.router.navigate(['/project', project.id]);
   }
 
 }

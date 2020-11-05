@@ -1,0 +1,37 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: default;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+  .selection-header{
+    width: 5%;
+  }
+  .id-header{
+    width: 10%;
+  }
+  .name-header{
+    width: 21%;
+  }
+  .source-header{
+    width: 21%;
+  }
+
+  .target-header{
+    width: 21%;
+  }
+
+  .client-header{
+    width: 21%;
+  }
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
+    padding-left: 10px;
+  }
+  

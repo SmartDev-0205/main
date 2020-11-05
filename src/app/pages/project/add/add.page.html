@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Project</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="project-content">
+    <div class="header">
+      <h1>Project Detail</h1>
+      <div class="action-container">
+        <ion-button size=small (click)="create()">Create</ion-button>
+        <ion-button size=small (click)="cancel()">Cancel</ion-button>
+      </div>
+    </div>
+    <div class="main-content">
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Project Name :</ion-label>
+          <ion-input class ="edit-input" type="text" [(ngModel)]="projectName"></ion-input>
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <!-- <ion-label class="edit-label">Project Type :</ion-label> -->
+          <!-- <ion-input class ="edit-input" type="text" [(ngModel)]="projectType"></ion-input> -->
+          <ion-label class="edit-label">Services :</ion-label>
+          <ion-input  class="edit-input" type="text" [(ngModel)]="projectType" readonly></ion-input>
+          <ion-icon ios="ios-settings" md="md-settings" class="setting" (click)="workflow()"></ion-icon>
+          <!-- <mat-form-field class="input-style">
+            <mat-select multiple="true" [(ngModel)]="projectType">
+              <mat-option *ngFor="let option of projetTypes" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Source Language :</ion-label>
+          <!-- <ion-input class ="edit-input" type="text" [(ngModel)]="sourceLanguage"></ion-input> -->
+          <mat-form-field class="input-style">
+            <mat-select [(ngModel)]="sourceLanguage">
+              <mat-option *ngFor="let option of allLanguage let i = index" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Target Language :</ion-label>
+          <!-- <ion-input class ="edit-input" type="text" [(ngModel)]="targetLanguage"></ion-input> -->
+          <mat-form-field class="input-style">
+            <mat-select [(ngModel)]="targetLanguage" multiple>
+              <mat-option *ngFor="let option of allLanguage let i = index" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">DueDate :</ion-label>
+          <!-- <ion-datetime class ="edit-input" displayFormat="D MMM YYYY H:mm" min="2020" max="2100" [(ngModel)]="projectDueDate"></ion-datetime> -->
+          <mat-form-field class ="date-time edit-input" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}">
+            <input matInput [ngxMatDatetimePicker]="picker" 
+                            placeholder="Choose a date" 
+                            [disabled]="!isEditable" [(ngModel)]="projectDueDate">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker>
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+        </ion-col>
+
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Status :</ion-label>
+          <!-- <ion-input class ="edit-input" type="text" [(ngModel)]="projectStatus"></ion-input> -->
+          <mat-form-field class="input-style">
+            <mat-select [(ngModel)]="projectStatus">
+              <mat-option *ngFor="let option of projectStatuses" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      
+
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">ProjectCode :</ion-label>
+          <ion-input class ="edit-input" type="text" [(ngModel)]="projectCode"></ion-input>
+        </ion-col>
+
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Client :</ion-label>
+          <mat-form-field class="input-style">
+            <input type="text"
+                   placeholder="Select Client"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.profile.email}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      
+
+      <ion-row>
+        <ion-col size=12 class="description-col">
+          <ion-label class="description-label">Description :</ion-label>
+          <textarea class="description-text" displayFormat="YYYY-MM-DDTHH:mm" [(ngModel)]="projectDescription"></textarea>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size=12 class="input-style">
+          <ion-label class="trans-width edit-label">Translation Memory :</ion-label>
+          <mat-form-field class="input-style trans-text" >
+            <mat-select [(ngModel)]="currentMemeory" multiple >
+              <mat-option *ngFor="let option of transMemory let i = index" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      
+      
+<!-- Job table (New Job button,Job Table) -->
+      
+    </div>
+
+    <div class="header">
+      <h1>Jobs</h1>
+    </div>
+    
+    <div class="main-content">
+      <ion-button size=small (click)="newJob()">New Job</ion-button>
+      <ion-button size=small (click)="deleteJob()">Delete Job</ion-button>
+      <input type='file' id="files" accept=".sdlxliff" (change)="onFileChanged()" style="display: none;" multiple #xliffInput />
+      <app-creating-job-table></app-creating-job-table>
+    </div>
+  </div>
+</ion-content>

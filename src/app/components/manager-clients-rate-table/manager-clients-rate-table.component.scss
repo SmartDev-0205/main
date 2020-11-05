@@ -1,0 +1,40 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+  .selection-header{
+    width: 5%;
+  }
+  .client-header{
+      width: 15%;
+  }
+  .service-header{
+    width: 15%;
+  }
+  .language-header{
+    width: 15%;
+  }
+  .specialization-header{
+    width: 15%;
+  }
+  .price-header{
+    width: 15%;
+  }
+  .currency-header{
+    width: 10%;
+  }
+  .unit-header{
+    width: 10%;
+  }
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
+    padding-left: 10px;
+  }

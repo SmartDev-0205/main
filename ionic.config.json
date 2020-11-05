@@ -1,5 +1,7 @@
 {
   "name": "weihzan_translation_portal",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

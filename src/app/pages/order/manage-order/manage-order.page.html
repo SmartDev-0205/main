@@ -1,0 +1,100 @@
+  <div class="container">
+    <div class="order-list-box">
+      <div class="col-12" id="searchcontent">
+        <div class="wrap">
+          <div class="search">
+            <div class="searchButton">
+              <mat-icon (click)="search()">search</mat-icon>
+            </div>
+            <input type="text" #searchOrder (keyup)="search()" [(ngModel)]="seachOrderContent" class="searchTerm">
+          </div>
+
+        </div>
+      </div>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let order of selectedOrders let i=index"
+          [ngClass]="{'selected':currentIndex==i}" (click)="select(i)">{{order.orderName}}</mat-list-item>
+      </mat-list>
+    </div>
+    <div class="order-manage-box">
+      <mat-tab-group *ngIf="currentOrder" (selectedTabChange)="onTabChanged($event);">
+        <mat-tab label="Detail">
+          <div class="detail-container">
+            <p class="bold">{{currentOrder.orderName}}</p>
+            <div class="context">
+              <div class="edit-box">
+                <p class="bold">Services</p>
+                <div class="chip-box">
+                  <mat-chip-list #chipList aria-label="Service selection">
+                    <mat-chip *ngFor="let service of currentOrder.orderServices">
+                      {{service}}
+                      <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                  </mat-chip-list>
+                </div>
+              </div>
+              <div class="edit-box flex">
+                <div class="left-half-edit-box">
+                  <p class="bold">Source Language</p>
+                  <input type="text" [disabled]="true" matInput [(ngModel)]="currentOrder.orderSourceLanguage">
+                </div>
+                <div class="right-half-edit-box">
+                  <p class="bold">Target Language</p>
+                  <input type="text" [disabled]="true" matInput [(ngModel)]="currentOrder.orderTargetLanguage">
+                </div>
+              </div>
+
+              <div class="edit-box flex">
+                <div class="left-half-edit-box">
+                  <p class="bold">Subject</p>
+                  <input class="subject" [disabled]="true" matInput [(ngModel)]="currentOrder.orderSubject">
+                </div>
+                <div class="right-half-edit-box">
+                  <p class="bold">Deadline</p>
+                  <div class="time-picker">
+                    <input matInput [disabled]="true" [(ngModel)]="currentOrder.orderDeadline">
+                  </div>
+                </div>
+              </div>
+
+              <div class="edit-box flex">
+                <div class="left-half-edit-box flex">
+                  <div class="left-half-edit-box">
+                    <p class="bold">Valid Quantity</p>
+                    <input matInput [disabled]="true" [(ngModel)]="currentOrder.orderQuntity">
+                  </div>
+                  <div class="right-half-edit-box">
+                    <p class="bold">Unit</p>
+                    <input matInput [disabled]="true">
+                  </div>
+                </div>
+
+                <div class="left-half-edit-box flex">
+                  <div class="left-half-edit-box">
+                    <p class="bold">Best Rate</p>
+                    <input matInput [disabled]="true" [(ngModel)]="currentOrder.orderBestRate">
+                  </div>
+                  <div class="right-half-edit-box">
+                    <p class="bold">Currency</p>
+                    <input matInput [disabled]="true" [(ngModel)]="currentOrder.orderCurrency">
+                  </div>
+                </div>
+              </div>
+
+              <div class="edit-box">
+                <p class="bold">Tell us more about your project</p>
+                <textarea [disabled]="true" [(ngModel)]="currentOrder.orderProjectMore"></textarea>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Payment">
+          <app-payment></app-payment>
+        </mat-tab>
+        <mat-tab class="chat-tab" label="Chat">
+          <app-chat></app-chat>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+  </div>

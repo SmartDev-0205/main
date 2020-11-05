@@ -1,0 +1,43 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.header{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.card{
+    display: flex;
+    width: 100%;
+    border: solid 1px #A8A8A8 ;
+    margin: 5px 0px;
+    .avata{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        min-width: 50px;
+        font-size: 50px;
+    }
+    .content{
+        width: 90%;
+        display: flex;
+        background: white;
+        justify-content: normal;
+        padding: 5px 20px;
+        .three-width{
+            width: 33%;
+        }
+    }
+    p{
+        margin: 2px 0px;
+    }
+    .action{
+        width: 5%;
+        min-width: 20px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

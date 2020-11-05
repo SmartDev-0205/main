@@ -1,0 +1,57 @@
+<div>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="select" >
+        <th mat-header-cell *matHeaderCellDef class="selection-header">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="ID" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="id-header"> 
+          ID 
+        </th>
+        <td mat-cell *matCellDef="let i = index"> 
+          {{ i + 1 }}
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="name" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="name-header"> 
+          Name 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.user.profile.givenName + element.user.profile.familyName}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="email" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="email-header"> 
+          Email
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.user.profile.email }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="status-header"> 
+          Status 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.status }}
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

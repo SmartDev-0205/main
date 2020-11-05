@@ -1,0 +1,8 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+@media (min-width:700px) {
+    .xl-left {
+      display: flex;
+      justify-content: flex-start;
+    }
+   }

@@ -1,0 +1,184 @@
+<ion-content >
+  <div class="project-content">
+    <div class="header" *ngIf="isLoaded">
+      <h1>{{project.name}} </h1>
+      <div class="box" *ngIf="isPending">
+        <ion-button  (click)="accept()" [disabled]="isDisabled">Accept</ion-button>
+        <ion-button  (click)="reject()" [disabled]="isDisabled">Reject</ion-button>
+      </div>
+    </div>
+    
+    <div class="main-content" *ngIf="isLoaded">
+      <div class="edit-icon" *ngIf="!isEditable && isManager">
+        <ion-icon name="create" class="edit-icon" (click)="editProject()">Edit</ion-icon>
+      </div>
+
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">ProjectCode :</ion-label>
+          <ion-input  *ngIf="isEditable == false" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="project.projectCode"></ion-input>
+          <ion-input class ="edit-input" *ngIf="isEditable == true" type="text" [(ngModel)]="project.projectCode"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Project Name :</ion-label>
+          <ion-input [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="project.name"></ion-input>
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Services :</ion-label>
+          <ion-input  clas="no-editable-edit-input" type="text" [(ngModel)]="project.serviceType"></ion-input>
+          <!-- <ion-icon ios="ios-settings" md="md-settings" *ngIf="isEditable" class="setting" (click)="workflow()"></ion-icon> -->
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Source Language :</ion-label>
+          <ion-input  *ngIf="isEditable == false" type="text" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" [(ngModel)]="project.sourceLanguage"></ion-input>
+          <mat-form-field class="input-style" *ngIf="isEditable == true" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-mat-field-input':  isEditable == true}">
+            <mat-select [(ngModel)]="project.sourceLanguage">
+              <mat-option *ngFor="let option of allLanguage let i = index" [value]="option" (click)="onSelectSourceLanaguage(i)">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Target Language :</ion-label>
+          <ion-input  *ngIf="isEditable == false" type="text" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" [(ngModel)]="project.targetLanguage"></ion-input>
+          <mat-form-field class="input-style" *ngIf="isEditable == true" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-mat-field-input':  isEditable == true}">
+            <mat-select [(ngModel)]="project.targetLanguage" multiple>
+              <mat-option *ngFor="let option of allLanguage let i = index" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Due :</ion-label>
+          <!-- <ion-input [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="date" [(ngModel)]="project.dueDate"></ion-input> -->
+          <!-- <ion-datetime class ="date-time edit-input" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" displayFormat="D MMM YYYY H:mm" min="2020" max="2100" [(ngModel)]="project.dueDate"></ion-datetime> -->
+
+          <mat-form-field class ="date-time edit-input" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}">
+            <input matInput [ngxMatDatetimePicker]="picker" 
+                            placeholder="Choose a date" 
+                            [disabled]="!isEditable" [(ngModel)]="project.dueDate">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker>
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+
+          <!-- <ngx-mat-timepicker [(ngModel)]="date"></ngx-mat-timepicker> -->
+
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Status :</ion-label>
+          <!-- <ion-input [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="project.Status"></ion-input> -->
+          <ion-input  *ngIf="isEditable == false" type="text" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" [(ngModel)]="project.status"></ion-input>
+          <mat-form-field class="input-style" *ngIf="isEditable == true" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-mat-field-input':  isEditable == true}">
+            <mat-select [(ngModel)]="project.status">
+              <mat-option *ngFor="let option of projectStatuses" [value]="option" >
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      
+
+      <ion-row>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Project Manager :</ion-label>
+          <ion-input  *ngIf="isEditable == false" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="managerEmail"></ion-input>
+          <mat-form-field class="input-style" *ngIf="isEditable == true">
+            <input type="text"
+                   placeholder="Select Client"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="managerControler"
+                   [matAutocomplete]="auto"
+                   [(ngModel)]="project.manager">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+              <mat-option *ngFor="let option of managerFilteredOptions | async" [value]="option">
+                {{option.profile.email}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </ion-col>
+        <ion-col size=6 class="input-style">
+          <ion-label class="edit-label">Client :</ion-label>
+          <ion-input  *ngIf="isEditable == false" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="clientEmail"></ion-input>
+          <mat-form-field class="input-style" *ngIf="isEditable == true">
+            <input type="text"
+                   placeholder="Select Client"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto"
+                   [(ngModel)]="project.client">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.profile.email}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </ion-col>
+      </ion-row>
+      
+
+
+      <ion-row>
+        <ion-col size=12 class="description-col">
+          <ion-label class="description-label">Description :</ion-label>
+          <textarea [ngClass]="{'no-editable-description-text':  isEditable == false,'description-text':  isEditable == true}" [(ngModel)]="project.description"></textarea>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size=12 class="input-style">
+          <ion-label class="trans-width edit-label">Translation Memory :</ion-label>
+          <ion-input  clas="no-editable-edit-input" type="text" [(ngModel)]="project.transMemoryNames"></ion-input>
+        </ion-col>
+      </ion-row>
+      
+
+
+      <div class="event-container">
+        <ion-button size=small (click)="editApply()" *ngIf="isEditable">Apply</ion-button>
+        <ion-button size=small (click)="cancel()" *ngIf="isEditable">Cancel</ion-button>
+      </div>
+    </div>
+    <div class="header">
+      <h1>Jobs</h1>
+    </div>
+    <div class="main-content">
+      <div class="job-header">
+        <div >
+          <input type='file' id="files" accept=".sdlxliff" (change)="onFileChanged()" style="display: none;" multiple #xliffInput />
+          <ion-button *ngIf="isManager" size=small (click)="newJob()">New</ion-button>
+          <ion-button *ngIf="isManager" size=small (click)="deleteJob()">Delete</ion-button>
+          <ion-button  size=small (click)="viewJob()">Edit</ion-button>
+          <ion-button *ngIf="isManager" size=small (click)="assignJob()">Assign</ion-button>
+        </div>
+        <mat-form-field *ngIf="project && isManager">
+          <mat-select [(ngModel)]="currentService" (selectionChange)="onServiceChanged()">
+            <mat-option *ngFor="let option of project.serviceType" [value]="option" >
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="project && !isManager">
+          <mat-select [(ngModel)]="currentService" (selectionChange)="onServiceChanged()">
+            <mat-option *ngFor="let option of vendorServices" [value]="option" >
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <app-pmjob-table></app-pmjob-table>
+    </div>
+  </div>
+</ion-content>

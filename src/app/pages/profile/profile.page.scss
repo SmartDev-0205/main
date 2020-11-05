@@ -1,102 +1,108 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
 .profile-picture {
-  width: 20vh;
-  height: 20vh;
-  border-radius: 20vh;
-  margin: auto;
-}
-
-$input-margin-vertical: 12px;
-$input-padding-vertical: 12px;
-$input-padding-horizonal: 12px;
-$input-border-radius: 4px;
-
-.editable-input {
-  border: solid 1px #c4c1d2;
-  margin-top: $input-margin-vertical * 2;
-  margin-bottom: $input-margin-vertical;
-  padding-top: $input-padding-vertical;
-  padding-bottom: $input-padding-vertical;
-  padding-left: $input-padding-horizonal !important;
-  padding-right: $input-padding-horizonal !important;
-  border-radius: $input-border-radius;
-}
-.non-editable-input {
-  border: solid 1px #ffffff00;
-  margin-top: $input-margin-vertical;
-  margin-bottom: $input-margin-vertical;
-  padding-top: $input-padding-vertical;
-  padding-bottom: $input-padding-vertical;
-  // padding-left: $input-padding-horizonal !important;
-  // padding-right: $input-padding-horizonal !important;
-  border-radius: $input-border-radius;
-}
-
-.profile__grid {
-  display: flex;
-  margin-top: 16px;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-
-  ion-item {
-    width: 30%;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 20vh;
+    margin: 0px 10px;
   }
-}
-
-@media only screen and (max-width: 900px) {
-  .profile__grid {
-    ion-item {
-      width: 50%;
-    }
+  .logo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
   }
-}
-
-@media only screen and (max-width: 500px) {
-  .profile__grid {
-    ion-item {
-      width: 100%;
-      padding: 8px;
-      margin: 4px 0;
-      border-bottom: 1px solid #efefef;
-    }
+  
+  $input-margin-vertical: 12px;
+  $input-padding-vertical: 12px;
+  $input-padding-horizonal: 12px;
+  $input-border-radius: 4px;
+  .itme-label{
+    margin-bottom: 5px;
   }
-}
-
-.profile-section-title {
-  margin-top: 20px;
-}
-
-.profile-floating-menu {
-  height: 50px;
-  width: 50px;
-  position: fixed;
-  bottom: 3vh;
-  right: 5vw;
-  z-index: 999;
-}
-
-ion-card {
-  margin-top: 50px;
-  padding: 0px 10px 20px 10px;
-  background-color: white;
-}
-
-ion-card-title {
-  font-size: 23px;
-}
-
-// .item-native {
-//   padding: 0;
-//   border: none;
-// }
-
-.profile__content {
-  ion-label {
-    color: #777;
-    font-size: 1rem;
+  .non-editing-input{
+    border: solid 1px #c4c1d2;
+    --padding-top: 3px;
+    --padding-bottom: 3px;
+    --padding-start: 3px;
   }
-
-  ion-card-header {
+  .editable-input {
+    border: solid 1px #c4c1d2;
+    margin-top: $input-margin-vertical * 2;
+    margin-bottom: $input-margin-vertical;
+    padding-top: $input-padding-vertical;
+    padding-bottom: $input-padding-vertical;
+    padding-left: $input-padding-horizonal !important;
+    padding-right: $input-padding-horizonal !important;
+    border-radius: $input-border-radius;
+  }
+  .profile-grid {
+    display: flex;
     margin-top: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    ion-item{
+      width: 100%;
+    }
   }
-}
+  ion-card {
+    margin-top: 50px;
+    padding: 0px 10px 20px 10px;
+    background-color: white;
+    margin-top: 24px;
+    display: flex;
+  }
+  .profile-floating-menu {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 3vh;
+    right: 5vw;
+    z-index: 999;
+    margin-bottom: 56px;
+  }
+  textarea{
+    height: 20vh;
+    width: 100%;
+  }
+  .information-title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .twice-items{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .half-content{
+    width: 45%;
+  }
+  .sevevn-percent-content{
+    width: 65%;
+  }
+  .there-percent-content{
+    width: 25%;
+  }
+  input{
+    cursor: not-allowed!important;
+  }
+  .image-change{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size:30px;
+  }
+  .hidden-input{
+    display: none;
+  }
+  .back-button{
+    max-width: 50px;
+  }
+@media (min-width:700px) {
+  .xl-left {
+    display: flex;
+    justify-content: flex-start;
+  }
+ }

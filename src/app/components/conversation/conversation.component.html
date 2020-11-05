@@ -1,0 +1,20 @@
+
+<div class="main" *ngIf="firstCoversation">
+  <div class="chat-box" >
+    <div class="message-area" id="chatbox" #chatbox>
+      <div class="message" *ngFor="let message of firstCoversation.messages.items" [ngClass]="getClasses(message)">
+        <p>{{message.content}}</p>
+      </div>
+    </div>
+    <!-- <div class="emo-area">
+    </div> -->
+    <div class="input-area">
+      <div class="chat-field" (keyup.enter)="onEnter()">
+        <ion-input type="text" id="message" class="message" [(ngModel)]="message" placeholder="Say something nice..."></ion-input>
+        <button (click)="sendMessage()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

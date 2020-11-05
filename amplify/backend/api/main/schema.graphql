@@ -1,0 +1,474 @@
+type User @model 
+  @key(name:"byUserRole", fields: ["role"], queryField: "getUsersByUserRole")
+{
+  id: ID!
+  role: String
+  profile: Profile
+}
+type Order @model 
+  @key(name:"clientOrder", fields: ["clientId"], queryField: "getClientOrder")
+{
+  id: ID!
+  clientId:ID
+  orderName:String
+  orderServices:[String]
+  orderSourceLanguage:String
+  orderTargetLanguage:String
+  orderSubject:String
+  orderDeadline:String
+  orderQuntity:String
+  orderUnit:String
+  orderBestRate:String
+  orderCurrency:String
+  orderProjectMore:String
+}
+type OrderMessage @model
+@key(name: "orderMessages", fields: ["orderId","createdAt"], queryField: "getMessageByOrderId")
+{
+  id:ID!
+  content:String!
+  orderId:ID!
+  senderId:ID!
+  recepterID:ID!
+  isRead:Boolean!
+  time:String
+  createdAt:AWSDateTime!
+}
+type OrderPayment @model
+@key(name: "getOrderPayment", fields: ["orderId","createdAt"], queryField: "getOrderPaymentByOrderId")
+{
+  id:ID!
+  orderId:ID!
+  description:String!
+  date:String
+  status:String
+  amount:String
+  createdAt:AWSDateTime!
+}
+type OrderPo @model
+@key(name: "getOrderPo", fields: ["orderId","createdAt"], queryField: "getOrderPoByOrderId")
+{
+  id:ID!
+  orderId:ID!
+  poNo:String!
+  projectName:String!
+  date:String
+  status:String
+  amount:String
+  createdAt:AWSDateTime!
+}
+
+type OrderQuote @model
+@key(name: "getOrderQuote", fields: ["orderId","createdAt"], queryField: "getOrderQuoteByOrderId")
+{
+  id:ID!
+  orderId:ID!
+  quoteNo:String!
+  projectName:String!
+  date:String
+  status:String
+  amount:String
+  createdAt:AWSDateTime!
+}
+
+
+type OrderInvoice @model
+@key(name: "getOrderInvoice", fields: ["orderId","createdAt"], queryField: "getOrderInvoiceByOrderId")
+{
+  id:ID!
+  orderId:ID!
+  invoiceNo:String!
+  issuedDate:String
+  paymentDate:String
+  status:String
+  amount:String
+  createdAt:AWSDateTime!
+}
+
+type OrderReceipt @model
+@key(name: "getOrderReceipt", fields: ["orderId","createdAt"], queryField: "getOrderReceiptByOrderId")
+{
+  id:ID!
+  orderId:ID!
+  receiptNo:String!
+  issuedDate:String
+  paymentDate:String
+  status:String
+  amount:String
+  createdAt:AWSDateTime!
+}
+type Client @model 
+  @key(name:"getClients", fields: ["managerId"], queryField: "getClientsByManagerId")
+{
+  id: ID!
+  managerId:ID!
+  profile: Profile
+}
+type Profile {
+  accountType:String
+  companyName:String
+  legalName:String
+  website:String
+  taxNumber:String
+  vatNumber:String
+  country:String
+  companyAddress:String
+  Zip:String
+  about:String
+  givenName: String
+  familyName: String
+  gender: String
+  position: String
+  email: String
+  tel: String
+  whatsapp:String
+  wechat:String
+  line:String
+  qq:String
+  telegram:String
+  slack:String
+  viber:String
+  note:String
+  timezone: String
+  rate:Float
+  customerCode:String
+  customerName:String
+  logoKey:String
+  # payment information
+  paymentTerm:String
+  paymentMethod:[String]
+  dayOption:String
+  payDay:String
+}
+type Project @model 
+  @key(name:"clientProject", fields: ["clientId"], queryField: "getProjectsByClientId")
+  @key(name:"pmProject",fields: ["pmId"], queryField: "getProjectsByPmId")
+{
+  id: ID!
+  projectCode:String
+  clientId: ID!
+  client:Client @connection(fields:["clientId"])
+  pmId:ID!
+  manager:User @connection(fields:["pmId"])
+  # Project Details
+  name: String
+  description: String
+  budget: Float
+  approvedBudget: Float
+  sourceLanguage: String
+  targetLanguage: [String]
+  serviceType: [String]
+  dueDate: String
+  # Project Statuses
+  status: String
+  developmentStatus: String
+  paymentStatus: String
+  quotes:[Quote]@connection(keyName:"byProjectQuote",fields:["id"])
+  invoices:[Invoice]@connection(keyName:"byProjectInvoice",fields:["id"])
+  jobs:[Job]@connection(keyName:"byProjectJob",fields:["id"])
+  #translation memory
+  transMemory:[String]
+  transMemoryNames:[String]
+}
+type Quote @model
+	@key(name: "byProjectQuote", fields: ["projectId"], queryField: "getQuotesByporjectId")
+  @key(name: "byProjectAndDirectionQuote", fields: ["projectId","direction"], queryField: "getQuotesByporjectIdAndDirection")
+{
+  id:ID!
+  direction:String!
+	projectId:ID!
+	project:Project @connection(fields:["projectId"])
+	companyName:String
+	companyAddress:String
+	taxId:String
+	tel:String
+	mobile:String
+	siteUrl:String
+	clientName:String
+	documentNo:String
+	date:String
+	credit:String
+	dueDate:String
+  seller:String
+  reference:String
+  projectName:String
+  total:String
+  discount:String
+  totalAfterDiscount:String
+  vat:String
+  grandTotal:String
+  remark:String
+	items:[Item]@connection(keyName:"byPayment",fields:["id"])
+  status:String
+  collectionTerm:String
+  financeString:String
+}
+type Item @model
+  	@key(name: "byPayment", fields: ["paymentId"], queryField: "getItemsByQuote")
+{
+  id:ID!
+  paymentId:ID!
+  services:String
+  languages:String
+  stratDate:String
+  deliveryDate:String
+  description:String
+  quantity:String
+  unit:String
+  pricePerUnit:Float
+  amount:Float
+  currency:String
+}
+
+type Invoice @model
+	@key(name: "byProjectInvoice", fields: ["projectId"], queryField: "getInvoiceByporjectId")
+  @key(name: "byProjectAndDirectionInvoice", fields: ["projectId","direction"], queryField: "getInvoiceByporjectIdAndDirection")
+{
+  id:ID!
+  direction:String!
+	projectId:ID!
+	project:Project @connection(fields:["projectId"])
+	companyName:String
+	companyAddress:String
+	taxId:String
+	tel:String
+	mobile:String
+	siteUrl:String
+	clientName:String
+	documentNo:String
+	date:String
+	credit:String
+	dueDate:String
+  seller:String
+  reference:String
+  projectName:String
+  total:String
+  discount:String
+  totalAfterDiscount:String
+  vat:String
+  grandTotal:String
+  remark:String
+	items:[Item]@connection(keyName:"byPayment",fields:["id"])
+  status:String
+  collectionTerm:String
+  financeString:String
+}
+type Job @model
+@key(name: "byProjectJob", fields: ["projectId"], queryField: "getJobsByProjectId")
+ {
+  id: ID!
+  projectId:ID!
+  filename: String
+  service:String
+  wordCount:Float
+  tasks: [SmallTask] @connection(keyName:"byJob",fields:["id"])
+  due:String
+  source:String
+  target:String
+  segments:[Segment] @connection(keyName:"JobSegments",fields:["id"])
+  process:[Progress]
+  status:String
+}
+type Progress{
+  serviceName:String,
+  progress:String
+}
+type SegmentService{
+  serviceName:String,
+  target:String
+  freelancerId:ID!
+  status:String
+  freelancerEmail:String
+}
+type Segment @model 
+@key(name:"JobSegments",fields:["jobId"],queryField:"getSegmetsByJobId")
+{
+  id:ID!
+  jobId:ID!
+  source:String
+  target:String
+  status:String
+  segmentService:[SegmentService]
+}
+type SmallTask @model
+@key(name:"byJob",fields:["jobId"],queryField:"getTasksByJobId")
+@key(name:"byJobAndService",fields:["jobId","serviceName"],queryField:"getTasksByJobIdAndService")
+@key(name:"byfreelancerID",fields:["freelancerId"],queryField:"getTasksByfreelancerId")
+@key(name:"byfreelancerIdAndUserId",fields:["jobId","freelancerId"],queryField:"getTasksByfreelancerIdAndUserID")
+ {
+  id:ID!
+  jobId:ID!
+  job:[Job] @connection(fields:["jobId"])
+  projectId:ID!
+  wordsCount:Float
+  serviceName:String!
+  freelancerId:ID!
+  freelancer:User @connection(fields:["freelancerId"])
+  tasks:[Task] #tasks 
+  rate:String
+  status:String #pending or accept
+}
+#to get freelancer project
+type ProjectSmallTaskRelation @model
+@key(name:"freelancerProject",fields:["freelancerId"],queryField:"getFreelancerProject")
+@key(name:"getRelationBySmallTask",fields:["smallTaskId"],queryField:"getRelationBySmallTask")
+{
+  id:ID!
+  freelancerId:ID!
+  projectId:ID!
+  project:Project @connection(fields:["projectId"])
+  smallTaskId:ID!
+}
+type Task 
+{
+  start:Float
+  end:Float
+  stringOfTask:String
+}
+type link @model
+{
+  id:ID!
+  name:String
+  url:String
+  status:String
+}
+
+type TeamInvite @model        
+@key(name:"getTeamInvite",fields:["teamId"],queryField:"getTeamInvitebyTeamId")
+@key(name:"getTeamInviteFromUserId",fields:["userId"],queryField:"getTeamInvitebyuserId")
+{
+	id:ID!
+	teamId:ID!
+	userId:ID!
+  team:Team @connection(fields:["teamId"])
+	user:User @connection(fields:["userId"])
+	status:String
+} 
+type Team @model
+@key(name:"getTeambyManagerId",fields:["managerId"],queryField:"getTeamByManagerId")
+{
+	id:ID!
+	managerId:ID!
+	teamName:String
+  manager:User @connection(fields:["managerId"])
+	invites:[TeamInvite] @connection(keyName:"getTeamInvite",fields:["id"])
+}
+type Event @model
+@key(name:"getEvent",fields:["userId"],queryField:"getEventByUserId")
+@key(name:"getUnShownEvent",fields:["userId","flagShowHide"],queryField:"getUnShownEvents")
+{
+  id:ID!
+  userId:ID!
+  user:User@connection(fields:["userId"])
+  managerId:ID!
+  manager:User@connection(fields:["managerId"])
+  textContent:String
+  link:String
+  type:String!
+  flagShowHide:String!
+}
+
+type Conversation @model
+@key(name: "userConversation", fields: ["firstUserId","secondUserId"], queryField: "getConversationByUsers")
+@key(name: "firstUserConversation", fields: ["firstUserId",], queryField: "getConversationByFirstUser")
+@key(name: "secondUserConversation", fields: ["secondUserId",], queryField: "getConversationBySecondUser")
+{
+  id:ID!
+  nextConversation:ID
+  firstUserId:ID!
+  secondUserId:ID!
+  secondUser:User @connection(fields:["secondUserId"])
+  messages:[Message]@connection(sortField: "createdAt",limit:50,keyName:"conversationMessage",fields:["id"])
+  badge:Float
+}
+
+type Message @model
+@key(name: "conversationMessage", fields: ["conversationId"],queryField: "getMessageByConversationId")
+@key(name: "unreadMessages", fields: ["conversationId","isRead"], queryField: "getUnReadMessageByUser")
+@key(name: "userUnreadMessages", fields: ["recepterID","isRead"], queryField: "getUserUnReadMessageByUser")
+{
+  id:ID!
+  content:String!
+  conversationId:ID!
+  senderId:ID!
+  recepterID:ID!
+  isRead:String!
+  createdAt:AWSDateTime!
+}
+
+
+# 
+type Collection @model
+@key(name: "managerCollection", fields: ["managerId"],queryField: "getManagerCollection")
+{
+  id:ID!
+  method:String
+  bankDate:String
+  netAmount:String
+  currency:String
+  fxrate:String
+  amount:String
+  managerId:ID!
+}
+
+type Service @model
+@key(name: "managerService", fields: ["managerId"],queryField: "getManagerServices")
+{
+  id:ID!
+  managerId:ID!
+  name:String
+  description:String
+  workflow:[String]
+}
+type Rate @model
+@key(name: "mangerClientRates", fields: ["managerId"],queryField: "getManagerClientRates")
+@key(name: "ClientRates", fields: ["clientId"],queryField: "getClientRates")
+{
+  id:ID!
+  managerId:ID!
+  clientId:ID!
+  clientName:String
+  service:String
+  languagePair:String
+  specialization:String
+  rate:String
+  currency:String
+  unit:String
+}
+type netRate @model
+@key(name: "clientNetRate", fields: ["clientId"],queryField: "getClientNetRate")
+{
+  id:ID!
+  clientId:ID!
+  tmRepetitions:String
+  mtRepetitions:String
+  tmOverHundred:String
+  mtOverHundred:String
+  tmHundred:String
+  mthundred:String
+  tmNineFive:String
+  mtNineFive:String
+  tmEightFive:String
+  mtEightFive:String
+  tmSevenFive:String
+  mtSevenFive:String
+  tmFive:String
+  mtFive:String
+  tmNewWord:String
+  mtNewWord:String
+}
+
+
+# Database for memory
+type TransMemory @model
+@key(name: "managerMemory", fields: ["managerId"],queryField: "getManagerMemory")
+{
+  id:ID!
+  managerId:ID!
+  filename:String
+  name:String
+  source:String
+  target:String
+  clientId:ID
+  clientName:String
+}

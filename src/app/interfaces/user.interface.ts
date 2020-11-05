@@ -1,8 +1,7 @@
-import {Profile} from 'src/app/interfaces/profile.interface';
+import { Profile } from './project.interface';
 
 export interface User {
   id?: string;
   role?: string;
-  projects?: any;
   profile: Profile;
 }

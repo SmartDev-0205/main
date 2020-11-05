@@ -1,216 +1,34 @@
-<ion-content>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="top" class="xl-left">
 
-  <div class="profile-floating-menu">
-    <ion-fab vertical="center" horizonal="center">
-      <ion-fab-button (click)="toggleEditing()">
-        <ion-icon name="create"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button color="primary" (click)="saveProfile()">
-          <ion-icon name="save" style="font-size: 25px;"></ion-icon>
-        </ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
-  </div>
+    <ion-tab-button class="back-button"  *ngIf="!isManager" (click)="back()">
+      <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-tab-button>
 
-  <ion-grid class="profile__content" style="padding: 0;">
-    <ion-row class="ion-align-items-center" style="background-color: #fff;">
-      <ion-col offset-md=1 size-md=10>
 
-        <div *ngIf="userProfile" @fadeInAnimation>
-          <ion-card style="margin-top: 24px;">
-            <ion-card-header>
-              <ion-card-title>Personal Information</ion-card-title>
-            </ion-card-header>
+    <ion-tab-button tab="general-information">
+      <ion-label>Genral Information</ion-label>
+    </ion-tab-button>
 
-            <ion-card-content class="profile__grid">
+    <ion-tab-button tab="contact-information">
+      <ion-label>Contact Information</ion-label>
+    </ion-tab-button>
 
-              <ion-item lines="none">
-                <ion-label position="stacked">Given Name</ion-label>
-                <ion-input autocomplete="given-name" mode="ios"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.givenName" [readonly]=!editingProfile>
-                </ion-input>
-              </ion-item>
+    <ion-tab-button tab="login-information" *ngIf="isManager">
+      <ion-label>Login Information</ion-label>
+    </ion-tab-button>
 
-              <ion-item lines="none">
-                <ion-label position="stacked">Family Name</ion-label>
-                <ion-input autocomplete="family-name"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.familyName" [readonly]=!editingProfile></ion-input>
-              </ion-item>
+    <ion-tab-button tab="invoicing" *ngIf="!isManager">
+      <ion-label>invoicing</ion-label>
+    </ion-tab-button>
 
-              <ion-item lines="none">
-                <ion-label position="stacked">Birthday</ion-label>
-                <ion-input autocomplete="bday"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.birthday" [readonly]=!editingProfile></ion-input>
-              </ion-item>
+    <ion-tab-button tab="rate">
+      <ion-label>Rate</ion-label>
+    </ion-tab-button>
 
-              <ion-item lines="none">
-                <ion-label position="stacked">Company Name</ion-label>
-                <ion-input autocomplete="organization"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.company" [readonly]=!editingProfile></ion-input>
-              </ion-item>
+    <ion-tab-button tab="net-rate" *ngIf="!isManager">
+      <ion-label>Net Rate</ion-label>
+    </ion-tab-button>
 
-              <ion-item lines="none">
-                <ion-label position="stacked">Website</ion-label>
-                <ion-input autocomplete="url"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.website" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Contact Details</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content class="profile__grid">
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Contact Email</ion-label>
-                <ion-input autocomplete="email"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.email" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Secondary Email</ion-label>
-                <ion-input autocomplete="email-2"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.email_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Primary Phone Number</ion-label>
-                <ion-input autocomplete="tel"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.phone" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Secondary Phone Number</ion-label>
-                <ion-input autocomplete="tel-2"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.phone_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Skype</ion-label>
-                <ion-input autocomplete="skype"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.skype" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Primary Address</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content class="profile__grid">
-              <ion-item lines="none">
-                <ion-label position="stacked">Address</ion-label>
-                <ion-input autocomplete="street-address"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.address" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Postal</ion-label>
-                <ion-input autocomplete="postal-code"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.postal" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">City</ion-label>
-                <ion-input autocomplete="address-level2"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.city" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Country</ion-label>
-                <ion-input autocomplete="country"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.country" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Timezone</ion-label>
-                <ion-input autocomplete="timezone"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.timezone" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card style="margin-bottom: 50px;">
-            <ion-card-header>
-              <ion-card-title>Secondary Address</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content class="profile__grid">
-              <ion-item lines="none">
-                <ion-label position="stacked">Address</ion-label>
-                <ion-input autocomplete="stree-address"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.address_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Postal</ion-label>
-                <ion-input autocomplete="postal-code"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.postal_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">City</ion-label>
-                <ion-input autocomplete="adress-level"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.city_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Country</ion-label>
-                <ion-input autocomplete="country"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.country_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-label position="stacked">Timezone</ion-label>
-                <ion-input autocomplete="timezone"
-                  [ngClass]="{'editable-input': editingProfile, 'non-editable-input': !editingProfile}"
-                  [(ngModel)]="userProfile.timezone_2" [readonly]=!editingProfile></ion-input>
-              </ion-item>
-
-            </ion-card-content>
-          </ion-card>
-
-        </div>
-
-        <!-- TODO: experience: [UserProfileExperience] @connection(keyName: "byUserProfile", fields: ["id"]) -->
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-</ion-content>
+  </ion-tab-bar>
+</ion-tabs>

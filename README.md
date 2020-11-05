@@ -23,14 +23,19 @@ Configure the AWS-amplify project.
 amplify init
 ```
 1. There is no need to sign into the account, just press continue.
-2. Chose `ap-southeast-1` region
+2. Chose `ap-southeast-2` region
 3. Use the following credentials:
 ```
 Username: prolocalize
 Access key:
-AKIAYTCIMGMH6YWXLNBD
+AKIAZGVW5XXZHGYS6P5S
 Secret:
-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
+U/evnPNkEv2zf2okXJ+O69mp0iHPfDmtKHccsheb
+
+
+AKIAZGVW5XXZHGYS6P5S
+
+U/evnPNkEv2zf2okXJ+O69mp0iHPfDmtKHccsheb
 ````
 
 Pull the AWS-amplify architecture:

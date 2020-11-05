@@ -2,3 +2,27 @@
   margin: 15px;
   height: 50vh;
 }
+.invite-logo{
+  width: 100px;
+  height: 52px;
+  margin-right: 10px;
+}
+.item-header{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.invite-font{
+  font-size: 18px;
+}
+.item-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 110px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.invite-button{
+  margin-left: 10px;
+}

@@ -1,0 +1,42 @@
+@import '../../../../../theme/common-variable.scss';
+@import '../../../../../theme/common-style.scss';
+@media (min-width:700px) {
+    .xl-left {
+      display: flex;
+      justify-content: flex-start;
+    }
+}
+ion-tab-bar{
+    height: 75px;
+}
+.tab-padding{
+    padding-top: 10px;
+}
+.buttons{
+    display: flex;
+    height: 70%;
+    font-size: 20px;
+}
+.ribbon-box{
+    height: 100%;
+    border: solid #CECECE;
+    margin: 1px;
+}
+ion-tab-button{
+    font-size: 18px;
+    margin: 1px;
+    background-color: #efefef;
+    ion-labe{
+        color:white
+    }
+}
+.selected-button{
+    background-color: #BEBEBE
+
+}
+.ribbon-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}

@@ -1,0 +1,53 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+  .selection-header{
+    width: 10%;
+    min-width: 16px;
+  }
+  .id-header{
+    width: 10%;
+    min-width: 16px;
+  }
+  .freelancer-header{
+    width: 10%;
+    min-width: 16px;
+  }y
+  .source-header{
+    width: 70%;
+  }
+  .mat-row.hovered {
+    background: #eee;
+  }
+  
+  .mat-row.highlighted {
+    background: #999;
+  }
+  .mat-row.selected{
+    background-color: red
+  }
+  /*
+    This is a work around for checkbox bug in material row
+    https://github.com/angular/material2/issues/8600
+  */
+  mat-cell.mat-cell, mat-header-cell.mat-header-cell {
+    overflow: visible; 
+  }
+.disable-select{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+

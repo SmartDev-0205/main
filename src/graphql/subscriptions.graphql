@@ -1,0 +1,3307 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateOrder {
+  onCreateOrder {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrder {
+  onUpdateOrder {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrder {
+  onDeleteOrder {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateOrderMessage {
+  onCreateOrderMessage {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrderMessage {
+  onUpdateOrderMessage {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrderMessage {
+  onDeleteOrderMessage {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateOrderPayment {
+  onCreateOrderPayment {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrderPayment {
+  onUpdateOrderPayment {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrderPayment {
+  onDeleteOrderPayment {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateClient {
+  onCreateClient {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateClient {
+  onUpdateClient {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteClient {
+  onDeleteClient {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProject {
+  onCreateProject {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProject {
+  onUpdateProject {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProject {
+  onDeleteProject {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateQuote {
+  onCreateQuote {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateQuote {
+  onUpdateQuote {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteQuote {
+  onDeleteQuote {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateItem {
+  onCreateItem {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateItem {
+  onUpdateItem {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteItem {
+  onDeleteItem {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateInvoice {
+  onCreateInvoice {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateInvoice {
+  onUpdateInvoice {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteInvoice {
+  onDeleteInvoice {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateJob {
+  onCreateJob {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateJob {
+  onUpdateJob {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteJob {
+  onDeleteJob {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSegment {
+  onCreateSegment {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSegment {
+  onUpdateSegment {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSegment {
+  onDeleteSegment {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSmallTask {
+  onCreateSmallTask {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSmallTask {
+  onUpdateSmallTask {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSmallTask {
+  onDeleteSmallTask {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProjectSmallTaskRelation {
+  onCreateProjectSmallTaskRelation {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectSmallTaskRelation {
+  onUpdateProjectSmallTaskRelation {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectSmallTaskRelation {
+  onDeleteProjectSmallTaskRelation {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateLink {
+  onCreateLink {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateLink {
+  onUpdateLink {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteLink {
+  onDeleteLink {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTeamInvite {
+  onCreateTeamInvite {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTeamInvite {
+  onUpdateTeamInvite {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTeamInvite {
+  onDeleteTeamInvite {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTeam {
+  onCreateTeam {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTeam {
+  onUpdateTeam {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTeam {
+  onDeleteTeam {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateEvent {
+  onCreateEvent {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateEvent {
+  onUpdateEvent {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteEvent {
+  onDeleteEvent {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateConversation {
+  onCreateConversation {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateConversation {
+  onUpdateConversation {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteConversation {
+  onDeleteConversation {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateMessage {
+  onCreateMessage {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateMessage {
+  onUpdateMessage {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteMessage {
+  onDeleteMessage {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCollection {
+  onCreateCollection {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCollection {
+  onUpdateCollection {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCollection {
+  onDeleteCollection {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateService {
+  onCreateService {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateService {
+  onUpdateService {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteService {
+  onDeleteService {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateRate {
+  onCreateRate {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateRate {
+  onUpdateRate {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteRate {
+  onDeleteRate {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateNetRate {
+  onCreateNetRate {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateNetRate {
+  onUpdateNetRate {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteNetRate {
+  onDeleteNetRate {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTransMemory {
+  onCreateTransMemory {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTransMemory {
+  onUpdateTransMemory {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTransMemory {
+  onDeleteTransMemory {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}

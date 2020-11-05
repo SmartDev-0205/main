@@ -1,0 +1,39 @@
+<ion-header> <strong>Split File</strong></ion-header>
+<mat-dialog-content>
+  <ion-row>
+    <ion-col size=6>
+      <ion-label>Total Segment:{{segments.length}}</ion-label>    
+    </ion-col>
+    <ion-col size = 6>
+      <ion-label>Word count : {{jobWordCount}}</ion-label>    
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size=2>
+      <div class="vertical-center">
+        <ion-label>Split File</ion-label>    
+      </div>
+    </ion-col>
+    <ion-col size = 6>
+      <div class="vertical-center" style="width: 80%;">
+        <mat-form-field>
+          <mat-select [(ngModel)]="method">
+            <mat-option value="option1">Every x segments</mat-option>
+            <mat-option value="option2">Every x words</mat-option>
+            <mat-option value="option3">Every equal words</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ion-col>
+    <ion-col size = 4>
+      <div class="vertical-center" style="padding-left: 20px;width: 100%;">
+        <!-- <input type="text" [(ngModel)]="value" style="width: 100%;"> -->
+        <ion-input type="text" class="edit-input" [(ngModel)]="value" style="width: 100%;"></ion-input>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div class="box">
+    <ion-button size=small (click)="onSplit()">Split File</ion-button>
+  </div>
+  
+</mat-dialog-content>

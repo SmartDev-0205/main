@@ -1,0 +1,53 @@
+@import '../../../../../theme/common-variable.scss';
+@import '../../../../../theme/common-style.scss';
+
+.description-col{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;   
+}
+ion-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.project-content{
+    padding: 10px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.trans-width {
+    width: 20%;
+}
+
+.edit-icon{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.header{
+    width: $contentPercent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box{
+    display: flex;
+    align-items: center;
+}
+.date-time{
+    padding: 0px;
+}
+.setting{
+    font-size: 25px;
+}
+.job-header{
+    display: flex;
+    justify-content: space-between;
+}

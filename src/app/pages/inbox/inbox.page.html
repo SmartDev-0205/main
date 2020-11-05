@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="control-buttons">
+    <ion-button class= "button" color="secondary" (click)="deleteEvents()" [routerDirection]="'root'" size="small" style="max-width: 70px;">Delete</ion-button>
+  </div>
+  <ion-card class="table-content">
+    <app-event-table class="table-style"></app-event-table>
+  </ion-card> 
+</ion-content>

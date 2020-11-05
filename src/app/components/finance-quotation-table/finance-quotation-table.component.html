@@ -1,0 +1,244 @@
+<div>
+  <div class="table-container big-table first-table">
+    <table mat-table [dataSource]="headerDataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="key">
+        <th mat-header-cell *matHeaderCellDef class="key-header"> 
+          Key
+        </th>
+      </ng-container>
+
+      <ng-container matColumnDef="project-quotation">
+        <th mat-header-cell *matHeaderCellDef class="project-quotation-header"> 
+          Quotation/Purchase Order/Sale Order
+        </th>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="headerDisplayedColumns" class="first-table-row"></tr>
+      <tr  mat-row *matRowDef="let row; columns: dearderDisplayedColumns;"></tr>
+    </table>
+ 
+ 
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 big-table second-table">
+      <ng-container matColumnDef="project-code" >
+        <th mat-header-cell *matHeaderCellDef class="project-code-header"> 
+          Project Code 
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getPorjectRowSpan(i) ? '' : 'none'" [attr.rowspan]="getPorjectRowSpan(i)"> 
+          {{element.projectCode}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="project-client-name">
+        <th mat-header-cell *matHeaderCellDef class="client-name-header"> 
+          Project Name
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getPorjectRowSpan(i) ? '' : 'none'" [attr.rowspan]="getPorjectRowSpan(i)"> 
+          <ion-label>{{element.projectName}}</ion-label>
+        </td> 
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-no-name">
+        <th mat-header-cell *matHeaderCellDef class="quotation-no-header"> 
+          No
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getQuoteRowSpan(i) ? '' : 'none'" [attr.rowspan]="getQuoteRowSpan(i)"> 
+          <ion-label>{{element.quotationNo}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-data-name">
+        <th mat-header-cell *matHeaderCellDef class="quotation-data-header"> 
+          Date(MMDDYY)
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getQuoteRowSpan(i) ? '' : 'none'" [attr.rowspan]="getQuoteRowSpan(i)"> 
+          <ion-label>{{element.quotationDate}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-customer-code">
+        <th mat-header-cell *matHeaderCellDef class="quotation-customer-code-header"> 
+          Customer Code
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getQuoteRowSpan(i) ? '' : 'none'" [attr.rowspan]="getQuoteRowSpan(i)"> 
+          <ion-label>{{element.quotationCustomerCode}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-customer-name">
+        <th mat-header-cell *matHeaderCellDef class="quotation-customer-name-header"> 
+          Customer Name
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getQuoteRowSpan(i) ? '' : 'none'" [attr.rowspan]="getQuoteRowSpan(i)"> 
+          <ion-label>{{element.clientName}}</ion-label>
+        </td>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="quotation-country">
+        <th mat-header-cell *matHeaderCellDef class="quotation-country-header"> 
+          Domestic / Oversea clients (Specify country)
+        </th>
+        <td mat-cell *matCellDef="let element let i = index" [style.display]="getQuoteRowSpan(i) ? '' : 'none'" [attr.rowspan]="getQuoteRowSpan(i)"> 
+          <ion-label>{{element.quotationCountry}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-service-type">
+        <th mat-header-cell *matHeaderCellDef class="quotation-service-type-header"> 
+          Service Type
+        </th>
+        <td mat-cell *matCellDef="let element let i = index"> 
+          <ion-label>{{element.quotationServiceType}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-description">
+        <th mat-header-cell *matHeaderCellDef class="quotation-description-header"> 
+          Description
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.description}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-duration">
+        <th mat-header-cell *matHeaderCellDef class="quotation-duration-header"> 
+          Work duration
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.quotationWorkDuration}}</ion-label>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="quotation-qty">
+        <th mat-header-cell *matHeaderCellDef class="quotation-qty-header"> 
+          Qty
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.quantity}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-unit">
+        <th mat-header-cell *matHeaderCellDef class="quotation-unit-header"> 
+          Unite(Word/page/etc)
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.unit}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-rate">
+        <th mat-header-cell *matHeaderCellDef class="quotation-rate-header"> 
+          Rate
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.pricePerUnit}}</ion-label>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="quotation-currency">
+        <th mat-header-cell *matHeaderCellDef class="quotation-currency-header"> 
+          Currency
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.currency}}</ion-label>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="quotation-sales-amount">
+        <th mat-header-cell *matHeaderCellDef class="quotation-sales-amount-header"> 
+          Sales amount
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.amount}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-fxrate">
+        <th mat-header-cell *matHeaderCellDef class="quotation-fxrate-header"> 
+          Fx rate
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getRate(element.currency)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-record-sales-amount">
+        <th mat-header-cell *matHeaderCellDef class="quotation-record-sales-amount-header"> 
+          Estimated Sales amount (THB) - (A)
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getEstimatedAmount(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-vat">
+        <th mat-header-cell *matHeaderCellDef class="quotation-vat-header"> 
+          VAT(B) = [(A)*7%]
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getVatAmount(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-total-charge">
+        <th mat-header-cell *matHeaderCellDef class="quotation-total-charge-header"> 
+          WHT( C ) = [(A)*3%
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getWhtAmount(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-project-manager-contact">
+        <th mat-header-cell *matHeaderCellDef class="quotation-project-manager-contact-header"> 
+          Estimated Total charge (THB) (D) =[(A)+(B)-( C)]
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{getTotalChargeAmount(element.currency,element.amount)}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-credit-term">
+        <th mat-header-cell *matHeaderCellDef class="quotation-crdit-term-header"> 
+          Credit Term
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.creditTerm}}</ion-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quotation-collection-term">
+        <th mat-header-cell *matHeaderCellDef class="quotation-collection-term-header"> 
+          Collection Term
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.collectionTerm}}</ion-label>
+        </td>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="quotation-collection-channel">
+        <th mat-header-cell *matHeaderCellDef class="quotation-collection-channel-header"> 
+          Collection channel
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.collectionChannel}}</ion-label>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="quotation-collection-detail">
+        <th mat-header-cell *matHeaderCellDef class="quotation-collection-detail-header"> 
+          Collection Detail
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <ion-label>{{element.collectionDetail}}</ion-label>
+        </td>
+      </ng-container> -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>     
+  </div>
+</div>

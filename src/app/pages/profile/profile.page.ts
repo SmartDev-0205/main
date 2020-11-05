@@ -1,66 +1,48 @@
 import {Component, OnInit} from "@angular/core";
-import {UserService} from "src/app/services/user.service";
-import {Profile} from "src/app/interfaces/profile.interface";
-
+import { UserService } from 'src/app/services/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as cloneDeep from "lodash/cloneDeep";
-
-import {trigger, transition, style, animate} from "@angular/animations";
-
+import { DataService } from 'src/app/services/data.service';
+import { ClientService } from 'src/app/services/client.service';
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.page.html",
   styleUrls: ["./profile.page.scss"],
-  animations: [
-    trigger("fadeInAnimation", [
-      transition(":enter", [
-        style({ opacity: "0" }),
-        animate(".5s ease-out", style({ opacity: "1" }))
-      ])
-    ]),
-
-    trigger("alertAnimation", [
-      transition(":enter", [
-        style({ transform: "translateY(100%)" }),
-        animate("400ms", style({ transform: "translateY(0%)" }))
-      ]),
-      transition(":leave", [
-        style({ transform: "translateY(0%)" }),
-        animate("400ms", style({ transform: "translateY(100%)" }))
-      ])
-    ])
-  ]
 })
 export class ProfilePage implements OnInit {
-  constructor(public user: UserService) {}
-
-  ngOnInit() {}
-
-  public userProfile: Profile = {};
-  ionViewWillEnter() {
-    this.user.refreshUser().then(() => {
-      this.userProfile = cloneDeep(this.user.profile$.getValue());
-    });
+  private userId = "";
+  private isManager = false;
+  constructor(
+    private  user: UserService,
+    private clientService:ClientService,
+    private route: ActivatedRoute,
+    private dataService:DataService,
+    private router:Router
+    ) {}
+  ngOnInit() {
+    this.route.params
+      .subscribe(
+        (params) => {
+          if(!params.id){
+            this.isManager = true;
+            this.userId = params.id;
+            this.user.refreshUser().then(() => {
+            let userprofile = cloneDeep(this.user.profile$.getValue());
+            this.dataService.changeProfileForSetting(userprofile);
+            this.dataService.changeUserIdForSetting("");
+          });
+        }
+        else{
+          let client = this.clientService.getClient(params.id).then((client) => {
+            if(!client)
+              return
+            this.dataService.changeProfileForSetting(client.profile);
+            this.dataService.changeUserIdForSetting(params.id);
+          });
+        }
+      });
   }
-
-  public editingProfile: boolean = false;
-
-  public saveProfile() {
-    this.user.updateProfile(this.userProfile);
-    this.editingProfile = false;
+  back(){
+    this.router.navigateByUrl("client/clients");
   }
-
-  private cancelEditing() {
-    this.userProfile = cloneDeep(this.user.profile$.getValue());
-    this.editingProfile = false;
-  }
-
-  public toggleEditing() {
-    if (!this.editingProfile) {
-      this.editingProfile = true;
-      return;
-    } else {
-      this.cancelEditing();
-    }
-  }
-
 }

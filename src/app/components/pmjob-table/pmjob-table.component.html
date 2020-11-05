@@ -1,0 +1,91 @@
+<div>
+  <div class="table-container">
+    <table  mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="select" >
+        <th mat-header-cell *matHeaderCellDef class="selection-header">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="ID" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="id-header"> 
+          ID 
+        </th>
+        <td mat-cell *matCellDef="let i = index"> 
+          {{ i + 1 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="progress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="progress-header"> 
+          Progress 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ getProgress(element.process,currentService) }}
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="name" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="name-header"> 
+          Name 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.filename }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="due" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="due-header"> 
+          Due
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <!-- {{ element.due }} -->
+          <!-- <ion-datetime class ="edit-input none-padding" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" displayFormat="D MMM H:mm" min="2020" max="2100" [(ngModel)]="element.due"></ion-datetime> -->
+          <mat-form-field class ="edit-input none-padding" [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}">
+            <input matInput [ngxMatDatetimePicker]="picker" 
+                            placeholder="Choose a date" 
+                            [disabled]="!isEditable" [(ngModel)]="element.due">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker>
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="target" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="target-header"> 
+          Target
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <!-- {{ element.target}} -->
+          <ion-input [ngClass]="{'no-editable-edit-input':  isEditable == false,'edit-input':  isEditable == true}" type="text" [(ngModel)]="element.target"></ion-input>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="manager"  >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="manager-header"> 
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          <!-- <ion-icon ios="ios-download" md="md-download" (click)="download(element)"></ion-icon> -->
+          <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let service of allServices" (click)="download(element,service)">{{service}}</button>
+          </mat-menu>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

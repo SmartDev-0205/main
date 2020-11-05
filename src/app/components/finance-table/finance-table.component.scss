@@ -1,0 +1,50 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+.code-header{
+    width: 15%;
+}
+
+.issued-header{
+    width: 15%;
+}
+
+.client-header{
+    width: 15%;
+}
+
+.total-header{
+    width: 15%;
+}
+
+.currency-header{
+    width: 12%;
+}
+
+.status-header{
+    width: 15%;
+}
+.manager-header{
+    width: 3%;
+}
+.flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.manage-div{
+    padding-right: 5PX!important;
+}
+ion-icon{
+    font-size: 20px;
+}

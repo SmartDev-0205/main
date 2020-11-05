@@ -1,0 +1,47 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.header{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.white-content{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.footer{
+    display: flex;
+    justify-content: flex-end;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .main-container{
+        width: 60%;
+    }
+    ion-input{
+        border-bottom: solid 1px;
+    }
+    .unit-editor{
+        margin-top:20px;
+        display: flex;
+        justify-content: space-between;
+        ion-input{
+            --padding-bottom:3px;
+        }
+    }
+    .there-element{
+        width: 30%;
+    }
+    .input-padding{
+        margin-bottom: 20px;
+    }
+}

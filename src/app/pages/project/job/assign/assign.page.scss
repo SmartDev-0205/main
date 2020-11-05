@@ -1,0 +1,81 @@
+@import '../../../../../theme/common-variable.scss';
+@import '../../../../../theme/common-style.scss';
+ion-col{
+    display: flex;
+    justify-content: flex-start;
+}
+mat-form-field{
+    max-width: 250px;
+}
+.project-content{
+    padding: 10px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.edit-icon{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.header{
+    width: $contentPercent;
+}
+.mat-dialog-container{
+    padding: 0px!important;
+}
+.full-width{
+    width: 100%;
+}
+.freelancer-manage-content{
+
+    align-items: flex-start;
+}
+.freelancer-manage-content{
+    padding-left: 10px;
+    flex-direction: column;
+}
+.freelancer-header{
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+}
+ion-icon{
+    width: 25px;
+    height: 25px;
+}
+.one-freelancer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.edit-input{
+    padding-top: 4px;
+    max-width: 50px;
+}
+.freelancer-content{
+    width: 100%;
+}
+.source-content{
+    height: 50vh;
+    overflow: auto;
+    width: 100%;
+}
+.apply-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.field-style{
+    margin-bottom: -4px;
+}
+.space-style{
+    margin-left: 10px;
+}

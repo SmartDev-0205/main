@@ -1,0 +1,41 @@
+<ion-content >
+  <div class="project-content">
+    <div class="header">
+      <ion-label>New Service</ion-label>
+    </div>
+    <div class="main-content">
+      <ion-input type="text" [(ngModel)]="serviceName" placeholder="Name"></ion-input>
+      <ion-input type="text" [(ngModel)]="serviceDescription" placeholder="Description"></ion-input>
+
+      <div cdkDropListGroup>
+        <div class="services-container">
+          <h2>Work Flow</h2>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="workflow"
+            class="workflow-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="workflow-box" *ngFor="let item of workflow" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      
+        <div class="services-container">
+          <h2>Services</h2>
+          <div
+            cdkDropList
+            [cdkDropListData]="allServices" 
+            class="services-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="service-box" *ngFor="let item of allServices" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <ion-button size="small" (click)="save()">Save</ion-button>        
+        <ion-button size="small" (click)="cancel()">Cancel</ion-button>        
+      </div>
+
+    </div>
+  </div>
+</ion-content>

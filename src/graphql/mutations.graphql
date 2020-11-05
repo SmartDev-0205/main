@@ -1,0 +1,3523 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateOrder(
+  $input: CreateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  createOrder(input: $input, condition: $condition) {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrder(
+  $input: UpdateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  updateOrder(input: $input, condition: $condition) {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrder(
+  $input: DeleteOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  deleteOrder(input: $input, condition: $condition) {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateOrderMessage(
+  $input: CreateOrderMessageInput!
+  $condition: ModelOrderMessageConditionInput
+) {
+  createOrderMessage(input: $input, condition: $condition) {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrderMessage(
+  $input: UpdateOrderMessageInput!
+  $condition: ModelOrderMessageConditionInput
+) {
+  updateOrderMessage(input: $input, condition: $condition) {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrderMessage(
+  $input: DeleteOrderMessageInput!
+  $condition: ModelOrderMessageConditionInput
+) {
+  deleteOrderMessage(input: $input, condition: $condition) {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateOrderPayment(
+  $input: CreateOrderPaymentInput!
+  $condition: ModelOrderPaymentConditionInput
+) {
+  createOrderPayment(input: $input, condition: $condition) {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrderPayment(
+  $input: UpdateOrderPaymentInput!
+  $condition: ModelOrderPaymentConditionInput
+) {
+  updateOrderPayment(input: $input, condition: $condition) {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrderPayment(
+  $input: DeleteOrderPaymentInput!
+  $condition: ModelOrderPaymentConditionInput
+) {
+  deleteOrderPayment(input: $input, condition: $condition) {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateClient(
+  $input: CreateClientInput!
+  $condition: ModelClientConditionInput
+) {
+  createClient(input: $input, condition: $condition) {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateClient(
+  $input: UpdateClientInput!
+  $condition: ModelClientConditionInput
+) {
+  updateClient(input: $input, condition: $condition) {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteClient(
+  $input: DeleteClientInput!
+  $condition: ModelClientConditionInput
+) {
+  deleteClient(input: $input, condition: $condition) {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProject(
+  $input: CreateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  createProject(input: $input, condition: $condition) {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProject(
+  $input: UpdateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  updateProject(input: $input, condition: $condition) {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProject(
+  $input: DeleteProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  deleteProject(input: $input, condition: $condition) {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateQuote(
+  $input: CreateQuoteInput!
+  $condition: ModelQuoteConditionInput
+) {
+  createQuote(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateQuote(
+  $input: UpdateQuoteInput!
+  $condition: ModelQuoteConditionInput
+) {
+  updateQuote(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteQuote(
+  $input: DeleteQuoteInput!
+  $condition: ModelQuoteConditionInput
+) {
+  deleteQuote(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateItem(
+  $input: CreateItemInput!
+  $condition: ModelItemConditionInput
+) {
+  createItem(input: $input, condition: $condition) {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateItem(
+  $input: UpdateItemInput!
+  $condition: ModelItemConditionInput
+) {
+  updateItem(input: $input, condition: $condition) {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteItem(
+  $input: DeleteItemInput!
+  $condition: ModelItemConditionInput
+) {
+  deleteItem(input: $input, condition: $condition) {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateInvoice(
+  $input: CreateInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  createInvoice(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateInvoice(
+  $input: UpdateInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  updateInvoice(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteInvoice(
+  $input: DeleteInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  deleteInvoice(input: $input, condition: $condition) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateJob(
+  $input: CreateJobInput!
+  $condition: ModelJobConditionInput
+) {
+  createJob(input: $input, condition: $condition) {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateJob(
+  $input: UpdateJobInput!
+  $condition: ModelJobConditionInput
+) {
+  updateJob(input: $input, condition: $condition) {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteJob(
+  $input: DeleteJobInput!
+  $condition: ModelJobConditionInput
+) {
+  deleteJob(input: $input, condition: $condition) {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSegment(
+  $input: CreateSegmentInput!
+  $condition: ModelSegmentConditionInput
+) {
+  createSegment(input: $input, condition: $condition) {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSegment(
+  $input: UpdateSegmentInput!
+  $condition: ModelSegmentConditionInput
+) {
+  updateSegment(input: $input, condition: $condition) {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSegment(
+  $input: DeleteSegmentInput!
+  $condition: ModelSegmentConditionInput
+) {
+  deleteSegment(input: $input, condition: $condition) {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSmallTask(
+  $input: CreateSmallTaskInput!
+  $condition: ModelSmallTaskConditionInput
+) {
+  createSmallTask(input: $input, condition: $condition) {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSmallTask(
+  $input: UpdateSmallTaskInput!
+  $condition: ModelSmallTaskConditionInput
+) {
+  updateSmallTask(input: $input, condition: $condition) {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSmallTask(
+  $input: DeleteSmallTaskInput!
+  $condition: ModelSmallTaskConditionInput
+) {
+  deleteSmallTask(input: $input, condition: $condition) {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectSmallTaskRelation(
+  $input: CreateProjectSmallTaskRelationInput!
+  $condition: ModelProjectSmallTaskRelationConditionInput
+) {
+  createProjectSmallTaskRelation(input: $input, condition: $condition) {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectSmallTaskRelation(
+  $input: UpdateProjectSmallTaskRelationInput!
+  $condition: ModelProjectSmallTaskRelationConditionInput
+) {
+  updateProjectSmallTaskRelation(input: $input, condition: $condition) {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectSmallTaskRelation(
+  $input: DeleteProjectSmallTaskRelationInput!
+  $condition: ModelProjectSmallTaskRelationConditionInput
+) {
+  deleteProjectSmallTaskRelation(input: $input, condition: $condition) {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateLink(
+  $input: CreateLinkInput!
+  $condition: ModellinkConditionInput
+) {
+  createLink(input: $input, condition: $condition) {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateLink(
+  $input: UpdateLinkInput!
+  $condition: ModellinkConditionInput
+) {
+  updateLink(input: $input, condition: $condition) {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteLink(
+  $input: DeleteLinkInput!
+  $condition: ModellinkConditionInput
+) {
+  deleteLink(input: $input, condition: $condition) {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateTeamInvite(
+  $input: CreateTeamInviteInput!
+  $condition: ModelTeamInviteConditionInput
+) {
+  createTeamInvite(input: $input, condition: $condition) {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTeamInvite(
+  $input: UpdateTeamInviteInput!
+  $condition: ModelTeamInviteConditionInput
+) {
+  updateTeamInvite(input: $input, condition: $condition) {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTeamInvite(
+  $input: DeleteTeamInviteInput!
+  $condition: ModelTeamInviteConditionInput
+) {
+  deleteTeamInvite(input: $input, condition: $condition) {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateTeam(
+  $input: CreateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  createTeam(input: $input, condition: $condition) {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTeam(
+  $input: UpdateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  updateTeam(input: $input, condition: $condition) {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTeam(
+  $input: DeleteTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  deleteTeam(input: $input, condition: $condition) {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateEvent(
+  $input: CreateEventInput!
+  $condition: ModelEventConditionInput
+) {
+  createEvent(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateEvent(
+  $input: UpdateEventInput!
+  $condition: ModelEventConditionInput
+) {
+  updateEvent(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteEvent(
+  $input: DeleteEventInput!
+  $condition: ModelEventConditionInput
+) {
+  deleteEvent(input: $input, condition: $condition) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateConversation(
+  $input: CreateConversationInput!
+  $condition: ModelConversationConditionInput
+) {
+  createConversation(input: $input, condition: $condition) {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateConversation(
+  $input: UpdateConversationInput!
+  $condition: ModelConversationConditionInput
+) {
+  updateConversation(input: $input, condition: $condition) {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteConversation(
+  $input: DeleteConversationInput!
+  $condition: ModelConversationConditionInput
+) {
+  deleteConversation(input: $input, condition: $condition) {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateMessage(
+  $input: CreateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  createMessage(input: $input, condition: $condition) {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateMessage(
+  $input: UpdateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  updateMessage(input: $input, condition: $condition) {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteMessage(
+  $input: DeleteMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  deleteMessage(input: $input, condition: $condition) {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCollection(
+  $input: CreateCollectionInput!
+  $condition: ModelCollectionConditionInput
+) {
+  createCollection(input: $input, condition: $condition) {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCollection(
+  $input: UpdateCollectionInput!
+  $condition: ModelCollectionConditionInput
+) {
+  updateCollection(input: $input, condition: $condition) {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCollection(
+  $input: DeleteCollectionInput!
+  $condition: ModelCollectionConditionInput
+) {
+  deleteCollection(input: $input, condition: $condition) {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateService(
+  $input: CreateServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  createService(input: $input, condition: $condition) {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateService(
+  $input: UpdateServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  updateService(input: $input, condition: $condition) {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteService(
+  $input: DeleteServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  deleteService(input: $input, condition: $condition) {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateRate(
+  $input: CreateRateInput!
+  $condition: ModelRateConditionInput
+) {
+  createRate(input: $input, condition: $condition) {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateRate(
+  $input: UpdateRateInput!
+  $condition: ModelRateConditionInput
+) {
+  updateRate(input: $input, condition: $condition) {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteRate(
+  $input: DeleteRateInput!
+  $condition: ModelRateConditionInput
+) {
+  deleteRate(input: $input, condition: $condition) {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateNetRate(
+  $input: CreateNetRateInput!
+  $condition: ModelnetRateConditionInput
+) {
+  createNetRate(input: $input, condition: $condition) {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateNetRate(
+  $input: UpdateNetRateInput!
+  $condition: ModelnetRateConditionInput
+) {
+  updateNetRate(input: $input, condition: $condition) {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteNetRate(
+  $input: DeleteNetRateInput!
+  $condition: ModelnetRateConditionInput
+) {
+  deleteNetRate(input: $input, condition: $condition) {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateTransMemory(
+  $input: CreateTransMemoryInput!
+  $condition: ModelTransMemoryConditionInput
+) {
+  createTransMemory(input: $input, condition: $condition) {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTransMemory(
+  $input: UpdateTransMemoryInput!
+  $condition: ModelTransMemoryConditionInput
+) {
+  updateTransMemory(input: $input, condition: $condition) {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTransMemory(
+  $input: DeleteTransMemoryInput!
+  $condition: ModelTransMemoryConditionInput
+) {
+  deleteTransMemory(input: $input, condition: $condition) {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}

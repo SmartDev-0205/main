@@ -3,7 +3,6 @@
 	font-size: 12px;
 	font-family: Roboto, "Helvetica Neue", sans-serif
 }
-#275d8d
 .mat-badge-small .mat-badge-content {
 	font-size: 9px
 }
@@ -1752,7 +1751,7 @@ th.mat-header-cell {
 }
 
 .mat-dialog-container {
-	box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+	box-shadow: 0 11px 15px -7px rgba(212, 181, 181, 0.2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
 	background: #fff;
 	color: rgba(0, 0, 0, .87)
 }

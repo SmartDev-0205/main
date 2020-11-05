@@ -1,0 +1,52 @@
+<ion-tabs class="tab-padding">
+  <ion-tab-bar class="tab-bar" slot="top" class="xl-left">
+    <div class="ribbon-box" *ngIf="getClientFinaceRole()">
+      <div class="buttons">
+        <ion-tab-button [ngClass]="{'selected-button':selectedStr=='client-quotation'}" (click)="quoteSelect()">
+          <ion-label>Quotation</ion-label>
+        </ion-tab-button>
+        <ion-tab-button [ngClass]="{'selected-button':selectedStr=='client-invoice'}" (click)="invoiceSelect()">
+          <ion-label>Invoices</ion-label>
+        </ion-tab-button>
+        <!-- <ion-tab-button (click)="invoiceSelect()"> -->
+          <!-- <ion-label>Invoices</ion-label> -->
+        <!-- </ion-tab-button> -->
+        <!-- <ion-tab-button (click)="quoteSelect()"> -->
+          <!-- <ion-label>Quotation</ion-label> -->
+        <!-- </ion-tab-button> -->
+      </div>
+      <div class="ribbon-name">
+        <ion-label>Clients</ion-label>
+      </div>
+    </div>
+    <div class="ribbon-box" *ngIf="getSupplierFianceRole()">
+      <div class="buttons">
+        <ion-tab-button [ngClass]="{'selected-button':selectedStr=='supplier-pucharorder'}" (click)="supplierPuchaseSelect()">
+          <ion-label>Purchase Order</ion-label>
+        </ion-tab-button>
+        <ion-tab-button [ngClass]="{'selected-button':selectedStr=='supplier-invoice'}" (click)="supplierInvoice()">
+          <ion-label>Invoice</ion-label>
+        </ion-tab-button>
+      </div>
+      <div class="ribbon-name">
+        <ion-label>Supplier</ion-label>
+      </div>
+    </div>
+    <div class="ribbon-box" *ngIf="getPaymentRole()">
+      <div class="buttons">
+        <ion-tab-button  [ngClass]="{'selected-button':selectedStr=='paymnet'}" (click)="summaryPayment()">
+          <ion-label>Balances</ion-label>
+          <!-- old name was payments so component name is payment -->
+        </ion-tab-button>
+        <ion-tab-button  [ngClass]="{'selected-button':selectedStr=='balance'}" (click)="summaryBalance()">
+          <ion-label>Incomes/Expenses</ion-label>
+          <!-- old name was Balances so component name is Balances -->
+        </ion-tab-button>
+      </div>
+      <div class="ribbon-name">
+        <ion-label>Reports</ion-label>
+        <!-- old name was Summary so component name is summmary -->
+      </div>
+    </div>
+  </ion-tab-bar>
+</ion-tabs>

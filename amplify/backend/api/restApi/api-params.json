@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/email",
+            "lambdaFunction": "restApi",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "restApi",
+    "apiName": "restApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "restApi"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-main-prod-93217-authRole",
+        "unAuthRoleName": "amplify-main-prod-93217-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "restApi",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

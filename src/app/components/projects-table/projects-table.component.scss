@@ -2,7 +2,7 @@
   overflow-x: auto;
 
   table {
-    width: 1700px;
+    width: 100%;
   }
 }
 .mat-row.ng-star-inserted{
@@ -10,4 +10,29 @@
   // :hover{
   //   background-color: grey;
   // }
+}
+.selection-header{
+  width: 5%;
+}
+.id-header{
+  width: 5%;
+}
+.name-header{
+  width: 30%;
+}
+.status-header{
+  width: 10%;
+}
+.type-header{
+  width: 25%;
+}
+.client-header{
+  width: 10%;
+}
+.manager-header{
+  width: 10%;
+}
+.duedate-header{
+  width: 15%;
+
 }

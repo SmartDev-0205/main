@@ -1,0 +1,3421 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    role
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrder($id: ID!) {
+  getOrder(id: $id) {
+    id
+    clientId
+    orderName
+    orderServices
+    orderSourceLanguage
+    orderTargetLanguage
+    orderSubject
+    orderDeadline
+    orderQuntity
+    orderUnit
+    orderBestRate
+    orderCurrency
+    orderProjectMore
+    createdAt
+    updatedAt
+  }
+}
+query ListOrders(
+  $filter: ModelOrderFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      clientId
+      orderName
+      orderServices
+      orderSourceLanguage
+      orderTargetLanguage
+      orderSubject
+      orderDeadline
+      orderQuntity
+      orderUnit
+      orderBestRate
+      orderCurrency
+      orderProjectMore
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrderMessage($id: ID!) {
+  getOrderMessage(id: $id) {
+    id
+    content
+    orderId
+    senderId
+    recepterID
+    isRead
+    time
+    createdAt
+    updatedAt
+  }
+}
+query ListOrderMessages(
+  $filter: ModelOrderMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrderMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      content
+      orderId
+      senderId
+      recepterID
+      isRead
+      time
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrderPayment($id: ID!) {
+  getOrderPayment(id: $id) {
+    id
+    orderId
+    description
+    date
+    status
+    amount
+    createdAt
+    updatedAt
+  }
+}
+query ListOrderPayments(
+  $filter: ModelOrderPaymentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrderPayments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      orderId
+      description
+      date
+      status
+      amount
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetClient($id: ID!) {
+  getClient(id: $id) {
+    id
+    managerId
+    profile {
+      accountType
+      companyName
+      legalName
+      website
+      taxNumber
+      vatNumber
+      country
+      companyAddress
+      Zip
+      about
+      givenName
+      familyName
+      gender
+      position
+      email
+      tel
+      whatsapp
+      wechat
+      line
+      qq
+      telegram
+      slack
+      viber
+      note
+      timezone
+      rate
+      customerCode
+      customerName
+      logoKey
+      paymentTerm
+      paymentMethod
+      dayOption
+      payDay
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListClients(
+  $filter: ModelClientFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listClients(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    projectCode
+    clientId
+    client {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    pmId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    name
+    description
+    budget
+    approvedBudget
+    sourceLanguage
+    targetLanguage
+    serviceType
+    dueDate
+    status
+    developmentStatus
+    paymentStatus
+    quotes {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    invoices {
+      items {
+        id
+        direction
+        projectId
+        companyName
+        companyAddress
+        taxId
+        tel
+        mobile
+        siteUrl
+        clientName
+        documentNo
+        date
+        credit
+        dueDate
+        seller
+        reference
+        projectName
+        total
+        discount
+        totalAfterDiscount
+        vat
+        grandTotal
+        remark
+        status
+        collectionTerm
+        financeString
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    jobs {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    transMemory
+    transMemoryNames
+    createdAt
+    updatedAt
+  }
+}
+query ListProjects(
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetQuote($id: ID!) {
+  getQuote(id: $id) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+query ListQuotes(
+  $filter: ModelQuoteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetItem($id: ID!) {
+  getItem(id: $id) {
+    id
+    paymentId
+    services
+    languages
+    stratDate
+    deliveryDate
+    description
+    quantity
+    unit
+    pricePerUnit
+    amount
+    currency
+    createdAt
+    updatedAt
+  }
+}
+query ListItems(
+  $filter: ModelItemFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      paymentId
+      services
+      languages
+      stratDate
+      deliveryDate
+      description
+      quantity
+      unit
+      pricePerUnit
+      amount
+      currency
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetInvoice($id: ID!) {
+  getInvoice(id: $id) {
+    id
+    direction
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    companyName
+    companyAddress
+    taxId
+    tel
+    mobile
+    siteUrl
+    clientName
+    documentNo
+    date
+    credit
+    dueDate
+    seller
+    reference
+    projectName
+    total
+    discount
+    totalAfterDiscount
+    vat
+    grandTotal
+    remark
+    items {
+      items {
+        id
+        paymentId
+        services
+        languages
+        stratDate
+        deliveryDate
+        description
+        quantity
+        unit
+        pricePerUnit
+        amount
+        currency
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    status
+    collectionTerm
+    financeString
+    createdAt
+    updatedAt
+  }
+}
+query ListInvoices(
+  $filter: ModelInvoiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInvoices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetJob($id: ID!) {
+  getJob(id: $id) {
+    id
+    projectId
+    filename
+    service
+    wordCount
+    tasks {
+      items {
+        id
+        jobId
+        projectId
+        wordsCount
+        serviceName
+        freelancerId
+        rate
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    due
+    source
+    target
+    segments {
+      items {
+        id
+        jobId
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    process {
+      serviceName
+      progress
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+query ListJobs($filter: ModelJobFilterInput, $limit: Int, $nextToken: String) {
+  listJobs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      projectId
+      filename
+      service
+      wordCount
+      tasks {
+        nextToken
+      }
+      due
+      source
+      target
+      segments {
+        nextToken
+      }
+      process {
+        serviceName
+        progress
+      }
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetSegment($id: ID!) {
+  getSegment(id: $id) {
+    id
+    jobId
+    source
+    target
+    status
+    segmentService {
+      serviceName
+      target
+      freelancerId
+      status
+      freelancerEmail
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListSegments(
+  $filter: ModelSegmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSegments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      jobId
+      source
+      target
+      status
+      segmentService {
+        serviceName
+        target
+        freelancerId
+        status
+        freelancerEmail
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetSmallTask($id: ID!) {
+  getSmallTask(id: $id) {
+    id
+    jobId
+    job {
+      items {
+        id
+        projectId
+        filename
+        service
+        wordCount
+        due
+        source
+        target
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    projectId
+    wordsCount
+    serviceName
+    freelancerId
+    freelancer {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    tasks {
+      start
+      end
+      stringOfTask
+    }
+    rate
+    status
+    createdAt
+    updatedAt
+  }
+}
+query ListSmallTasks(
+  $filter: ModelSmallTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSmallTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      jobId
+      job {
+        nextToken
+      }
+      projectId
+      wordsCount
+      serviceName
+      freelancerId
+      freelancer {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      tasks {
+        start
+        end
+        stringOfTask
+      }
+      rate
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectSmallTaskRelation($id: ID!) {
+  getProjectSmallTaskRelation(id: $id) {
+    id
+    freelancerId
+    projectId
+    project {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    smallTaskId
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectSmallTaskRelations(
+  $filter: ModelProjectSmallTaskRelationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectSmallTaskRelations(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      freelancerId
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      smallTaskId
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetLink($id: ID!) {
+  getLink(id: $id) {
+    id
+    name
+    url
+    status
+    createdAt
+    updatedAt
+  }
+}
+query ListLinks(
+  $filter: ModellinkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLinks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      url
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTeamInvite($id: ID!) {
+  getTeamInvite(id: $id) {
+    id
+    teamId
+    userId
+    team {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+query ListTeamInvites(
+  $filter: ModelTeamInviteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTeamInvites(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      teamId
+      userId
+      team {
+        id
+        managerId
+        teamName
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTeam($id: ID!) {
+  getTeam(id: $id) {
+    id
+    managerId
+    teamName
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    invites {
+      items {
+        id
+        teamId
+        userId
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListTeams(
+  $filter: ModelTeamFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTeams(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetEvent($id: ID!) {
+  getEvent(id: $id) {
+    id
+    userId
+    user {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    managerId
+    manager {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    textContent
+    link
+    type
+    flagShowHide
+    createdAt
+    updatedAt
+  }
+}
+query ListEvents(
+  $filter: ModelEventFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      managerId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      textContent
+      link
+      type
+      flagShowHide
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetConversation($id: ID!) {
+  getConversation(id: $id) {
+    id
+    nextConversation
+    firstUserId
+    secondUserId
+    secondUser {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    messages {
+      items {
+        id
+        content
+        conversationId
+        senderId
+        recepterID
+        isRead
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    badge
+    createdAt
+    updatedAt
+  }
+}
+query ListConversations(
+  $filter: ModelConversationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listConversations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nextConversation
+      firstUserId
+      secondUserId
+      secondUser {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      messages {
+        nextToken
+      }
+      badge
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMessage($id: ID!) {
+  getMessage(id: $id) {
+    id
+    content
+    conversationId
+    senderId
+    recepterID
+    isRead
+    createdAt
+    updatedAt
+  }
+}
+query ListMessages(
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      content
+      conversationId
+      senderId
+      recepterID
+      isRead
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetCollection($id: ID!) {
+  getCollection(id: $id) {
+    id
+    method
+    bankDate
+    netAmount
+    currency
+    fxrate
+    amount
+    managerId
+    createdAt
+    updatedAt
+  }
+}
+query ListCollections(
+  $filter: ModelCollectionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      method
+      bankDate
+      netAmount
+      currency
+      fxrate
+      amount
+      managerId
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetService($id: ID!) {
+  getService(id: $id) {
+    id
+    managerId
+    name
+    description
+    workflow
+    createdAt
+    updatedAt
+  }
+}
+query ListServices(
+  $filter: ModelServiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      managerId
+      name
+      description
+      workflow
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetRate($id: ID!) {
+  getRate(id: $id) {
+    id
+    managerId
+    clientId
+    clientName
+    service
+    languagePair
+    specialization
+    rate
+    currency
+    unit
+    createdAt
+    updatedAt
+  }
+}
+query ListRates(
+  $filter: ModelRateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      managerId
+      clientId
+      clientName
+      service
+      languagePair
+      specialization
+      rate
+      currency
+      unit
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetNetRate($id: ID!) {
+  getNetRate(id: $id) {
+    id
+    clientId
+    tmRepetitions
+    mtRepetitions
+    tmOverHundred
+    mtOverHundred
+    tmHundred
+    mthundred
+    tmNineFive
+    mtNineFive
+    tmEightFive
+    mtEightFive
+    tmSevenFive
+    mtSevenFive
+    tmFive
+    mtFive
+    tmNewWord
+    mtNewWord
+    createdAt
+    updatedAt
+  }
+}
+query ListNetRates(
+  $filter: ModelnetRateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listNetRates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      clientId
+      tmRepetitions
+      mtRepetitions
+      tmOverHundred
+      mtOverHundred
+      tmHundred
+      mthundred
+      tmNineFive
+      mtNineFive
+      tmEightFive
+      mtEightFive
+      tmSevenFive
+      mtSevenFive
+      tmFive
+      mtFive
+      tmNewWord
+      mtNewWord
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTransMemory($id: ID!) {
+  getTransMemory(id: $id) {
+    id
+    managerId
+    filename
+    name
+    source
+    target
+    clientId
+    clientName
+    createdAt
+    updatedAt
+  }
+}
+query ListTransMemorys(
+  $filter: ModelTransMemoryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTransMemorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      managerId
+      filename
+      name
+      source
+      target
+      clientId
+      clientName
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUsersByUserRole(
+  $role: String
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getUsersByUserRole(
+    role: $role
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      role
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetClientOrder(
+  $clientId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrderFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getClientOrder(
+    clientId: $clientId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      clientId
+      orderName
+      orderServices
+      orderSourceLanguage
+      orderTargetLanguage
+      orderSubject
+      orderDeadline
+      orderQuntity
+      orderUnit
+      orderBestRate
+      orderCurrency
+      orderProjectMore
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMessageByOrderId(
+  $orderId: ID
+  $createdAt: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrderMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getMessageByOrderId(
+    orderId: $orderId
+    createdAt: $createdAt
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      content
+      orderId
+      senderId
+      recepterID
+      isRead
+      time
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrderPaymentByOrderId(
+  $orderId: ID
+  $createdAt: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrderPaymentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getOrderPaymentByOrderId(
+    orderId: $orderId
+    createdAt: $createdAt
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      orderId
+      description
+      date
+      status
+      amount
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetClientsByManagerId(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelClientFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getClientsByManagerId(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      profile {
+        accountType
+        companyName
+        legalName
+        website
+        taxNumber
+        vatNumber
+        country
+        companyAddress
+        Zip
+        about
+        givenName
+        familyName
+        gender
+        position
+        email
+        tel
+        whatsapp
+        wechat
+        line
+        qq
+        telegram
+        slack
+        viber
+        note
+        timezone
+        rate
+        customerCode
+        customerName
+        logoKey
+        paymentTerm
+        paymentMethod
+        dayOption
+        payDay
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectsByClientId(
+  $clientId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getProjectsByClientId(
+    clientId: $clientId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectsByPmId(
+  $pmId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getProjectsByPmId(
+    pmId: $pmId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      projectCode
+      clientId
+      client {
+        id
+        managerId
+        createdAt
+        updatedAt
+      }
+      pmId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      name
+      description
+      budget
+      approvedBudget
+      sourceLanguage
+      targetLanguage
+      serviceType
+      dueDate
+      status
+      developmentStatus
+      paymentStatus
+      quotes {
+        nextToken
+      }
+      invoices {
+        nextToken
+      }
+      jobs {
+        nextToken
+      }
+      transMemory
+      transMemoryNames
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetQuotesByporjectId(
+  $projectId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelQuoteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getQuotesByporjectId(
+    projectId: $projectId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetQuotesByporjectIdAndDirection(
+  $projectId: ID
+  $direction: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelQuoteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getQuotesByporjectIdAndDirection(
+    projectId: $projectId
+    direction: $direction
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetItemsByQuote(
+  $paymentId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelItemFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getItemsByQuote(
+    paymentId: $paymentId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      paymentId
+      services
+      languages
+      stratDate
+      deliveryDate
+      description
+      quantity
+      unit
+      pricePerUnit
+      amount
+      currency
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetInvoiceByporjectId(
+  $projectId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelInvoiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getInvoiceByporjectId(
+    projectId: $projectId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetInvoiceByporjectIdAndDirection(
+  $projectId: ID
+  $direction: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelInvoiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getInvoiceByporjectIdAndDirection(
+    projectId: $projectId
+    direction: $direction
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      direction
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      companyName
+      companyAddress
+      taxId
+      tel
+      mobile
+      siteUrl
+      clientName
+      documentNo
+      date
+      credit
+      dueDate
+      seller
+      reference
+      projectName
+      total
+      discount
+      totalAfterDiscount
+      vat
+      grandTotal
+      remark
+      items {
+        nextToken
+      }
+      status
+      collectionTerm
+      financeString
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetJobsByProjectId(
+  $projectId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelJobFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getJobsByProjectId(
+    projectId: $projectId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      projectId
+      filename
+      service
+      wordCount
+      tasks {
+        nextToken
+      }
+      due
+      source
+      target
+      segments {
+        nextToken
+      }
+      process {
+        serviceName
+        progress
+      }
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetSegmetsByJobId(
+  $jobId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelSegmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getSegmetsByJobId(
+    jobId: $jobId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      jobId
+      source
+      target
+      status
+      segmentService {
+        serviceName
+        target
+        freelancerId
+        status
+        freelancerEmail
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTasksByJobId(
+  $jobId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelSmallTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTasksByJobId(
+    jobId: $jobId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      jobId
+      job {
+        nextToken
+      }
+      projectId
+      wordsCount
+      serviceName
+      freelancerId
+      freelancer {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      tasks {
+        start
+        end
+        stringOfTask
+      }
+      rate
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTasksByJobIdAndService(
+  $jobId: ID
+  $serviceName: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelSmallTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTasksByJobIdAndService(
+    jobId: $jobId
+    serviceName: $serviceName
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      jobId
+      job {
+        nextToken
+      }
+      projectId
+      wordsCount
+      serviceName
+      freelancerId
+      freelancer {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      tasks {
+        start
+        end
+        stringOfTask
+      }
+      rate
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTasksByfreelancerId(
+  $freelancerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelSmallTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTasksByfreelancerId(
+    freelancerId: $freelancerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      jobId
+      job {
+        nextToken
+      }
+      projectId
+      wordsCount
+      serviceName
+      freelancerId
+      freelancer {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      tasks {
+        start
+        end
+        stringOfTask
+      }
+      rate
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTasksByfreelancerIdAndUserId(
+  $jobId: ID
+  $freelancerId: ModelIDKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelSmallTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTasksByfreelancerIdAndUserID(
+    jobId: $jobId
+    freelancerId: $freelancerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      jobId
+      job {
+        nextToken
+      }
+      projectId
+      wordsCount
+      serviceName
+      freelancerId
+      freelancer {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      tasks {
+        start
+        end
+        stringOfTask
+      }
+      rate
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetFreelancerProject(
+  $freelancerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelProjectSmallTaskRelationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getFreelancerProject(
+    freelancerId: $freelancerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      freelancerId
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      smallTaskId
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetRelationBySmallTask(
+  $smallTaskId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelProjectSmallTaskRelationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getRelationBySmallTask(
+    smallTaskId: $smallTaskId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      freelancerId
+      projectId
+      project {
+        id
+        projectCode
+        clientId
+        pmId
+        name
+        description
+        budget
+        approvedBudget
+        sourceLanguage
+        targetLanguage
+        serviceType
+        dueDate
+        status
+        developmentStatus
+        paymentStatus
+        transMemory
+        transMemoryNames
+        createdAt
+        updatedAt
+      }
+      smallTaskId
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTeamInvitebyTeamId(
+  $teamId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelTeamInviteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTeamInvitebyTeamId(
+    teamId: $teamId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      teamId
+      userId
+      team {
+        id
+        managerId
+        teamName
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTeamInvitebyuserId(
+  $userId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelTeamInviteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTeamInvitebyuserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      teamId
+      userId
+      team {
+        id
+        managerId
+        teamName
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTeamByManagerId(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelTeamFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getTeamByManagerId(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      teamName
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      invites {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetEventByUserId(
+  $userId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelEventFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getEventByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      managerId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      textContent
+      link
+      type
+      flagShowHide
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUnShownEvents(
+  $userId: ID
+  $flagShowHide: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelEventFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getUnShownEvents(
+    userId: $userId
+    flagShowHide: $flagShowHide
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      user {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      managerId
+      manager {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      textContent
+      link
+      type
+      flagShowHide
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetConversationByUsers(
+  $firstUserId: ID
+  $secondUserId: ModelIDKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelConversationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getConversationByUsers(
+    firstUserId: $firstUserId
+    secondUserId: $secondUserId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      nextConversation
+      firstUserId
+      secondUserId
+      secondUser {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      messages {
+        nextToken
+      }
+      badge
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetConversationByFirstUser(
+  $firstUserId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelConversationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getConversationByFirstUser(
+    firstUserId: $firstUserId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      nextConversation
+      firstUserId
+      secondUserId
+      secondUser {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      messages {
+        nextToken
+      }
+      badge
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetConversationBySecondUser(
+  $secondUserId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelConversationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getConversationBySecondUser(
+    secondUserId: $secondUserId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      nextConversation
+      firstUserId
+      secondUserId
+      secondUser {
+        id
+        role
+        createdAt
+        updatedAt
+      }
+      messages {
+        nextToken
+      }
+      badge
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMessageByConversationId(
+  $conversationId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getMessageByConversationId(
+    conversationId: $conversationId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      content
+      conversationId
+      senderId
+      recepterID
+      isRead
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUnReadMessageByUser(
+  $conversationId: ID
+  $isRead: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getUnReadMessageByUser(
+    conversationId: $conversationId
+    isRead: $isRead
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      content
+      conversationId
+      senderId
+      recepterID
+      isRead
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUserUnReadMessageByUser(
+  $recepterID: ID
+  $isRead: ModelStringKeyConditionInput
+  $sortDirection: ModelSortDirection
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getUserUnReadMessageByUser(
+    recepterID: $recepterID
+    isRead: $isRead
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      content
+      conversationId
+      senderId
+      recepterID
+      isRead
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetManagerCollection(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelCollectionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getManagerCollection(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      method
+      bankDate
+      netAmount
+      currency
+      fxrate
+      amount
+      managerId
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetManagerServices(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelServiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getManagerServices(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      name
+      description
+      workflow
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetManagerClientRates(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelRateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getManagerClientRates(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      clientId
+      clientName
+      service
+      languagePair
+      specialization
+      rate
+      currency
+      unit
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetClientRates(
+  $clientId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelRateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getClientRates(
+    clientId: $clientId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      clientId
+      clientName
+      service
+      languagePair
+      specialization
+      rate
+      currency
+      unit
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetClientNetRate(
+  $clientId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelnetRateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getClientNetRate(
+    clientId: $clientId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      clientId
+      tmRepetitions
+      mtRepetitions
+      tmOverHundred
+      mtOverHundred
+      tmHundred
+      mthundred
+      tmNineFive
+      mtNineFive
+      tmEightFive
+      mtEightFive
+      tmSevenFive
+      mtSevenFive
+      tmFive
+      mtFive
+      tmNewWord
+      mtNewWord
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetManagerMemory(
+  $managerId: ID
+  $sortDirection: ModelSortDirection
+  $filter: ModelTransMemoryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  getManagerMemory(
+    managerId: $managerId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      managerId
+      filename
+      name
+      source
+      target
+      clientId
+      clientName
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

@@ -7,14 +7,17 @@ import {IonicModule} from '@ionic/angular';
 import {ForgottenPasswordPageRoutingModule} from './forgotten-password-routing.module';
 
 import {ForgottenPasswordPage} from './forgotten-password.page';
-
+import { AmplifyAngularModule, AmplifyIonicModule, AmplifyService } from 'aws-amplify-angular'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ForgottenPasswordPageRoutingModule
+    ForgottenPasswordPageRoutingModule,
+    AmplifyAngularModule,
+    AmplifyIonicModule,
   ],
-  declarations: [ForgottenPasswordPage]
+  declarations: [ForgottenPasswordPage],
+  providers: [AmplifyService]
 })
 export class ForgottenPasswordPageModule {}

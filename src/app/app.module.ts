@@ -13,6 +13,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AmplifyAngularModule, AmplifyService} from "aws-amplify-angular";
 import {MaterialModule} from "./shared/material-modules";
 import {AppSharedModule} from "./shared/app-shared-module";
+import { HttpModule } from '@angular/http';
+import { ChatService } from './services/chat.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,9 +26,11 @@ import {AppSharedModule} from "./shared/app-shared-module";
     BrowserAnimationsModule,
     AmplifyAngularModule,
     MaterialModule,
-    AppSharedModule
+    AppSharedModule,
+    HttpModule,
   ],
   providers: [
+    ChatService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

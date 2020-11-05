@@ -11,7 +11,7 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
       <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
+        <th mat-header-cell *matHeaderCellDef class="selection-header">
           <mat-checkbox (change)="$event ? masterToggle() : null"
                         [checked]="selection.hasValue() && isAllSelected()"
                         [indeterminate]="selection.hasValue() && !isAllSelected()">
@@ -26,7 +26,7 @@
       </ng-container>
       
       <ng-container matColumnDef="ID">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="id-header"> 
           ID 
         </th>
         <td mat-cell *matCellDef="let i = index"> 
@@ -35,7 +35,7 @@
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="name-header"> 
           Name 
         </th>
         <td mat-cell *matCellDef="let element"> 
@@ -43,48 +43,50 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="createdBy">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
-          Created by 
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="status-header"> 
+          Status 
         </th>
         <td mat-cell *matCellDef="let element"> 
-          {{ element.user?.profile?.givenName }} {{ element.user?.profile?.familyName }} 
+          {{ element.status }}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="budget">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
-          Budget 
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="type-header"> 
+          Service Type 
         </th>
         <td mat-cell *matCellDef="let element"> 
-          ${{ element.budget }}
+          {{ element.serviceType }}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="quoteStatus" >
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
-          Quote Status
+      <ng-container matColumnDef="client">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="client-header"> 
+          Client
         </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.quoteStatus }}
+        <td mat-cell *matCellDef="let element" > 
+          <span *ngIf="element.clientId=='Empty'"></span>
+          <span *ngIf="element.clientId!='Empty'">{{ element.client.profile.givenName +  element.client.profile.familyName }}</span>
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="paymentStatus" >
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
-          Payment Status
+      <ng-container matColumnDef="manage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="manager-header"> 
+          Manager
         </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.paymentStatus }}
+        <td mat-cell *matCellDef="let element"> 
+          <span *ngIf="element.managerId=='Empty'"></span>
+          <span *ngIf="element.managerId!='Empty'">{{ element.manager.profile.givenName +  element.manager.profile.familyName }}</span>
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="developmentStatus" >
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> 
-          Development Status
+      <ng-container matColumnDef="dueDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="duedate-header"> 
+          Due Date
         </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.developmentStatus }}
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.dueDate}}
         </td>
       </ng-container>
 

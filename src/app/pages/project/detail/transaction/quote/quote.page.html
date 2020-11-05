@@ -1,0 +1,14 @@
+<ion-content >
+  <div class="project-content">
+
+    <div class="main-content">
+      <div class="header">
+        <h1>{{titleToShow}} </h1>
+        <div class="box">
+          <ion-button  *ngIf='hasCreateRole' (click)="create()" size="small">Create</ion-button>
+        </div>
+      </div>
+    <app-finance-table></app-finance-table>
+    </div>
+  </div>
+</ion-content>

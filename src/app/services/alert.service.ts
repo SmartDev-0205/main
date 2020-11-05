@@ -22,6 +22,17 @@ export class AlertService {
       ]
     });
     toast.present();
+    // setTimeout(()=>{ 
+    //   try {
+    //     this.toastController.dismiss();   
+    //   } catch (error) {
+    //     console.log("message was closed before");
+    //   }
+      
+    // }, 2000);
+  }
+  close(){
+    this.toastController.dismiss();
   }
 
 }

@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="main-page">
+        <div class="common-root-page" [ngClass]="{'translate-width-header':  headerShowFlag,'translate-width':  headerShowFlag == false}" >
+            <div class="button-container" id="button-container" >
+                <button class="button" (click)="textButtonClicked()" [ngClass]="{'button-background-selected':  textButtonSeleted == true,'button-background-unselected':  textButtonSeleted == false}">
+                    <span class="button-content">
+                        <svg class="text-icon">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3224 1.79289C14.7129 1.40237 15.3461 1.40237 15.7366 1.79289L18.1365 4.19284C18.5271 4.58336 18.5271 5.21653 18.1365 5.60705L7.22124 16.5224L1.5 18.4294L3.40708 12.7082L4.30451 11.8108H1.9665V10.8108H5.30451L7.7591 8.35617H1.9665V7.35617H8.7591L11.2744 4.84091H1.9665V3.84091H12.2744L14.3224 1.79289ZM17.4294 4.89995L15.0295 2.5L4.90487 12.6246L7.30481 15.0246L17.4294 4.89995ZM3.08114 16.8483L4.23944 13.3734L6.55603 15.69L3.08114 16.8483Z"></path>
+                        </svg>Translate text
+                    </span>
+                </button>
+                <button class="button" (click)="docButtonClicked()" [ngClass]="{'button-background-selected':  docButtonSeleted == true,'button-background-unselected':  docButtonSeleted == false}">
+                    <span class="button-content">
+                        <mat-icon class="material-icon">description</mat-icon>
+                        Translate documents
+                    </span>
+                </button>
+            </div>
+            <div id="translation-container">
+                <div class="language-container">
+                    <button class="language-button">
+                        <mat-menu class="custom-menu" #sourcemenu="matMenu">
+                            <button mat-menu-item *ngFor="let option of sourceLanguages" (click)="sourceLangChanged(option)">{{option}}</button>
+                        </mat-menu>
+                        <span>from&nbsp;</span>
+                        <span class="bold">{{sourceLanguage}}</span>
+                        <!-- <div mat-button [matMenuTriggerFor]="sourcemenu" class="lmt__language_select__opener"></div> -->
+                        <mat-icon [matMenuTriggerFor]="sourcemenu">keyboard_arrow_down</mat-icon>
+                    </button>
+                    <div class="text-area">
+                        <textarea #sourceArea (focusout)="focusOut()" (focus)="onFocus()" [disabled]="docButtonSeleted" [(ngModel)]="sourceText" (input)="sourceChanged()"></textarea>
+                        <span *ngIf="textButtonSeleted">
+                            <span class="description point-none" *ngIf="sourceText=='' && focusFlag == false">
+                                <div class="type-text">Type to translate.</div>
+                                <div>Drag and drop to translate Word (.docx) and PowerPoint (.pptx) files with our document translator.</div>
+                                <div>Popular: Spanish to English, French to English, and Japanese to English.</div>
+                                <div>
+                                    <br>Other languages: German, Portuguese, Italian, Dutch, Polish, Russian, and Chinese.
+                                </div>
+                            </span>
+                        </span>
+                        <span *ngIf="docButtonSeleted">
+                            <span class="description">
+                                <div class="docTrans__help_popup">
+                                    <div class="docTrans__help_popup__icons">
+                                        <img class="doc-image" src="/assets/icon/download.jpg" alt="Icon file format">
+                                    </div>
+                                    <div class="docTrans__help_popup__desc">
+                                        <p>{{inputedFilename}}</p>
+                                        <div id="docTrans__file-upload-button">
+                                            <input #fileUploadInput (change)="onFileChanged()" type="file" id="file-upload_input" accept=".docx,.pptx,.txt,.srt,.xliff,.sdlxliff">
+                                            <button *ngIf="!fileinputed" (click)="importDoc()" type="button" class="select-file-button">
+                                                <span tabindex="-1" style="outline: none;">Select from your computer</span>
+                                            </button>
+                                            <button *ngIf="fileinputed" (click)="fileTranslate()" type="button" class="select-file-button">
+                                                <span tabindex="-1" style="outline: none;">Translate</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                        </span>
+        
+                    </div>
+                </div>
+                <div class="language-container">
+                    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+                    <button class="language-button" >
+                        <mat-menu #menu="matMenu" xPosition="before">
+                            <button mat-menu-item *ngFor="let option of sourceLanguages" (click)="targetLangChanged(option)">{{option}}</button>
+                        </mat-menu>
+                        <span>into&nbsp;</span>
+                        <span class="bold">{{targetLanguage}}</span>
+                        <!-- <div mat-button [matMenuTriggerFor]="menu" class="lmt__language_select__opener"></div> -->
+                        <mat-icon [matMenuTriggerFor]="menu">keyboard_arrow_down</mat-icon>
+                    </button>
+                    <div class="text-area right-text-area ">
+                        <textarea #targetArea   [(ngModel)]="targetText" [disabled]="!sourceText" (change)="targetChanged()"></textarea>
+                        <span *ngIf="docButtonSeleted">
+                            <span class="description target-description">
+                                <mat-progress-bar *ngIf="translating" mode="indeterminate"></mat-progress-bar>
+                                <div *ngIf="!translating">
+                                    <p>{{translateResultText}}</p>
+                                </div>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="common-root-page">
+            <app-transcript></app-transcript>
+        </div>
+    </div>
+    
+</div>

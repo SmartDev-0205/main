@@ -1,0 +1,24 @@
+ion-row{
+    height: 100%;
+    overflow-y: auto;
+    
+}
+.conversation-list{
+    .selected{
+        --ion-background-color:#C7EDFC;
+    }
+    .conversation-item{
+        cursor: pointer;
+    }
+    .add-conversation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .email-min-width{
+        min-width: 259px;
+    }
+}
+.conversation-content{
+    height: 100vh;
+}

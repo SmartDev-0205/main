@@ -1,0 +1,101 @@
+<div>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <ng-container matColumnDef="select" >
+        <th mat-header-cell *matHeaderCellDef class="selection-header">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="Code" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="code-header"> 
+          Code
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.documentNo }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="issuedAt" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="issued-header"> 
+          Issued At
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.date }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="clientName" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="client-header"> 
+         {{getInvoiceProviderName()}}
+          <!-- <span *ngIf="getInvoiceProviderName() == 'Client'">Client</span> -->
+          <!-- <span *ngIf="getInvoiceProviderName() == 'Manager'">Manager</span> -->
+          <!-- <span *ngIf="getInvoiceProviderName() == 'Vendor'">Vendor</span> -->
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.clientName}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="total-header"> 
+          Total
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.total }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="currency" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="currency-header"> 
+          Currency
+        </th>
+        <td mat-cell *matCellDef="let element"> 
+          {{ element.currency}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="status-header"> 
+          Status
+        </th>
+        <td mat-cell *matCellDef="let element let i = index"> 
+          <span *ngIf="!getManageRole(element)">{{ element.status}}</span>
+          <mat-form-field *ngIf="getManageRole(element)">
+            <mat-select (selectionChange)="onStatusChange(element,i)" [disabled] = "element.status==Pending" [(ngModel)]="element.status">
+              <mat-option value="Pending">Pending</mat-option>
+              <mat-option value="Accept">Accept</mat-option>
+              <mat-option value="Reject">Reject</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="manage" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="manager-header"> 
+        </th>
+        <td class="manage-div" mat-cell *matCellDef="let i = index"> 
+          <div class="flex">
+            <ion-icon ios="ios-trash" tooltip="Add Freelancer" navTooltip md="md-trash" (click)="delete(i)"></ion-icon>
+            <ion-icon ios="ios-download" tooltip="Add Freelancer" navTooltip md="md-download" (click)="download(i)"></ion-icon>
+            <ion-icon ios="ios-add-circle" md="md-add-circle" (click)="makeInvoice(i)"></ion-icon>
+          </div>
+        </td>
+    </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openFinance(row)"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+ .key-header{
+    width: 22%;
+    background:#92D050;
+ }
+ .project-invoice-header{
+    width: 78%;
+    background  :#C5ECF3;
+ }
+ th.mat-header-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ th.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+ }
+ td.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ tr {
+    border: solid 1px;
+ } 
+ .first-table-row{
+    border-bottom: 0px;
+ }
+ .big-table{
+     width: 3000px;
+ }
+ .project-code-header{
+     width: 11%;
+     background:#92D050;
+ }
+ .client-name-header{
+     width: 11%;
+     background:#92D050;
+ }
+ .invoice-no-header{
+     width: 6%;
+    background:#C5ECF3;
+ }
+ .invoice-date-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-customer-name-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-reference-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-description-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-qty-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-usd-price-unit-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-thb-price-unit-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-unit-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-thb-amount-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-vat-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-wht-header{
+    width: 6%;
+    background:#C5ECF3;
+}
+.invoice-total-amount-header{
+    width: 6%;
+    background:#C5ECF3;
+}

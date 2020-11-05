@@ -1,7 +1,50 @@
 #logo {
-  max-width: 100px;
+  max-width: 50px;
   border: 0;
   height: auto;
-  margin: 16px auto;
   display: block;
+  margin-right:10px ;
 }
+.table-cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto 20px auto;
+  cursor: pointer;
+}
+.title{
+  color: #27649F;
+  font-size: 30px;
+}
+.notification-icon{
+  height: 30px;
+  width: 30px;
+}
+.notifications-badge {
+  border-radius: 100%;
+  font-size: 15px;
+  padding: 2px 5px;
+}
+.tab-button{
+  padding: 0px;
+  max-width: 54px;
+} 
+
+ion-item{
+  --background: #1E1E2D;
+  :hover{
+    --background: #1E1E2D;
+  }
+  ion-label{
+    color:#f7f7f7;
+  }
+  ion-icon{
+    color: #f7f7f7;
+  }
+}
+.project-table{
+  min-width: 1000px;
+}
+// ion-button{
+//   --background: #001E4B;
+// }

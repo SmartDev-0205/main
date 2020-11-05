@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="team-header">
+      <div class="left-panel">
+        <ion-title class="title">My teams</ion-title>
+        <mat-form-field class="team-selector">
+          <mat-select [(ngModel)]="currentTeam" (ngModelChange)="onSelectedTeam()">
+            <mat-option *ngFor="let teamOption of currentTeams" [value]="teamOption" >
+              {{teamOption.teamName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> 
+      </div>
+      <div>
+        <ion-button size=small (click)="addNewTeam()">Add New Team</ion-button>
+        <ion-button size=small (click)="deleteCurrentTeam()">Delete Current Team</ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="project-content">
+    <div class="main-content">
+      <div class="manager-freelancer-header">
+        <!-- <mat-form-field class="full-width"> -->
+          <!-- <input type="text" matInput [formControl]="myControl" placeholder="Please find freelancers with email" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field> -->
+        <ion-button size=small (click)="addFreelancer()">Add</ion-button>
+        <ion-button size=small (click)="deleteSelectedFreelancer()">Delete</ion-button>
+      </div>
+      <div class="team-body">
+        <mat-selection-list #freelancers>
+          <div class="team-list">
+            <mat-list-option *ngFor="let member of teamMemembers">
+              {{member.name}}
+            </mat-list-option>
+          </div>
+          
+        </mat-selection-list>
+        <app-freelancer-table></app-freelancer-table>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,20 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.header{
+    width: $contentPercent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.big-container{
+    overflow:auto;
+    min-height: calc(100vh - 215px);
+    min-width: 1060px;
+    padding-right: 10px;
+}
+.action{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}

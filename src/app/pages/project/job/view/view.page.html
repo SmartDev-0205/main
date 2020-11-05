@@ -1,0 +1,55 @@
+<ion-content class="content">
+  <div class="cat-editor">
+    <div class="full-width search-content">
+      <p>
+        Concordance search result
+      </p>
+      <ion-row *ngIf="source!=''" class="search-result full-width">
+        <ion-col size= "5" *ngIf="source!=''">{{source}}</ion-col>
+        <ion-col size= "7" class="target" >
+          <div size= "1" class="rate" *ngIf="source!=''">{{rate}}%</div>
+          <div size= "5" class="target" *ngIf="source!=''">{{target}}</div>
+        </ion-col>
+      </ion-row>
+      <div *ngIf="source ==''" class="information-content">
+        <ion-icon class="information-icon" name="information-circle"></ion-icon>
+        <span>{{searchInformation}}</span>
+      </div>
+    </div>
+    <div class="table-container">
+      <table  style="width: 100%;">
+        <tbody>
+          <tr class="table-title" *ngIf="segments.length > 0" >
+            <th class="table-col" style="width: 5%;">#</th>
+            <th class="table-col" style="width: 35%;">Source</th>
+            <th class="table-col" style="width: 35%;">Target</th>
+            <th class="table-col" style="width: 10%;">Lock</th>
+            <th class="table-col" style="width: 10%;">Manage</th>
+          </tr>
+      
+          <tr *ngFor="let segment of segments; let i = index" class="pointer" (click)="onTableRowClick(i)" [ngClass]="{'selected-row': i == selectedIndexd}">
+            <td class="card-index" valign="top">{{i + 1}}</td>
+            <td class="card-text" valign="top">
+              <div class="edit-div" contenteditable="false">{{segment.source}}</div>
+            </td>
+            <td class="card-text" valign="top">
+              <div class="edit-div" [contentEditable]="!isLock(segment)" [textContent]="segment.target"  (blur)="segment.target=$event.target.textContent;updateTarget(i,segment.target)">{{segment.target}}</div>
+            </td>
+            <td class="card-text" valign="top">
+              <div class="lock-icon" contenteditable="false">
+                <ion-icon *ngIf="isLock(segment)" class="icon-font" ios="ios-lock" md="md-lock"></ion-icon>
+              </div>
+            </td>
+            <td>
+              <div class="status-icon" >
+                <ion-icon class="icon-font" ios="ios-checkbox-outline" md="md-checkbox-outline" *ngIf="segment.status != 'Done'" (click)="toggleConform(i)" >{{segment.status}}</ion-icon>
+                {{segment.status}}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</ion-content>

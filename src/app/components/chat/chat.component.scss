@@ -1,0 +1,69 @@
+::ng-deep .mat-tab-body.mat-tab-body-active{
+  overflow: hidden;
+}
+.container{
+   background: white; 
+   height: calc(100vh - 173px);;
+}
+.chat {
+    box-sizing: border-box;
+    overflow: auto;
+    // padding: 74px 20px 80px;
+    .chat-content{
+      overflow: auto;
+      padding: 20px 20px;
+    }
+    .chat-content:hover{
+      overflow: auto;
+    }
+    .message {
+      white-space: pre-wrap;
+      padding: 10px 30px;
+      border-radius: 0 40px 40px 40px;
+      margin: 10px 50px 10px 0;
+    }
+    .time{
+      text-align: right;
+      font-size: 10px;
+    }
+    .self {
+      display: flex;
+      font-size: 14px;
+      justify-content: flex-end;
+      .message {
+        white-space: pre-wrap;
+        margin: 10px 0 10px 50px;
+        border-radius: 40px 0 40px 40px;
+        background-color: #03a9f4;
+        color: white;
+      }
+    }
+  }
+  .add-area {
+    border-top: 1px solid #eed4d4;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    padding: 0 60px;
+    @media screen and (max-width: 600px) {
+      padding: 0 20px;
+    }
+    .mat-form-field {
+      min-width: 80%;
+    }
+    textarea {
+      resize: none;
+      overflow: hidden;
+    }
+    button {
+      margin: auto 0;
+    }
+    .start-flex{
+      display: flex;
+      justify-content: flex-start;
+    }
+    .end-flex{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }

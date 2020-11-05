@@ -1,0 +1,75 @@
+@import '../../../theme/common-variable.scss';
+@import '../../../theme/common-style.scss';
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+ .collection-header{
+    width: 100%;
+    background  :#C5ECF3;
+ }
+ th.mat-header-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ th.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+ }
+ td.mat-cell {
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    border: solid 1px;
+    border-bottom-width: 0px;
+ }
+ tr {
+    border: solid 1px;
+ } 
+ .first-table-row{
+    border-bottom: 0px;
+ }
+ .small-table{
+     min-width: 1000px;
+     width: 100%;
+ }
+ .selection-header{
+   width:5%;
+   background:#C5ECF3;
+ }
+ .method-header{
+     width: 15%;
+     background:#C5ECF3;
+ }
+ .collocatin-date-header{
+     width: 20%;
+     background:#C5ECF3;
+ }
+ .net-amount-header{
+     width: 15%;
+    background:#C5ECF3;
+ }
+ .currency-header{
+    width: 15%;
+    background:#C5ECF3;
+}
+.fxrate-header{
+    width: 15%;
+    background:#C5ECF3;
+}
+.amount-header{
+    width: 15%;
+    background:#C5ECF3;
+}
+ion-item {
+
+   --border-width: 0;
+   --inner-border-width: 0;
+}
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
+   padding-left: 0px;
+}

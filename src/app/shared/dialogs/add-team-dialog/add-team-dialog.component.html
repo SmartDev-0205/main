@@ -1,0 +1,16 @@
+<ion-header> <strong>Add Team</strong></ion-header>
+<mat-dialog-content>
+  <ion-row>
+    <ion-col size=4>
+      <ion-label>New Team Name :</ion-label>
+    </ion-col>
+    <ion-col size=8>
+      <ion-input class="edit-input" placeholder="New team name" [(ngModel)]="newTeamName"></ion-input>
+    </ion-col>
+  </ion-row>
+  <div class="box">
+    <ion-button size=small (click)="add()">Add</ion-button>
+    <ion-button size=small (click)="close()">Close</ion-button>
+  </div>
+  
+</mat-dialog-content>

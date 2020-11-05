@@ -1,10 +1,34 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-
-    <ion-menu contentId="main-content" type="overlay">
-      <menu style="padding: 10px;"></menu>
-    </ion-menu>
-
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+  <!-- 'https://s12.aconvert.com/convert/p3r68-cdx67/aconvert-com-a22yo-dpp6j.doc'; -->
+  <mat-drawer-container (click)="outDrawer(drawer)" class="example-container" autosize>
+    <ion-content>
+      <mat-drawer #drawer  class="sidenav" mode="side">
+        <button (click)="goto('signin');drawer.toggle()">Contact Sales</button>
+        <button (click)="goto('signin');drawer.toggle()">About Us</button>
+      </mat-drawer>
+      <div class="nav" *ngIf="!navFlag">
+        <div class="nav-content">
+          <div class="left-box">
+            <button type="button"  class="small-screen" mat-button (click)="drawer.toggle();drawerMenuFlag = true;">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <img (click)="trigHeader()" src="/assets/companylogo.png" class="logo">
+            <div class="link-box">
+              <!-- <a (click)="goto('translator')" [ngClass]="{'selected':currentSelectorName == 'translator'}"><span>AI</span></a> -->
+              <!-- <a (click)="goto('transcriber')" [ngClass]="{'selected':currentSelectorName == 'transcriber'}"><span>Human</span></a> -->
+            </div>
+          </div>
+          <div class="contact-box">
+              <a (click)="goto('order/manage-order')" [ngClass]="{'selected':currentSelectorName == 'contact'}"><span>My Orders</span></a>
+              <button mat-button class="quote" (click)="goto('order/create-order')">New Order</button>
+              <button mat-button *ngIf="!auth.signedIn" (click)="goto('signin')">Log in</button>
+              
+          </div>
+        </div>
+      </div>
+      <ion-router-outlet></ion-router-outlet>
+      <div class="footer" >Copyright © 2020 Prolocalize Co., Ltd. All rights reserved</div>
+    </ion-content>
+  </mat-drawer-container>
+  
 </ion-app>

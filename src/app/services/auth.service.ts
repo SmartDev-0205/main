@@ -5,6 +5,7 @@ import {AlertController, LoadingController} from "@ionic/angular";
 import {AmplifyService} from "aws-amplify-angular";
 import {AlertService} from "src/app/services/alert.service";
 import {UserService} from './user.service';
+import { Router } from '@angular/router';
 
 export interface UserAttributes {
   givenName: string;
@@ -20,10 +21,12 @@ export class AuthService {
     private alertMsg: AlertService,
     private amplify: AmplifyService,
     private loadingController: LoadingController,
-    private user: UserService
+    private user: UserService,
+    private router:Router
   ) {}
 
   public signedIn: boolean = false;
+  private currentLoginedUser:any;
   public activatePersistentSignin() {
     this.amplify.authStateChange$.subscribe((authState: any) => {
       this.signedIn = (authState.state === "signedIn");
@@ -31,7 +34,14 @@ export class AuthService {
       if (!authState.user) return;
       this.user.authState$.next(authState);
       this.user.id$.next(authState.user.username);
-      this.user.refreshUser();
+      this.user.email$.next(this.amplify.auth().user.attributes.email)
+      this.user.refreshUser().then(result =>{
+        console.log("the result is ",result);
+        if(!result){
+          this.signOut();
+          this.router.navigateByUrl("/signin");
+        }
+      })
     });
   }
 
@@ -70,7 +80,6 @@ export class AuthService {
             handler: inputs => {
               //takes the data
               resolve(inputs.code);
-              console.log(inputs.code);
             }
           },
           {
@@ -133,10 +142,13 @@ export class AuthService {
     const loading = await this.loadingController.create({
       message: "Signing in. Please wait."
     });
+    email = email.toLowerCase();
     loading.present();
 
     try {
       const user = await this.amplify.auth().signIn(email, password);
+      console.log("current connected user",user);
+      this.currentLoginedUser = user;
       loading.dismiss();
       if (
         user.challengeName === "SMS_MFA" ||
@@ -186,6 +198,27 @@ export class AuthService {
           return false;
         }
         const successfulSignIn = await this.signIn(email, password);
+        if(successfulSignIn){
+          console.log(this.currentLoginedUser);
+          let attributes = this.currentLoginedUser.attributes;
+          let newEmail = attributes.email;
+          let familyName = attributes.family_name;
+          let givenName = attributes.given_name;
+          let id = attributes.sub;
+          let profile = {
+            givenName: givenName,
+            email:newEmail,
+            familyName: familyName
+          }
+          const newUser = {
+            id: id,
+            role: "vendor",
+            profile: profile
+          }
+          let createdUser = await this.user.createUser(newUser);
+          console.log("created user from signin page",createdUser)
+          this.router.navigateByUrl("");
+        }
         return successfulSignIn;
       } else if (error.code === "PasswordResetRequiredException") {
         // The error happens when the password is reset in the Cognito console
@@ -233,8 +266,9 @@ export class AuthService {
           return false;
         case "CodeMismatchException":
           this.alertMsg.show(
-            "Wrong verification code. Please go to the Sign In page and try again."
-          );
+              "Wrong verification code. Please go to the Sign In page and try again.Please back to Signin"
+            );
+          
           return false;
         case "ExpiredCodeException":
           this.alertMsg.show(
@@ -254,11 +288,11 @@ export class AuthService {
     password: string,
     attributes: UserAttributes
   ): Promise<boolean> {
+    email = email.toLowerCase();
     const loading = await this.loadingController.create({
       message: "Creating new user. Please wait."
     });
     loading.present();
-
     try {
       let result = await this.amplify.auth().signUp({
         username: email,
@@ -266,11 +300,16 @@ export class AuthService {
         attributes: {
           email: email,
           given_name: attributes.givenName,
-          family_name: attributes.familyName
+          family_name: attributes.familyName,
         },
         validationData: [] //optional
       });
+      loading.dismiss();
       this.user.id$.next(result.userSub);
+      const confirmedAccount = await this.confirmAccount(email);
+      if (!confirmedAccount) {
+        return true;
+      }
     } catch (error) {
       loading.dismiss();
       console.log("Error creating account");
@@ -294,7 +333,6 @@ export class AuthService {
           );
           return false;
       }
-      return false;
     }
 
     loading.dismiss();
@@ -303,5 +341,6 @@ export class AuthService {
 
   public async signOut() {
     await this.amplify.auth().signOut();
+    this.user.createUser = null;
   }
 }

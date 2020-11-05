@@ -1,0 +1,91 @@
+<ion-content>
+  <div class="profile-floating-menu">
+    <ion-fab vertical="center" horizonal="center">
+      <ion-fab-button (click)="toggleEditing()">
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="primary" (click)="saveProfile()">
+          <ion-icon name="save" style="font-size: 25px;"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <ion-grid class="profile-content">
+    <ion-row class="ion-align-items-center" style="background-color: #fff;">
+      <ion-col offset-md=1 size-md=10>
+        <div *ngIf="userProfile" @fadeInAnimation>
+          <ion-card>
+            <ion-card-content class="profile-grid">
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Account Type</ion-label>
+                  <ion-input class="non-editing-input" *ngIf="!editingProfile" [(ngModel)]="userProfile.accountType" [readonly]="true"></ion-input>
+                  <mat-select [(ngModel)]="userProfile.accountType" *ngIf="editingProfile" class="full-width" [ngClass]="{'editable-material': editingProfile, 'non-editable-material': !editingProfile}">
+                    <mat-option *ngFor="let option of accountTypes" [value]="option" >{{option}}</mat-option>
+                  </mat-select>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Company Name</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.companyName" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Abbreviation Code</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.customerCode" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Legal Name</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.legalName" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Web site</ion-label>
+                <ion-input class="non-editing-input"  [(ngModel)]="userProfile.website" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Tax Number</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.taxNumber" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">VAT number</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.vatNumber" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Country</ion-label>
+                <ion-input class="non-editing-input" *ngIf="!editingProfile" [(ngModel)]="userProfile.country" [readonly]="true"></ion-input>
+                <mat-select [(ngModel)]="userProfile.country" *ngIf="editingProfile" class="full-width" [ngClass]="{'editable-material': editingProfile, 'non-editable-material': !editingProfile}">
+                  <mat-option *ngFor="let option of allCountries" [value]="option" >{{option}}</mat-option>
+                </mat-select>
+             </ion-item>
+              
+            </ion-card-content>
+            <ion-card-content class="profile-grid">
+              <div class="logo-container">
+                <input type="file" accept="image/*" (change)="changeLogo($event)"  class="hidden-input" #file>
+                <ion-icon class="image-change" *ngIf="editingProfile" (click)="file.click()" ios="ios-camera" md="md-camera"></ion-icon>
+                <img [src]="logoBlob" class="profile-picture" alt="logo">
+              </div>
+              <ion-item lines="none">
+                <textarea ([ngModel])="userProfile.about" [readonly]="!editingProfile" ></textarea>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Address</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.companyAddress" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Zip</ion-label>
+                <ion-input class="non-editing-input" [(ngModel)]="userProfile.Zip" [readonly]="!editingProfile"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="itme-label" position="stacked">Time Zone</ion-label>
+                <ion-input class="non-editing-input" *ngIf="!editingProfile" [(ngModel)]="userProfile.timezone" [readonly]="true"></ion-input>
+                <mat-select [(ngModel)]="userProfile.timezone" *ngIf="editingProfile" class="full-width" [ngClass]="{'editable-material': editingProfile, 'non-editable-material': !editingProfile}">
+                  <mat-option *ngFor="let option of allTimezones" [value]="option" >{{option}}</mat-option>
+                </mat-select>
+             </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

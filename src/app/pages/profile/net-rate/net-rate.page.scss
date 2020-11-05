@@ -1,0 +1,43 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+@import '../profile.page.scss';
+.header{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.white-content{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-center{
+    display: flex;
+    justify-content: center;
+}
+.rate-content{
+    width: 60%;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .item{
+        width: 30%;
+        display: flex;
+        align-items: flex-start;
+    }
+    ion-input{
+        --padding-bottom:3px;
+        --padding-top:3px;
+        border-bottom: solid 1px;
+    }
+    .header{
+        font-weight: bold;
+    }
+}

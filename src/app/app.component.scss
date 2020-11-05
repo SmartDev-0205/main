@@ -1,28 +1,119 @@
-#logo {
-  max-width: 40%;
-  border: 0;
+.sidenav{
+  z-index: 1000!important;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding-top: 20px;
+  background: #001D48;
+  color: white;
+  button{
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #001D48;
+    color: white;
+    // margin-bottom: 3px;
+  }
+  button:hover{
+    background: #CDDCE3!important;
+  }
+}
+::ng-deep .mat-drawer-inner-container{
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep .mat-menu-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+::ng-deep .custom-menu{
+  left: -20px!important;
+}
+::ng-deep .mat-menu-panel{
+  margin-top: 10px;
+  max-width: none!important;
   height: auto;
-  margin: 48px auto 32px auto;
-  display: block;
+  width: calc(100vw - 40px);
+  position: relative;
+  left: 20px;
+  top:11px;
 }
-
-#main-content {
-  background: #f9f9f9 !important;
-
-  .ion-page {
-    padding: 20px !important;
-  }
+.nav{
+  z-index: 999;
+  width: 100%;
+  height: 65px;
+  background: #fdfdfdfd;
+  // position: absolute;
+  // box-shadow: 0px 10px #fafafa;
+  border-bottom: 2px solid #F1F1F1;
 }
-
-@media (min-width:700px) {
-  ion-menu {
-    max-width:20%!important;
+.nav-content{
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  .left-box{
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
- }
-@media only screen and (max-width: 500px) {
-  ion-menu {
-    menu {
-      padding-left: 10px;
+  .auth-button{
+      padding: 4px 16px 2px;
+      font-size: 14px;
+      line-height: 24px;
+      border-radius: 2px;
+      min-height: 32px;
+  }
+  a:hover{
+      background: #F5F5F9;
+  }
+  .selected{
+      background: #F5F5F9;
+  }
+  a{
+      cursor: pointer;
+      text-decoration:none;
+      padding: 10px;
+      margin-left: 20px;
+      outline: none;
+      color: black;
+  }
+  .contact-box{
+    z-index: 999;
+    .quote{
+      background: #001D48;
+      color: white;
+      border-radius: 0px;
+    }
+    .quote:hover{
+      background: #076b9a;
     }
   }
+}
+.logo{
+  height: 40px;
+}
+mat-drawer-container{
+  width: 100%;
+  height: 100%;
+}
+small-screen{
+  display: none;
+}
+.footer{
+  background:white;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 97;
+  box-shadow: 0 0 28px 0 rgba(82,63,105,.13);
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  padding-left: 10px;
+  display: flex;
+  color: #7e8299;
 }

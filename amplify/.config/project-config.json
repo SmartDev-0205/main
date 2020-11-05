@@ -1,17 +1,17 @@
 {
-    "providers": [
-        "awscloudformation"
-    ],
-    "projectName": "prolocalize",
+    "projectName": "main",
     "version": "3.0",
     "frontend": "javascript",
     "javascript": {
-        "framework": "angular",
+        "framework": "ionic",
         "config": {
             "SourceDir": "src",
-            "DistributionDir": "dist",
-            "BuildCommand": "npm run-script build",
-            "StartCommand": "ng serve"
+            "DistributionDir": "www",
+            "BuildCommand": "npm.cmd run-script build",
+            "StartCommand": "ionic serve"
         }
-    }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
 }

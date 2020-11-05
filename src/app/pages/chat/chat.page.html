@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-row>
+    <ion-col size="3">
+      <div class="conversation-list">
+        <div class="add-conversation">
+          <mat-form-field class="input-style email-min-width">
+            <input type="text"
+                   placeholder="Invite new person"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="controler"
+                   [matAutocomplete]="auto"
+                   [(ngModel)]="newUser">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.profile.email}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <ion-button size="small" [disabled]="!newUser" (click)="addFriend()"> Add Friend</ion-button>
+        </div>
+        <div class="conversations">
+          <ion-item *ngFor="let conversation of firstConversation let i = index" class="conversation-item" [ngClass]="{'selected':checkCurrentConversation(i)}" (click)="selecteConversation(i)">
+            <ion-icon slot="start" name="md-person"></ion-icon>
+            <ion-label>
+              {{conversation.secondUser.profile.givenName  +  conversation.secondUser.profile.familyName}}
+            </ion-label>
+            <ion-badge color="primary" *ngIf="conversation.badge > 0">{{conversation.badge}}</ion-badge>
+          </ion-item>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col size="9" class="conversation-content">
+      <app-conversation ></app-conversation>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header *ngIf="isLoaded">
+  <ion-toolbar>
+    <ion-title>{{job.filename}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="project-content">
+    <div class="main-content">
+      <div class="apply-button">
+        <ion-button  (click)="assign()">Assign</ion-button>
+        <ion-button  (click)="apply()">Apply all changes</ion-button>
+      </div>
+      <ion-row>
+        <ion-col size=8 >
+          <div class="source-content">
+            <app-pmtask-table class="full-width" [currentService]="currentService"></app-pmtask-table>
+          </div>
+        </ion-col>  
+        <ion-col size=4 class="freelancer-manage-content">
+          <div class="source-content">
+            <div class="freelancer-header">
+              <ion-label>Freelancers</ion-label>
+              <ion-icon name="person-add" tooltip="Add Freelancer" navTooltip (click)="addFreelancer()"></ion-icon>
+            </div>
+            
+            <div class="freelancer-content">
+              <div  *ngFor="let freelancer of allProjectFreelancers let i=index" class="one-freelancer">
+                <mat-form-field class="input-style field-style">
+                  <input type="text"
+                         placeholder="Freelancer"
+                         aria-label="Number"
+                         matInput
+                         [formControl]="myControl[i]"
+                         [matAutocomplete]="auto"
+                         [(ngModel)]="allProjectFreelancers[i]">
+                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+                    <mat-option *ngFor="let option of filteredOptions[i] | async" [value]="option">
+                      {{option.profile.email}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                <ion-input class ="space-style edit-input " placeholder="Rate" type="text" [(ngModel)]="rates[i]"></ion-input>
+                <ion-input class ="space-style field-style no-editable-edit-input" type="text" (value)="words[i]">{{words[i].toString()}} words</ion-input>
+                <ion-input class ="space-style field-style no-editable-edit-input" type="text" (value)="words[i]">{{status[i]}}</ion-input>
+                <ion-icon name="remove-circle" (click)="remove(i)"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </ion-col>  
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

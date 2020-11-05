@@ -1,0 +1,22 @@
+@import '../../../../theme/common-variable.scss';
+@import '../../../../theme/common-style.scss';
+.header{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+ion-row{
+    max-width: 500px;
+    align-items: center;
+}
+ion-input{
+    border: solid  1px;
+    --padding-bottom: 3px;
+    --padding-top: 3px;
+}
+
+.body{
+    width: 100%;
+    padding-left: 100px;
+}

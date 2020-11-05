@@ -1,0 +1,26 @@
+<ion-content >
+    <div class="project-content">
+      <div class="header">
+        <ion-button size="small" (click)="createNewService()">Add Service</ion-button>
+      </div>
+      <div class="main-content">
+        <div *ngIf="(services$ | async)?.length === 0">
+          No services yet.
+        </div>
+        <div *ngIf="!(services$ | async)">
+          Fetching services...
+        </div>
+        <div *ngIf="(services$ | async)?.length">
+          <div class="service-container" *ngFor="let service of (services$ | async) let i = index">
+            <div class="card" >
+              <div class="content" >
+                <div class="full-width">
+                  <P>{{getServiceText(service)}}</P>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>

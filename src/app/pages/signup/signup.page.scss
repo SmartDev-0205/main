@@ -1,0 +1,9 @@
+@import '../../../theme/common-variable.scss';
+ion-card{
+    background-image: $defaultBackground;
+}
+ion-item{
+    height: 48px;
+    margin-top: 5px;
+    border: solid 1px #d9d9d9;
+}

@@ -1,0 +1,23 @@
+.table-container {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+    }
+  }
+  .mat-row.ng-star-inserted{
+    cursor: pointer;
+    // :hover{
+    //   background-color: grey;
+    // }
+  }
+  .selection-header{
+    width: 10%;
+  }
+  .id-header{
+    width: 10%;
+  }
+  .name-header{
+    width: 80%;
+  }
+ 

@@ -1,19 +1,25 @@
 {
     "prod": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-prolocalize-prod-95832-authRole",
-            "UnauthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::590709797647:role/amplify-prolocalize-prod-95832-authRole",
-            "Region": "ap-southeast-1",
-            "DeploymentBucketName": "amplify-prolocalize-prod-95832-deployment",
-            "UnauthRoleName": "amplify-prolocalize-prod-95832-unauthRole",
-            "StackName": "amplify-prolocalize-prod-95832",
-            "StackId": "arn:aws:cloudformation:ap-southeast-1:590709797647:stack/amplify-prolocalize-prod-95832/b3b07220-433e-11ea-8086-0a43e1cd1fda",
-            "AmplifyAppId": "drshshpona720"
+            "AuthRoleName": "amplify-main-prod-93217-authRole",
+            "UnauthRoleArn": "arn:aws:iam::632817565170:role/amplify-main-prod-93217-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::632817565170:role/amplify-main-prod-93217-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-main-prod-93217-deployment",
+            "UnauthRoleName": "amplify-main-prod-93217-unauthRole",
+            "StackName": "amplify-main-prod-93217",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:632817565170:stack/amplify-main-prod-93217/2499e630-0e8f-11eb-952b-06fa27f652ae",
+            "AmplifyAppId": "d3vj7bk1b6wd9o"
         },
         "categories": {
             "auth": {
-                "prolocalize43142882": {}
+                "main4082e793": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3vj7bk1b6wd9o",
+                    "type": "manual"
+                }
             }
         }
     }

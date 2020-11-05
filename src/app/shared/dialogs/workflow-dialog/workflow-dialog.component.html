@@ -1,0 +1,31 @@
+<ion-header class="dialog-header">Add a client</ion-header>
+<mat-dialog-content>
+  <div cdkDropListGroup class="full-width">
+    <div class="services-container">
+      <h2>Work Flow</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="workflow"
+        class="workflow-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="workflow-box" *ngFor="let item of workflow" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  
+    <div class="services-container">
+      <h2>Services</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="allServices" 
+        class="workflow-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="workflow-box" *ngFor="let item of allServices" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <ion-button size=small (click)="save()">Save</ion-button>
+    <ion-button size=small (click)="close()">Cancel</ion-button>
+  </div>
+  
+</mat-dialog-content>
